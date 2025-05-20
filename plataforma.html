@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agência Exittus</title> <!-- título simples para a aba -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header img.banner, header img {
+      width: 100%;
+      height: auto;
+      max-height: 250px; /* controla a altura máxima */
+      display: block;
+      margin: 0 auto;
+    }
+
+    nav {
+      border-top: 2px solid #647C01;
+      border-bottom: 2px solid #647C01;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      background-color: #f9f9f9;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #647C01;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #344800;
+    }
+
+    .sobre {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+
+    .sobre h2 {
+      color: #647C01;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .sobre p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    .sobre ul {
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .sobre ul li {
+      margin-bottom: 0.6rem;
+      text-align: justify;
+    }
+
+    footer {
+      background-color: #f4f4f4;
+      padding: 2rem;
+      text-align: center;
+      border-top: 2px solid #647C01;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      margin: 0.4rem 0;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 1rem;
+      color: #666;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 999;
+    }
+
+    .whatsapp-button img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .ats-link {
+      display: block;
+      margin-top: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      color: #647C01;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .ats-link:hover {
+      color: #344800;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner no topo -->
+  <header>
+    <img src="imagens/banner.png" alt="Banner Exittus" />
+  </header>
+
+  <!-- Navegação -->
+  <nav>
+    <a href="sobre.html">SOBRE</a>
+    <a href="missao.html">MISSÃO</a>
+    <a href="visao.html">VISÃO</a>
+    <a href="valores.html">VALORES</a>
+    <a href="servicos.html">SERVIÇOS</a>
+    <a href="contato.html">CONTATO</a>
+    <a href="plataforma.html">CADASTRE SEU CURRÍCULO</a>
+  </nav>
+
+  <!-- Conteúdo -->
+  <section class="sobre">
+    <h2>CADASTRE EM NOSSA PLATAFORMA </h2>
+    <h2>Sistema ATS Selecty – Transformando o Recrutamento em um Processo Ágil e Transparente</h2>
+    <p>O ATS (Applicant Tracking System) da Selecty, disponível em <a href="https://cty.app/home" target="_blank" rel="noopener noreferrer">cty.app/home</a>, é uma solução tecnológica que moderniza e organiza o processo de recrutamento e seleção, conectando empresas e candidatos de forma eficiente e transparente.</p>
+
+    <h3>Como funciona para o candidato?</h3>
+    <ul>
+      <li><strong>Cadastro e criação de perfil:</strong> O candidato acessa a plataforma e cria um perfil personalizado, preenchendo informações pessoais, experiências profissionais, formação acadêmica e habilidades. É possível também anexar currículos em diversos formatos.</li>
+      <li><strong>Busca e candidatura a vagas:</strong> Com o perfil pronto, o candidato pode navegar pelas oportunidades disponíveis, filtrar por área, localização e nível hierárquico, e se candidatar diretamente pelo sistema, de forma rápida e prática.</li>
+      <li><strong>Acompanhamento do processo:</strong> Após se candidatar, o candidato tem acesso ao status da sua candidatura em tempo real — se ela está em análise, se passou para a próxima fase, ou se foi desconsiderada. Além disso, recebe notificações via e-mail ou aplicativo, mantendo-o sempre informado.</li>
+      <li><strong>Entrevistas e testes:</strong> Quando aprovado nas etapas iniciais, o sistema facilita o agendamento de entrevistas (presenciais ou online) e pode integrar aplicações de testes técnicos ou comportamentais, otimizando a avaliação.</li>
+      <li><strong>Feedback e contratação:</strong> A plataforma permite a comunicação direta entre candidato e recrutador para feedbacks, orientações e, em caso de sucesso, a formalização da contratação.</li>
+    </ul>
+
+    <h3>Como funciona para o recrutador?</h3>
+    <ul>
+      <li><strong>Publicação de vagas:</strong> As empresas podem criar e publicar vagas detalhadas, incluindo requisitos técnicos, perfil desejado e etapas do processo seletivo, tudo dentro do sistema.</li>
+      <li><strong>Triagem automatizada:</strong> O ATS realiza uma pré-seleção automática com base em critérios definidos, como experiência, formação e competências, agilizando a análise inicial e reduzindo o volume manual de currículos.</li>
+      <li><strong>Gestão das etapas seletivas:</strong> O recrutador acompanha cada fase do processo, podendo registrar avaliações, agendar entrevistas e enviar mensagens para candidatos diretamente pelo sistema.</li>
+      <li><strong>Relatórios e análise de dados:</strong> O sistema gera relatórios que ajudam a monitorar o desempenho dos processos seletivos, identificar gargalos e otimizar estratégias de atração e seleção de talentos.</li>
+      <li><strong>Conformidade e segurança:</strong> Toda a gestão de dados dos candidatos é realizada conforme as melhores práticas de segurança e privacidade, garantindo o sigilo e a proteção das informações.</li>
+    </ul>
+
+    <h3>Por que utilizar o ATS da Selecty?</h3>
+    <ul>
+      <li><strong>Agilidade:</strong> Automatiza tarefas repetitivas, liberando tempo para ações estratégicas.</li>
+      <li><strong>Transparência:</strong> Candidato e recrutador têm visibilidade clara do andamento do processo.</li>
+      <li><strong>Eficiência:</strong> Melhora a qualidade das contratações por meio de filtros inteligentes e avaliações estruturadas.</li>
+      <li><strong>Comunicação:</strong> Facilita o contato direto e organizado entre todas as partes envolvidas.</li>
+    </ul>
+
+    <a class="ats-link" href="https://agenciaexittus.selecty.com.br/login" target="_blank" rel="noopener noreferrer">👉 Clique aqui para se candidatar às vagas da Agência Exittus</a>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p><strong>Endereço:</strong> R. São José, 584 - sala 204 - Centro, Guaíba - RS, 92704-380</p>
+    <p><strong>Telefone:</strong> (51) 99338-1495</p>
+    <p><strong>E-mail:</strong> adm@agenciaexittus.com</p>
+    <small>&copy; 2025 Agência Exittus. Todos os direitos reservados.</small>
+  </footer>
+
+  <!-- Botão WhatsApp -->
+  <a class="whatsapp-button" href="https://wa.me/5551993381495" target="_blank" rel="noopener">
+    <img src="imagens/whatsapp.png" alt="WhatsApp" />
+  </a>
+
+</body>
+</html>
