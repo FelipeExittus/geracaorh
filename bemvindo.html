@@ -442,16 +442,17 @@ footer small {
   /* Aqui é o Final, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */
 
 
-  /* Texto e bullets alinhados à esquerda para mobile */
+  /* Inicio Texto e bullets alinhados à esquerda para mobile */
   .conteudo p,
   .conteudo ul li,
   .conteudo h1 {
-    text-align: left !important;
-    word-spacing: normal !important; /* remove espaçamento extra */
+    text-align: justify !important;
+    text-justify: inter-word !important; /* controla espaçamento entre palavras */
+    word-spacing: normal !important;     /* garante espaçamento normal */
   }
 }
 
- 
+   /* Final Texto e bullets alinhados à esquerda para mobile */
 
   .swiper {
     width: 100vw;
@@ -942,6 +943,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
