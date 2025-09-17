@@ -407,23 +407,27 @@ footer small {
 /* Media query */
 @media (max-width: 600px) {
   .header-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+    display: flex;                /* mantém flexível */
+    flex-direction: row;           /* mantém tudo na mesma linha */
+    align-items: center;           /* verticalmente alinhados */
+    justify-content: space-between; /* distribui: logo esquerda, título centro, botão direita */
+    padding: 10px 15px;           /* espaçamento interno */
+    width: 100%;
     margin-left: 0;
-    padding: 10px 0;
   }
 
   .header-left img {
-    height: 80px;
+    height: 60px;   /* ajusta tamanho da logo */
     width: auto;
-    margin: 0 auto;
+    margin: 0;      /* remove centralização */
   }
 
   .header-title-container {
-    margin-left: 0; /* <<< ZERA o deslocamento */
+    margin: 0 auto;                /* título no centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;                        /* ocupa espaço central */
   }
 
   .titulo-desktop {
@@ -439,11 +443,10 @@ footer small {
   }
 
   #darkModeToggle {
-    margin: 0 auto;
-    color: #013241;
-    border-color: #013241;
+    margin: 0;                     /* mantém botão à direita */
   }
 }
+
 
    /* Media query */
 
@@ -935,6 +938,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
