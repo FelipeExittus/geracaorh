@@ -411,28 +411,35 @@ footer small {
     padding: 10px;
   }
 
-  .header-left {
-    font-size: 1.2rem;
-    gap: 10px;
-    justify-content: center;
-  }
+/* Ajuste do header-left para mobile */
+.header-left {
+  flex-direction: column;       /* empilha logo, título e botão */
+  align-items: center;          /* centraliza horizontalmente */
+  justify-content: center;
+  gap: 10px;                    /* espaço entre os elementos */
+  margin-left: 0;               /* remove deslocamento do desktop */
+}
 
-  .header-left img {
-    height: 80px;
-    margin-top: 0;
-  }
+.header-left img {
+  height: 80px;                 /* reduz tamanho da logo */
+  width: auto;
+  margin-top: 0;
+}
 
-  .titulo-desktop {
-    display: none;
-  }
+/* Título */
+.titulo-desktop { display: none; }       /* oculta título desktop */
+.titulo-mobile { display: block;         /* mostra título mobile */
+  font-size: 1.5rem;
+  color: #013241;                        /* cor do título */
+  text-align: center;
+}
 
-  .titulo-mobile {
-    display: inline-block;
-    font-size: 1.5rem;
-    color: white;
-    font-weight: bold;
-    margin: 0;
-  }
+  /* Botão modo claro/escuro */
+#darkModeToggle {
+  margin-top: 5px;            /* separa do título */
+  color: #013241;             /* cor fixa para mobile */
+  border-color: #013241;
+}
 
   .swiper {
     width: 100vw;
@@ -922,3 +929,4 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
