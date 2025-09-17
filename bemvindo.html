@@ -443,28 +443,23 @@ footer small {
 
 
   /* Inicio Texto e bullets alinhados à esquerda para mobile */
-.conteudo p,
+.conteudo p {
+    text-align: justify;
+    text-align-last: left; /* mantém última linha à esquerda */
+    hyphens: auto;         /* quebra automática de palavras */
+    word-spacing: normal;  /* garante espaçamento normal */
+    margin: 0 0 0.5em 0;
+}
+
 .conteudo ul li {
-    text-align: justify;        /* justifica o texto */
-    text-align-last: left;      /* última linha alinhada à esquerda */
-    hyphens: auto;              /* permite quebra de palavras */
-    word-spacing: normal;       /* garante espaçamento normal */
-    margin: 0 0 0.5em 0;        /* espaçamento entre linhas */
+    text-align: left;      /* bullets alinhados à esquerda */
+    word-spacing: normal;  /* sem espaçamento extra entre palavras */
+    margin: 0 0 0.5em 0;
 }
 
-/* bullets azuis */
 .conteudo ul li::marker {
-    color: #009AB2;
+    color: #009AB2;        /* bullets azuis */
 }
-       .conteudo p,
-    .conteudo ul li {
-        text-align: justify;
-        text-align-last: left;
-        hyphens: auto;
-        word-spacing: normal;
-    }
-}
-
 /* para mobile, evitar excesso de espaçamento */
 
    /* Final Texto e bullets alinhados à esquerda para mobile */
@@ -958,6 +953,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
