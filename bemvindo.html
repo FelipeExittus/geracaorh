@@ -30,12 +30,12 @@
 }
 
 #slide1-img {
-  max-width: 600px;
-  width: 90%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
+  width: 100%;    /* ocupa toda a largura do container */
+  height: auto;   /* mantém proporção do GIF */
+  display: block; /* evita espaçamento embaixo */
+  margin: 0 auto; /* centraliza se não for 100% */
 }
+
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -59,7 +59,10 @@
   text-align: center;
   min-height: 280px;
   box-sizing: border-box;
+  margin-right: 20px; /* adiciona espaço entre slides */
 }
+
+
 
 .avatar {
   width: 60px;
@@ -100,7 +103,7 @@ body {
 }
 
 body.dark-mode {
-  background-color: #1a1a1a;
+  background-color: #000004;
   color: #ffffff;
 }
 
@@ -311,7 +314,7 @@ nav a.ativo {
 }
 
 body.dark-mode nav {
-  background-color: #2a2a2a;
+  background-color: #000004;
 }
 
 /* Conteúdo */
@@ -375,7 +378,7 @@ footer {
 }
 
 body.dark-mode footer {
-  background-color: #1f1f1f;
+  background-color: #000004;
 }
 
 footer p {
@@ -630,8 +633,8 @@ footer small {
         <div class="comment">"Excelente atendimento"</div>
         <div class="author">Nonno Eugênio Pizzeria</div>
       </div>
-
     </div>
+
 
     <!-- Paginação e Navegação -->
     <div class="swiper-pagination"></div>
@@ -642,21 +645,23 @@ footer small {
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   <script>
-     const swiper = new Swiper('.swiper', {
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
+    const swiper = new Swiper('.swiper', {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  spaceBetween: 30, // <--- aqui você define o espaço entre slides em pixels
+});
+
   </script>
   
 
@@ -664,8 +669,16 @@ footer small {
 <section class="conteudo">
     <img src="loop.gif" alt="Globo animado com conexões" id="slide1-img" />
 
-   <h1 style="text-align: center; color: #009AB2;">O que você vai ver aqui no site</h1>
+    <div style="width: 100%; height: 2px; background-color: #009AB2; margin: 10px 0;"></div>
 
+     <p>
+       As conexões que moldam o mundo moderno, conhecidas como networking, facilitam a empregabilidade, aumentam o engajamento e permitem conhecer e ajudar pessoas, que, por sua vez, contribuirão para a sua jornada.
+    </p>
+
+
+<h1 style="text-align: center; color: #009AB2; font-size: 1.8rem;">
+  O que você vai ver aqui no site
+</h1>
 
     <p>
         Nosso objetivo é transformar seu percurso profissional em uma experiência completa, indo muito além de consultoria tradicional de RH, acompanhando as tendências do mercado, recrutamento moderno, da era da inteligência artificial, ATS e claro atuando em múltiplos canais.
@@ -981,6 +994,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
