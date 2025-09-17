@@ -406,9 +406,51 @@ footer small {
 
 /* Media query */
 /* Mobile */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+/* logo à esquerda */
+.header-left img {
+  height: 60px;
+  width: auto;
+}
+
+/* título no centro */
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+.titulo-desktop {
+  font-size: 1.8rem;
+  color: #013241;
+  font-weight: bold;
+  margin: 0;
+}
+.titulo-mobile {
+  display: none;
+}
+
+/* botão à direita */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+#darkModeToggle {
+  padding: 5px 10px;
+  border: 2px solid #013241;
+  background: transparent;
+  color: #013241;
+  border-radius: 5px;
+}
+
+/* mobile */
 @media (max-width: 600px) {
   .header-left img {
-    height: 40px; /* logo menor */
+    height: 40px;
   }
 
   .titulo-desktop {
@@ -422,27 +464,7 @@ footer small {
     font-weight: bold;
     margin: 0;
   }
-
-  .swiper {
-    width: 100vw;
-    padding-left: 10px;
-    padding-right: 10px;
-    box-sizing: border-box;
-  }
-
-  .swiper-wrapper {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .swiper-slide {
-    width: calc(100vw - 20px);
-    min-height: 220px;
-    padding: 10px;
-    margin-right: 0;
-    box-sizing: border-box;
-  }
+}
 
   nav {
     justify-content: center;
@@ -451,6 +473,8 @@ footer small {
     flex-wrap: wrap;
   }
 } /* fecha só aqui */
+
+   
 </style>
 
 </head>
@@ -912,6 +936,7 @@ floatb.addEventListener('click', () => {
 </body>
 
 </html>
+
 
 
 
