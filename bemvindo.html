@@ -1,3 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="icone.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agência Exittus - Recrutamento e Seleção</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Conectamos profissionais e empresas com empatia, estratégia e tecnologia. Recrutamento e Seleção com foco humano e excelência." />
+  <meta name="keywords" content="Agência de Empregos, RH, Recrutamento, Seleção, Vagas, Exittus, Guaíba, Porto Alegre, Carreira, Talentos" />
+  <meta name="author" content="Agência Exittus" />
+  <meta property="og:title" content="Agência Exittus - Recrutamento Estratégico" />
+  <meta property="og:description" content="Somos especialistas em criar pontes sólidas entre profissionais e empresas, com foco humano e tecnologia." />
+  <meta property="og:image" content="slide1.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agenciaexittus.github.io/agenciaexittus/" />
+  <meta name="robots" content="index, follow" />
+ 
+ 
+ <style>
+/* Swiper geral */
+.swiper {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 200px;
+  background-color: transparent;
+}
+
+#slide1-img {
+  max-width: 600px;
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+  color: #2b960a;
+}
+
+.swiper-wrapper {
+  align-items: stretch;
+}
+
+.swiper-slide {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 280px;
+  box-sizing: border-box;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: #fbc02d;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.comment {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.author {
+  font-weight: bold;
+  color: #333;
+}
+
+.swiper-pagination-bullet-active {
+  background: #333;
+}
+
+/* Body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  padding-top: 170px; /* header + nav */
+}
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Container que engloba header + nav */
+.header-nav-container {
+  position: fixed;  /* fixo na tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+header {
+  background-color: #EFEFEF;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav {
+  background-color: #EFEFEF !important; /* fundo fixo para claro e escuro */
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+/* LINKS DO MENU */
+nav a,
+.dropdown > a {
+  text-decoration: none;
+  color: #009AB2;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+nav a:hover,
+.dropdown:hover > a {
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  color: #009AB2;
+}
+
+/* Dropdown */
+.dropdown-content {
+  background-color: #EFEFEF !important;
+}
+
+.dropdown-content a {
+  background-color: #EFEFEF !important;
+  color: #009AB2;
+}
+
+/* Ajuste no body para não ficar conteúdo escondido atrás do topo fixo */
+body {
+  padding-top: 200px; /* soma aproximada da altura do header + nav */
+}
+
+
+/* Header */
+header {
+  background-color: #EFEFEF;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  color: #EFEFEF;
+  font-size: 1.8rem;
+  font-weight: bold;
+  user-select: none;
+  flex-wrap: wrap;
+}
+
+.header-left img {
+  height: 280px;
+  width: auto;
+  display: block;
+  margin-top: 11px;
+}
+
+.header-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -190px;
+}
+
+.titulo-desktop {
+  display: block;
+  font-size: 2.8rem;
+  color: #013241;
+  font-weight: bold;
+  line-height: 1.7;
+  margin-left: 2px;
+}
+
+.titulo-mobile {
+  display: none;
+}
+
+#darkModeToggle {
+  background: none;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+#darkModeToggle:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Nav e dropdown */
+nav {
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  background-color: #EFEFEF;
+  position: relative;
+}
+
+nav a,
+.dropdown > a {
+  text-decoration: none;
+  color: #009AB2;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Efeito ao passar o mouse */
+nav a:hover,
+.dropdown:hover > a {
+  color: #013241;              /* muda a cor do texto */
+  font-weight: 700;              /* fica mais “negrito” */
+  background-color: #EFEFEF;   /* muda fundo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra moderna */
+  transform: scale(1.05);        /* dá um leve zoom */
+}
+
+nav a.ativo {
+  color: #000000;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #EFEFEF;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-align: left;
+  color: #647C01;
+  font-weight: normal;
+  background-color: #EFEFEF;
+}
+
+.dropdown-content a:hover {
+  background-color: #EFEFEF;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+body.dark-mode nav {
+  background-color: #2a2a2a;
+}
+
+/* Conteúdo */
+.conteudo {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: justify;
+  hyphens: auto;
+  word-spacing: normal;
+  letter-spacing: normal;
+}
+
+.conteudo h1 {
+  text-align: center;
+  color: #009AB2;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(100,124,1,0.3);
+}
+
+.conteudo p {
+  margin-bottom: 1rem;
+}
+
+/* Botão fale conosco */
+.fale-conosco-btn {
+  display: block;
+  text-align: center;
+  background-color: #4F7214;
+  color: white;
+  padding: 12px 24px;
+  margin: 2rem auto 0;
+  width: fit-content;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.fale-conosco-btn:hover {
+  background-color: #3a5a0f;
+}
+
+/* Footer */
+footer {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid #647C01;
+  font-size: 0.95rem;
+}
+
+body.dark-mode footer {
+  background-color: #1f1f1f;
+}
+
+footer p {
+  margin: 0.4rem 0;
+}
+
+footer small {
+  display: block;
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* Botão flutuante WhatsApp */
+.whatsapp-button,
+.contact-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+}
+
+.whatsapp-button img,
+#contactBtn img,
+.contact-options a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Botões de slide */
+.slide-button:hover {
+  background-color: #4F7214;
+  box-shadow: 0 6px 16px rgba(33,136,56,0.7);
+}
+
+/* Media query */
+@media (max-width: 600px) {
+  header {
+    height: auto;
+    padding: 10px;
+  }
+
+  .header-left {
+    font-size: 1.2rem;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .header-left img {
+    height: 80px;
+    margin-top: 0;
+  }
+
+  .titulo-desktop {
+    display: none;
+  }
+
+  .titulo-mobile {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .swiper {
+    width: 100vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+
+  .swiper-wrapper {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .swiper-slide {
+    width: calc(100vw - 20px);
+    min-height: 220px;
+    padding: 10px;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+  }
+}
+</style>
+
+</head>
+<body>
+
+
+<!-- Menu de navegação e Banner são fixos no scroll -->
+<div class="header-nav-container">
+  <header>
+    <div class="header-left">
+      <img src="lg.png" alt="Logo Agência Exittus" />
+      <div class="header-title-container">
+        <h1 class="titulo-desktop">Conectando Talentos</h1>
+        <span class="titulo-mobile">Exittus RH </span>
+      </div>
+      <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+    </div>
+  </header>
+
+  <nav>
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
+      <div class="dropdown-content">
+        <a href="bemvindo.html" class="ativo">Bem vindos</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="missao.html">Missão</a>
+        <a href="visao.html">Visão</a>
+        <a href="valores.html">Valores</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">CARREIRA</a>
+      <div class="dropdown-content">
+        <a href="plataforma.html">Candidato</a>
+        <a href="vagas.html">Vagas</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">ATENDIMENTO</a>
+      <div class="dropdown-content">
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
+      <div class="dropdown-content">
+        <a href="cookie.html">Cookies</a>
+        <a href="lgbtqia.html">LGBT+</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="lgpd.html">Lei Geral de Proteção de Dados</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
+      <div class="dropdown-content">
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- Fim do menu e banner fixos -->
+
+
+  <h2 style="text-align:center;">💬 Avaliações do Google</h2>
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slides -->
+      <div class="swiper-slide" style="color: #4F7214;">
+        <img class="avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjXBTjXwS527NCxCSArd_ThvRsQDuKJZbU9fiiBJ-b9gDl-YKZA=s36-c-rp-mo-br100" alt="Cleiciane Gomes">
+        <div class="stars">★★★★★</div>
+        <div class="comment">"Excelente atendimento e profissionalismo! Muito atenciosos e prestativos. Recomendo a agência!"</div>
+        <div class="author">Cleiciane Gomes</div>
+      </div>
+
+      <div class="swiper-slide" style="color: #4F7214;">
+        <img class="avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjVUTP2Sb35AulgVxuOPdwCGcgEwK-2dGoZc7lG2ebw80DoU5yA=s36-c-rp-mo-br100" alt="Branco Odontologia">
+        <div class="stars">★★★★★</div>
+        <div class="comment">"Iniciamos processo seletivo com eles e o resultado foi rápido e eficiente. Recomendo!!"</div>
+        <div class="author">Branco Odontologia</div>
+      </div>
+
+     <div class="swiper-slide" style="color: #4F7214;">
+        <img class="avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjVkVNAwpbpacn-POBkzBWDQzdDKzIkS4T2-L8pkCShPb_7J78L3=s36-c-rp-mo-ba3-br100" alt="Cristiano Vianna">
+        <div class="stars">★★★★★</div>
+        <div class="comment">"Excelente empresa! Excelente serviço. Profissionais, éticos e entregam muita qualidade."</div>
+        <div class="author">Cristiano Vianna</div>
+      </div>
+
+      <div class="swiper-slide" style="color: #4F7214;">
+        <img class="avatar" src="https://lh3.googleusercontent.com/a/ACg8ocLQcVwFPoDruelT8qbmEIfFJtrxanZ-s3XRwCCcLEmxAP-lQA=s36-c-rp-mo-br100" alt="Carlos Santos">
+        <div class="stars">★★★★★</div>
+        <div class="comment">"Excelente empresa! Busca um atendimento humano e empático sempre de forma ágil."</div>
+        <div class="author">Carlos Santos</div>
+      </div>
+
+      <div class="swiper-slide" style="color: #4F7214;">
+        <img class="avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjWpQLLtADszA54-Z16-Ic9iCLQoclEIvPUdwAAVgOILKfXH5MY=s36-c-rp-mo-br100" alt="Nonno Eugênio Pizzeria">
+        <div class="stars">★★★★★</div>
+        <div class="comment">"Excelente atendimento"</div>
+        <div class="author">Nonno Eugênio Pizzeria</div>
+      </div>
+
+    </div>
+
+    <!-- Paginação e Navegação -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script>
+     const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+  
+
+
+<section class="conteudo">
+    <img src="loop.gif" alt="Globo animado com conexões" id="slide1-img" />
+
+   <h1 style="text-align: center; color: #009AB2;">O que você vai ver aqui no site</h1>
+
+
+    <p>
+        Nosso objetivo é transformar seu percurso profissional em uma experiência completa, indo muito além de consultoria tradicional de RH, acompanhando as tendências do mercado, recrutamento moderno, da era da inteligência artificial, ATS e claro atuando em múltiplos canais.
+    </p>
+    <ul>
+        <li>Portal de vagas atualizado</li>
+        <li>Canal de tutoriais e vídeos no YouTube</li>
+        <li>Blog com dicas práticas de carreira</li>
+        <li>Comunidade interativa para networking</li>
+    </ul>
+    <hr>
+
+    <p><strong>Nossa abordagem e especialidades:</strong> Aplicamos metodologias modernas e profundas para identificar talentos e gerar resultados reais.</p>
+    <ul>
+        <li>Entrevistas por narrativas, com metodologia própria baseada em conceitos STAR, revelando resultados mais profundos que entrevistas superficiais.</li>
+        <li>Parecer técnico, comportamental e profissional.</li>
+        <li>Perfil comportamental 3D.</li>
+        <li>Identificação de nichos diferenciados para captação de talentos.</li>
+        <li>Alcance de público superior a 1 milhão de pessoas.</li>
+    </ul>
+    <hr>
+
+    <p><strong>Para empresas e parcerias:</strong> Apoiamos empresas na captação de talentos e na construção de equipes de alta performance.</p>
+    <ul>
+        <li>Envio direto de propostas e vagas por e-mail.</li>
+        <li>Atendimento dedicado via WhatsApp para empresas.</li>
+        <li>Consultoria em recrutamento e seleção personalizada.</li>
+        <li>Acesso a relatórios e análises de candidatos.</li>
+    </ul>
+    <hr>
+
+    <p><strong>Acesso, atendimento e transparência:</strong> Oferecemos múltiplos canais e informações completas, garantindo segurança e fácil comunicação.</p>
+    <ul>
+        <li>Atendimento via WhatsApp, Telegram, e-mail e Google Forms.</li>
+        <li>Mural de vagas e propostas para empresas.</li>
+        <li>Política de Privacidade, Cookies e LGPD.</li>
+        <li>Ambiente seguro, acolhedor e interativo.</li>
+    </ul>
+    <hr>
+
+    <p><strong>Inovação e acompanhamento contínuo:</strong> Investimos em tecnologia e acompanhamento constante para garantir eficiência e resultados reais.</p>
+    <ul>
+        <li>Uso de ATS e ferramentas digitais modernas.</li>
+        <li>Atualizações contínuas sobre tendências de mercado.</li>
+        <li>Acompanhamento e feedbacks de processos seletivos.</li>
+        <li>Integração com múltiplos canais de comunicação.</li>
+    </ul>
+    <hr>
+</section>
+
+<style>
+/* Texto justificado e bullets azuis */
+.conteudo p, .conteudo ul li, .conteudo h1 {
+    text-align: justify;
+}
+
+/* Bullets sempre azuis */
+.conteudo ul {
+    list-style: disc;
+    margin-left: 30px;
+}
+.conteudo ul li::marker {
+    color: #009AB2;
+}
+
+/* Modo claro: texto preto */
+body:not(.dark-mode) .conteudo p,
+body:not(.dark-mode) .conteudo ul li,
+body:not(.dark-mode) .conteudo h1 {
+    color: black;
+}
+
+/* Modo escuro: texto branco */
+body.dark-mode .conteudo p,
+body.dark-mode .conteudo ul li,
+body.dark-mode .conteudo h1 {
+    color: white;
+}
+
+/* Linha hr azul */
+.conteudo hr {
+    border: none;
+    border-top: 2px solid #009AB2;
+    margin: 20px 0;
+}
+</style>
+
+
+<style>
+    /* Bullets azuis mantendo texto branco */
+    .conteudo ul li::marker {
+        color: #009AB2;
+    }
+</style>
+
+
+<style>
+    /* Deixa os bullets azuis e o texto branco */
+    .conteudo ul li::marker {
+        color: #009AB2; 
+    }
+</style>
+
+    <a href="contato.html" class="fale-conosco-btn">Fale Conosco</a>
+  </section>
+
+<div style="text-align: center; margin-top: 1rem;">
+  <a href="https://www.hitwebcounter.com" target="_blank">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=20853828&style=0002&nbdigits=5&type=page&initCount=0"
+      title="Counter Widget" alt="Visit counter For Websites" border="0" />
+  </a>
+</div>
+  
+ <footer>
+    <p><strong>CNPJ:</strong> 46.599.025/0001-54</p>
+    <p><strong>Telefone:</strong> (51) 99338-1495 e (51) 99697-6579 </p>
+    <p><strong>E-mail:</strong> adm@agenciaexittus.com</p>
+    <small>&copy; 2025 Agência Exittus. Todos os direitos reservados.</small>
+  </footer>
+
+
+<script>
+function toggleDarkMode() {
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  body.classList.toggle("dark-mode");
+  const isDark = body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  // Alterar texto e cor do botão
+  if (isDark) {
+    button.textContent = "☀️";
+    button.style.color = "#013241"; // cor para modo escuro
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241"; // cor para modo claro
+    button.style.borderColor = "#013241";
+  }
+}
+
+window.onload = () => {
+  const theme = localStorage.getItem("theme");
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  if (theme === "dark") {
+    body.classList.add("dark-mode");
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+};
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
+    const dropdownContent = document.querySelector(".dropdown-content");
+
+    if (dropdownToggle && dropdownContent) {
+      dropdownToggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        dropdownContent.classList.toggle("show");
+      });
+
+      // Fecha o menu se clicar fora
+      document.addEventListener("click", function (e) {
+        if (!dropdownToggle.contains(e.target) && !dropdownContent.contains(e.target)) {
+          dropdownContent.classList.remove("show");
+        }
+      });
+    }
+  });
+  </script>
 <!-- Botão flutuante principal com ícone -->
 <div class="floatb-container">
   <button class="floatb" id="floatb">
@@ -134,5 +922,3 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
-
-
