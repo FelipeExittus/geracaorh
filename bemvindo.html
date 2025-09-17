@@ -18,481 +18,120 @@
   <meta name="robots" content="index, follow" />
  
  
- <style> 
-/* Swiper geral */
-.swiper {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-  min-height: 200px;
-  background-color: transparent;
-}
+ <style>
+    /* Estilo geral do header */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #013241;
+    }
 
-#slide1-img {
-  max-width: 600px;
-  width: 90%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-}
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #009AB2;
+    }
 
-.swiper-button-prev,
-.swiper-button-next {
-  display: none !important;
-  color: #2b960a;
-}
+    /* logo à esquerda */
+    .header-left img {
+      height: 60px;
+      width: auto;
+    }
 
-.swiper-wrapper {
-  align-items: stretch;
-}
+    /* título no centro */
+    .header-center {
+      flex: 1;
+      text-align: center;
+    }
+    .titulo-desktop {
+      font-size: 1.8rem;
+      color: #ffffff;
+      font-weight: bold;
+      margin: 0;
+    }
+    .titulo-mobile {
+      display: none;
+    }
 
-.swiper-slide {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 280px;
-  box-sizing: border-box;
-}
+    /* botão à direita */
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+    #darkModeToggle {
+      padding: 5px 10px;
+      border: 2px solid #ffffff;
+      background: transparent;
+      color: #ffffff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
 
-.avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
+    /* modo escuro */
+    body.dark-mode {
+      background-color: #222;
+      color: #fff;
+    }
+    body.dark-mode header {
+      background-color: #333;
+    }
+    body.dark-mode #darkModeToggle {
+      border-color: #fff;
+      color: #fff;
+    }
 
-.stars {
-  color: #fbc02d;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
+    /* mobile */
+    @media (max-width: 600px) {
+      .header-left img {
+        height: 40px;
+      }
 
-.comment {
-  font-style: italic;
-  margin-bottom: 10px;
-}
+      .titulo-desktop {
+        display: none;
+      }
 
-.author {
-  font-weight: bold;
-  color: #333;
-}
-
-.swiper-pagination-bullet-active {
-  background: #333;
-}
-
-/* Body */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #ffffff;
-  color: #333;
-  transition: background-color 0.3s, color 0.3s;
-  padding-top: 170px; /* header + nav */
-}
-
-body.dark-mode {
-  background-color: #1a1a1a;
-  color: #ffffff;
-}
-
-/* Container que engloba header + nav */
-.header-nav-container {
-  position: fixed;  /* fixo na tela */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: #EFEFEF;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-
-header {
-  background-color: #EFEFEF;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-}
-
-nav {
-  background-color: #EFEFEF !important; /* fundo fixo para claro e escuro */
-  border-top: 2px solid #009AB2;
-  border-bottom: 2px solid #009AB2;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0.5rem 0;
-  position: relative;
-}
-
-/* LINKS DO MENU */
-nav a,
-.dropdown > a {
-  text-decoration: none;
-  color: #009AB2;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-nav a:hover,
-.dropdown:hover > a {
-  background-color: #EFEFEF;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  color: #009AB2;
-}
-
-/* Dropdown */
-.dropdown-content {
-  background-color: #EFEFEF !important;
-}
-
-.dropdown-content a {
-  background-color: #EFEFEF !important;
-  color: #009AB2;
-}
-
-/* Ajuste no body para não ficar conteúdo escondido atrás do topo fixo */
-body {
-  padding-top: 200px; /* soma aproximada da altura do header + nav */
-}
-
-
-/* Header */
-header {
-  background-color: #EFEFEF;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  width: 100%;
-  color: #EFEFEF;
-  font-size: 1.8rem;
-  font-weight: bold;
-  user-select: none;
-  flex-wrap: wrap;
-}
-
-.header-left img {
-  height: 280px;
-  width: auto;
-  display: block;
-  margin-top: 11px;
-}
-
-.header-title-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: -190px;
-}
-
-.titulo-desktop {
-  display: block;
-  font-size: 2.8rem;
-  color: #013241;
-  font-weight: bold;
-  line-height: 1.7;
-  margin-left: 2px;
-}
-
-.titulo-mobile {
-  display: none;
-}
-
-#darkModeToggle {
-  background: none;
-  border: 2px solid #ffffff;
-  border-radius: 6px;
-  padding: 6px 12px;
-  cursor: pointer;
-  color: white;
-  font-weight: bold;
-  transition: all 0.3s;
-  font-size: 0.9rem;
-}
-
-#darkModeToggle:hover {
-  background-color: rgba(255,255,255,0.1);
-}
-
-/* Nav e dropdown */
-nav {
-  border-top: 2px solid #009AB2;
-  border-bottom: 2px solid #009AB2;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0.5rem 0;
-  background-color: #EFEFEF;
-  position: relative;
-}
-
-nav a,
-.dropdown > a {
-  text-decoration: none;
-  color: #009AB2;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-/* Efeito ao passar o mouse */
-nav a:hover,
-.dropdown:hover > a {
-  color: #013241;              /* muda a cor do texto */
-  font-weight: 700;              /* fica mais “negrito” */
-  background-color: #EFEFEF;   /* muda fundo */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra moderna */
-  transform: scale(1.05);        /* dá um leve zoom */
-}
-
-nav a.ativo {
-  color: #000000;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #EFEFEF;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  z-index: 999;
-  min-width: 200px;
-  top: 100%;
-  left: 0;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px;
-  text-align: left;
-  color: #647C01;
-  font-weight: normal;
-  background-color: #EFEFEF;
-}
-
-.dropdown-content a:hover {
-  background-color: #EFEFEF;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-body.dark-mode nav {
-  background-color: #2a2a2a;
-}
-
-/* Conteúdo */
-.conteudo {
-  padding: 2rem;
-  max-width: 900px;
-  margin: 2rem auto;
-  text-align: justify;
-  hyphens: auto;
-  word-spacing: normal;
-  letter-spacing: normal;
-}
-
-.conteudo h1 {
-  text-align: center;
-  color: #009AB2;
-  margin-bottom: 1.5rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(100,124,1,0.3);
-}
-
-.conteudo p {
-  margin-bottom: 1rem;
-}
-
-/* Botão fale conosco */
-.fale-conosco-btn {
-  display: block;
-  text-align: center;
-  background-color: #4F7214;
-  color: white;
-  padding: 12px 24px;
-  margin: 2rem auto 0;
-  width: fit-content;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
-}
-
-.fale-conosco-btn:hover {
-  background-color: #3a5a0f;
-}
-
-/* Footer */
-footer {
-  background-color: #f4f4f4;
-  padding: 2rem;
-  text-align: center;
-  border-top: 2px solid #647C01;
-  font-size: 0.95rem;
-}
-
-body.dark-mode footer {
-  background-color: #1f1f1f;
-}
-
-footer p {
-  margin: 0.4rem 0;
-}
-
-footer small {
-  display: block;
-  margin-top: 1rem;
-  color: #666;
-}
-
-/* Botão flutuante WhatsApp */
-.whatsapp-button,
-.contact-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 999;
-}
-
-.whatsapp-button img,
-#contactBtn img,
-.contact-options a img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-/* Botões de slide */
-.slide-button:hover {
-  background-color: #4F7214;
-  box-shadow: 0 6px 16px rgba(33,136,56,0.7);
-}
-
-/* Media query */
-/* Mobile */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-/* logo à esquerda */
-.header-left img {
-  height: 60px;
-  width: auto;
-}
-
-/* título no centro */
-.header-center {
-  flex: 1;
-  text-align: center;
-}
-.titulo-desktop {
-  font-size: 1.8rem;
-  color: #013241;
-  font-weight: bold;
-  margin: 0;
-}
-.titulo-mobile {
-  display: none;
-}
-
-/* botão à direita */
-.header-right {
-  display: flex;
-  align-items: center;
-}
-#darkModeToggle {
-  padding: 5px 10px;
-  border: 2px solid #013241;
-  background: transparent;
-  color: #013241;
-  border-radius: 5px;
-}
-
-/* mobile */
-@media (max-width: 600px) {
-  .header-left img {
-    height: 40px;
-  }
-
-  .titulo-desktop {
-    display: none;
-  }
-
-  .titulo-mobile {
-    display: block;
-    font-size: 1.5rem;
-    color: white;
-    font-weight: bold;
-    margin: 0;
-  }
-}
-
-  nav {
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    flex-wrap: wrap;
-  }
-} /* fecha só aqui */
-
-   
-</style>
-
+      .titulo-mobile {
+        display: block;
+        font-size: 1.5rem;
+        color: white;
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
-
-<!-- Menu de navegação e Banner são fixos no scroll -->
-<div class="header-nav-container">
   <header>
+    <!-- logo à esquerda -->
     <div class="header-left">
-      <img src="lg.png" alt="Logo Agência Exittus" />
-      <div class="header-title-container">
-        <h1 class="titulo-desktop">Conectando Talentos</h1>
-        <span class="titulo-mobile">Geração RH </span>
-      </div>
+      <img src="lg.png" alt="Logo Agência Exittus">
+    </div>
+
+    <!-- título no centro -->
+    <div class="header-center">
+      <h1 class="titulo-desktop">Conectando Talentos</h1>
+      <span class="titulo-mobile">Nova Geração RH</span>
+    </div>
+
+    <!-- botão à direita -->
+    <div class="header-right">
       <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
     </div>
   </header>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
+</html>
 
   <nav>
     <div class="dropdown">
@@ -936,6 +575,7 @@ floatb.addEventListener('click', () => {
 </body>
 
 </html>
+
 
 
 
