@@ -16,6 +16,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://agenciaexittus.github.io/agenciaexittus/" />
   <meta name="robots" content="index, follow" />
+  <img src="lg.png" alt="Logo Agência Exittus" class="logo-desktop" />
+  <img src="lg-mobile.png" alt="Logo Mobile" class="logo-mobile" />
  
  
  <style>
@@ -404,6 +406,14 @@ footer small {
   box-shadow: 0 6px 16px rgba(33,136,56,0.7);
 }
 
+   /* Por padrão */
+.logo-mobile { display: none; }
+.logo-desktop { display: block; }
+
+@media (max-width: 600px) {
+  .logo-desktop { display: none; }
+  .logo-mobile { display: block; height: 80px; }
+}
 /* Media query */
 @media (max-width: 600px) {
   header {
@@ -922,4 +932,5 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
