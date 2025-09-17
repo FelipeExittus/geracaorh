@@ -516,12 +516,19 @@ footer small {
     box-sizing: border-box;
   }
 
-  nav {
+ nav {
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.5rem;
+    padding: 0.2rem 0; /* menos espaço acima e abaixo dos links */
     flex-wrap: wrap;
-  }
+    background-color: #EFEFEF; /* mantém a cor atual */
+}
+
+nav a,
+.dropdown > a {
+    padding: 0.2rem 0.5rem; /* diminui altura dos links */
+    font-size: 0.9rem;      /* opcional: reduz fonte, mantendo legível */
+}
   
 </style>
 
@@ -994,6 +1001,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
