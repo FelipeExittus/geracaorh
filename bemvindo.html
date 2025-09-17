@@ -114,63 +114,7 @@ body.dark-mode {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-
-header {
-  background-color: #EFEFEF;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-}
-
-nav {
-  background-color: #EFEFEF !important; /* fundo fixo para claro e escuro */
-  border-top: 2px solid #009AB2;
-  border-bottom: 2px solid #009AB2;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0.5rem 0;
-  position: relative;
-}
-
-/* LINKS DO MENU */
-nav a,
-.dropdown > a {
-  text-decoration: none;
-  color: #009AB2;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-nav a:hover,
-.dropdown:hover > a {
-  background-color: #EFEFEF;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  color: #009AB2;
-}
-
-/* Dropdown */
-.dropdown-content {
-  background-color: #EFEFEF !important;
-}
-
-.dropdown-content a {
-  background-color: #EFEFEF !important;
-  color: #009AB2;
-}
-
-/* Ajuste no body para não ficar conteúdo escondido atrás do topo fixo */
-body {
-  padding-top: 200px; /* soma aproximada da altura do header + nav */
-}
-
-
-/* Header */
+/* Header Desktop */
 header {
   background-color: #EFEFEF;
   height: 100px;
@@ -235,6 +179,47 @@ header {
   background-color: rgba(255,255,255,0.1);
 }
 
+nav {
+  background-color: #EFEFEF !important; /* fundo fixo para claro e escuro */
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+/* LINKS DO MENU */
+nav a,
+.dropdown > a {
+  text-decoration: none;
+  color: #009AB2;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+nav a:hover,
+.dropdown:hover > a {
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  color: #009AB2;
+}
+
+/* Dropdown */
+.dropdown-content {
+  background-color: #EFEFEF !important;
+}
+
+.dropdown-content a {
+  background-color: #EFEFEF !important;
+  color: #009AB2;
+}
+
 /* Nav e dropdown */
 nav {
   border-top: 2px solid #009AB2;
@@ -263,7 +248,7 @@ nav a,
 nav a:hover,
 .dropdown:hover > a {
   color: #013241;              /* muda a cor do texto */
-  font-weight: 700;              /* fica mais “negrito” */
+  font-weight: 700;              /* fica mais "negrito" */
   background-color: #EFEFEF;   /* muda fundo */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra moderna */
   transform: scale(1.05);        /* dá um leve zoom */
@@ -404,36 +389,88 @@ footer small {
   box-shadow: 0 6px 16px rgba(33,136,56,0.7);
 }
 
-/* Media query */
-@media (max-width: 600px) {
+/* MEDIA QUERIES PARA CELULAR */
+@media (max-width: 768px) {
+  /* Ajuste no body para mobile */
+  body {
+    padding-top: 140px; /* header menor + nav */
+  }
+
+  /* Header mobile */
   header {
-    height: auto;
-    padding: 10px;
+    height: 70px; /* altura menor para mobile */
+    padding: 10px 15px;
   }
 
   .header-left {
-    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo esquerda, título centro, botão direita */
+    width: 100%;
     gap: 10px;
-    justify-content: center;
+    font-size: 1.2rem;
   }
 
   .header-left img {
-    height: 80px;
+    height: 50px; /* logo menor */
+    width: auto;
     margin-top: 0;
+    flex-shrink: 0; /* não encolhe */
+    order: 1; /* primeiro elemento (esquerda) */
+  }
+
+  .header-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0; /* remove margem negativa */
+    flex: 1; /* ocupa espaço disponível no centro */
+    order: 2; /* segundo elemento (centro) */
   }
 
   .titulo-desktop {
-    display: none;
+    display: none; /* esconde título desktop */
   }
 
   .titulo-mobile {
-    display: inline-block;
-    font-size: 1.5rem;
-    color: white;
+    display: block;
+    font-size: 1.4rem;
+    color: #013241;
     font-weight: bold;
     margin: 0;
+    text-align: center;
+    line-height: 1.2;
   }
 
+  #darkModeToggle {
+    flex-shrink: 0; /* não encolhe */
+    order: 3; /* terceiro elemento (direita) */
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-color: #013241;
+    color: #013241;
+    background: transparent;
+  }
+
+  #darkModeToggle:hover {
+    background-color: rgba(1, 50, 65, 0.1);
+  }
+
+  /* Nav mobile */
+  nav {
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  nav a,
+  .dropdown > a {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  /* Swiper mobile */
   .swiper {
     width: 100vw;
     padding-left: 10px;
@@ -455,14 +492,73 @@ footer small {
     box-sizing: border-box;
   }
 
-  nav {
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    flex-wrap: wrap;
+  /* Conteúdo mobile */
+  .conteudo {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .conteudo h1 {
+    font-size: 2rem;
   }
 }
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+  .titulo-mobile {
+    font-size: 1.2rem;
+  }
+
+  #darkModeToggle {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+
+  nav a,
+  .dropdown > a {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+/* Texto justificado e bullets azuis */
+.conteudo p, .conteudo ul li, .conteudo h1 {
+    text-align: justify;
+}
+
+/* Bullets sempre azuis */
+.conteudo ul {
+    list-style: disc;
+    margin-left: 30px;
+}
+.conteudo ul li::marker {
+    color: #009AB2;
+}
+
+/* Modo claro: texto preto */
+body:not(.dark-mode) .conteudo p,
+body:not(.dark-mode) .conteudo ul li,
+body:not(.dark-mode) .conteudo h1 {
+    color: black;
+}
+
+/* Modo escuro: texto branco */
+body.dark-mode .conteudo p,
+body.dark-mode .conteudo ul li,
+body.dark-mode .conteudo h1 {
+    color: white;
+}
+
+/* Linha hr azul */
+.conteudo hr {
+    border: none;
+    border-top: 2px solid #009AB2;
+    margin: 20px 0;
+}
 </style>
+
+</head>
+<body>
 
 </head>
 <body>
@@ -922,4 +1018,5 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
