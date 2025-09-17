@@ -408,19 +408,20 @@ footer small {
 @media (max-width: 600px) {
   .header-left {
     display: flex;
-    flex-direction: column;
-    align-items: center;  /* centraliza a logo */
+    flex-direction: column; /* empilha elementos */
+    align-items: center;    /* centraliza logo */
+    justify-content: center;
     gap: 5px;
     margin-left: 0;
     padding: 10px 0;
-    position: relative; /* necessário para o posicionamento absoluto do botão */
+    position: relative;     /* necessário para o absolute do botão */
   }
 
   .header-left img {
     height: 170px;
     width: auto;
     display: block;
-    margin: 0 auto; /* centraliza a logo */
+    margin: 0 auto; 
   }
 
   .titulo-desktop { display: none; }
@@ -429,10 +430,16 @@ footer small {
   /* Botão de modo claro/escuro */
   #darkModeToggle {
     position: absolute;   /* tira do fluxo do flex */
-    left: 10px;           /* distância da borda esquerda */
     top: 10px;            /* distância do topo do container */
+    left: 10px;           /* distância da borda esquerda */
+    display: block;
     color: #013241;
     border-color: #013241;
+    background: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }
    /* Media query */
@@ -925,6 +932,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
