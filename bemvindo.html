@@ -413,32 +413,35 @@ footer small {
 
 /* Ajuste do header-left para mobile */
 .header-left {
-  flex-direction: column;       /* empilha logo, título e botão */
-  align-items: center;          /* centraliza horizontalmente */
-  justify-content: center;
-  gap: 10px;                    /* espaço entre os elementos */
-  margin-left: 0;               /* remove deslocamento do desktop */
-}
+    display: flex;              /* mantém flexível */
+    flex-direction: column;     /* empilha os elementos */
+    align-items: center;        /* centraliza horizontalmente */
+    justify-content: center;    /* centraliza verticalmente */
+    gap: 5px;                   /* espaço entre logo, título e botão */
+    margin-left: 0;             /* remove deslocamento do desktop */
+    padding: 10px 0;            /* garante espaço interno no topo */
+  }
 
-.header-left img {
-  height: 80px;                 /* reduz tamanho da logo */
-  width: auto;
-  margin-top: 0;
-}
+  .header-left img {
+    height: 80px;               /* tamanho da logo para mobile */
+    width: auto;
+    margin: 0 auto;             /* centraliza a logo */
+  }
 
-/* Título */
-.titulo-desktop { display: none; }       /* oculta título desktop */
-.titulo-mobile { display: block;         /* mostra título mobile */
-  font-size: 1.5rem;
-  color: #013241;                        /* cor do título */
-  text-align: center;
-}
+  .titulo-desktop { display: none; }    /* oculta título desktop */
+  .titulo-mobile {
+    display: block;
+    font-size: 1.5rem;
+    color: #013241;
+    text-align: center;                  /* centraliza texto do título */
+    margin: 0;                            /* remove margens extras */
+  }
 
-  /* Botão modo claro/escuro */
-#darkModeToggle {
-  margin-top: 5px;            /* separa do título */
-  color: #013241;             /* cor fixa para mobile */
-  border-color: #013241;
+  #darkModeToggle {
+    margin: 0 auto;                       /* centraliza botão */
+    color: #013241;                       /* mantém cor consistente */
+    border-color: #013241;
+  }
 }
 
   .swiper {
@@ -929,4 +932,5 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
