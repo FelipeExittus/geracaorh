@@ -20,6 +20,7 @@
  
  <style>
 /* Swiper geral */
+   
 .swiper {
   width: 90%;
   max-width: 1000px;
@@ -409,24 +410,26 @@ footer small {
   .header-left {
     display: flex;
     flex-direction: column;
-    align-items: center;  /* centraliza horizontalmente */
-    justify-content: center;
+    align-items: center;  /* centraliza a logo */
     gap: 5px;
     margin-left: 0;
     padding: 10px 0;
   }
 
   .header-left img {
-    height: 170px;  /* aumenta a logo */
+    height: 120px;
     width: auto;
-    margin: 0 auto; /* centraliza */
+    display: block;
+    margin: 0 auto; /* centraliza a logo */
   }
 
-  .titulo-desktop { display: none; }    /* já existente, ok */
-  .titulo-mobile { display: none; }     /* oculta título mobile */
-  
+  .titulo-desktop { display: none; }
+  .titulo-mobile { display: none; }
+
+  /* Botão de modo claro/escuro */
   #darkModeToggle {
-    margin: 0 auto;  
+    align-self: flex-start; /* mantém na esquerda do container */
+    margin: 0 0 0 10px;     /* pequeno espaçamento da borda esquerda */
     color: #013241;
     border-color: #013241;
   }
@@ -922,6 +925,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
