@@ -405,7 +405,6 @@ footer small {
   box-shadow: 0 6px 16px rgba(33,136,56,0.7);
 }
 
-/* Media query */
 @media (max-width: 600px) {
   .header-left {
     display: flex;
@@ -414,10 +413,11 @@ footer small {
     gap: 5px;
     margin-left: 0;
     padding: 10px 0;
+    position: relative; /* necessário para o posicionamento absoluto do botão */
   }
 
   .header-left img {
-    height: 120px;
+    height: 170px;
     width: auto;
     display: block;
     margin: 0 auto; /* centraliza a logo */
@@ -428,13 +428,13 @@ footer small {
 
   /* Botão de modo claro/escuro */
   #darkModeToggle {
-    align-self: flex-start; /* mantém na esquerda do container */
-    margin: 0 0 0 10px;     /* pequeno espaçamento da borda esquerda */
+    position: absolute;   /* tira do fluxo do flex */
+    left: 10px;           /* distância da borda esquerda */
+    top: 10px;            /* distância do topo do container */
     color: #013241;
     border-color: #013241;
   }
 }
-
    /* Media query */
 
   .swiper {
@@ -925,6 +925,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
