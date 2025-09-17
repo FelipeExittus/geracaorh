@@ -408,40 +408,35 @@ footer small {
 @media (max-width: 600px) {
   .header-left {
     display: flex;
-    flex-direction: column; /* empilha elementos */
-    align-items: center;    /* centraliza logo */
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 5px;
     margin-left: 0;
     padding: 10px 0;
-    position: relative;     /* necessário para o absolute do botão */
   }
 
   .header-left img {
     height: 170px;
     width: auto;
-    display: block;
-    margin: 0 auto; 
   }
 
   .titulo-desktop { display: none; }
   .titulo-mobile { display: none; }
 
-  /* Botão de modo claro/escuro */
   #darkModeToggle {
-    position: absolute;   /* tira do fluxo do flex */
-    top: 10px;            /* distância do topo do container */
-    left: 10px;           /* distância da borda esquerda */
+    position: absolute;
+    top: 10px;
+    left: 10px;
     display: block;
     color: #013241;
-    border-color: #013241;
+    border: 2px solid #013241;
     background: none;
-    font-size: 1rem;
+    border-radius: 6px;
     padding: 5px 10px;
-    border-radius: 5px;
     cursor: pointer;
   }
 }
+
    /* Media query */
 
   .swiper {
@@ -480,16 +475,17 @@ footer small {
 
 <!-- Menu de navegação e Banner são fixos no scroll -->
 <div class="header-nav-container">
-  <header>
-    <div class="header-left">
-      <img src="lg.png" alt="Logo Agência Exittus" />
-      <div class="header-title-container">
-        <h1 class="titulo-desktop">Conectando Talentos</h1>
-        <span class="titulo-mobile">Geração RH</span>
-      </div>
-      <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+<header>
+  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+  <div class="header-left">
+    <img src="lg.png" alt="Logo Agência Exittus" />
+    <div class="header-title-container">
+      <h1 class="titulo-desktop">Conectando Talentos</h1>
+      <span class="titulo-mobile">Geração RH</span>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <nav>
     <div class="dropdown">
@@ -932,6 +928,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
