@@ -444,16 +444,10 @@ footer small {
 
   /* Inicio Texto e bullets alinhados à esquerda para mobile */
   .conteudo ul li {
-    text-align: justify;       /* justifica o texto do item */
-    word-spacing: normal;      /* normaliza espaçamento */
-    display: list-item;        /* mantém o bullet padrão */
-  }
-
-  /* Faz com que o último linha não estique exageradamente */
-  .conteudo ul li::after {
-    content: "";
-    display: inline-block;
-    width: 100%;
+    text-align: justify;          /* justifica todas linhas exceto a última */
+    text-align-last: left;        /* última linha alinha à esquerda, evitando espaçamento gigante */
+    word-spacing: normal;         /* garante espaçamento normal entre palavras */
+    display: list-item;           /* mantém bullets */
   }
 }
 
@@ -948,6 +942,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
