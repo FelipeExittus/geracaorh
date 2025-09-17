@@ -406,43 +406,46 @@ footer small {
 
 /* Media query */
 @media (max-width: 600px) {
-  header {
-    height: auto;
-    padding: 10px;
-  }
-
-/* Ajuste do header-left para mobile */
-.header-left {
-    display: flex;              /* mantém flexível */
-    flex-direction: column;     /* empilha os elementos */
-    align-items: center;        /* centraliza horizontalmente */
-    justify-content: center;    /* centraliza verticalmente */
-    gap: 5px;                   /* espaço entre logo, título e botão */
-    margin-left: 0;             /* remove deslocamento do desktop */
-    padding: 10px 0;            /* garante espaço interno no topo */
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-left: 0;
+    padding: 10px 0;
   }
 
   .header-left img {
-    height: 80px;               /* tamanho da logo para mobile */
+    height: 80px;
     width: auto;
-    margin: 0 auto;             /* centraliza a logo */
+    margin: 0 auto;
   }
 
-  .titulo-desktop { display: none; }    /* oculta título desktop */
+  .header-title-container {
+    margin-left: 0; /* <<< ZERA o deslocamento */
+  }
+
+  .titulo-desktop {
+    display: none;
+  }
+
   .titulo-mobile {
     display: block;
     font-size: 1.5rem;
     color: #013241;
-    text-align: center;                  /* centraliza texto do título */
-    margin: 0;                            /* remove margens extras */
+    text-align: center;
+    margin: 0;
   }
 
   #darkModeToggle {
-    margin: 0 auto;                       /* centraliza botão */
-    color: #013241;                       /* mantém cor consistente */
+    margin: 0 auto;
+    color: #013241;
     border-color: #013241;
   }
 }
+
+   /* Media query */
 
   .swiper {
     width: 100vw;
@@ -932,5 +935,6 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
