@@ -443,12 +443,13 @@ footer small {
 
 
   /* Inicio Texto e bullets alinhados à esquerda para mobile */
-  .conteudo ul li {
-    text-align: justify;          /* justifica todas linhas exceto a última */
-    text-align-last: left;        /* última linha alinha à esquerda, evitando espaçamento gigante */
-    word-spacing: normal;         /* garante espaçamento normal entre palavras */
-    display: list-item;           /* mantém bullets */
-  }
+.conteudo p,
+.conteudo ul li {
+    text-align: justify;       /* justifica o texto */
+    text-align-last: left;     /* mantém a última linha alinhada à esquerda */
+    hyphens: auto;             /* permite quebra automática de palavras */
+    word-spacing: normal;      /* mantém espaçamento normal */
+    margin: 0 0 0.5em 0;       /* opcional: deixa um espaçamento uniforme entre linhas */
 }
 
    /* Final Texto e bullets alinhados à esquerda para mobile */
@@ -942,6 +943,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
