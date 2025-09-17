@@ -444,17 +444,15 @@ footer small {
 
   /* Inicio Texto e bullets alinhados à esquerda para mobile */
   /* Parágrafos e título justificados */
+  /* Texto justificado e espaçamento normal */
   .conteudo p,
-  .conteudo h1 {
-    text-align: justify !important;
-    text-justify: inter-word !important;
-    word-spacing: normal !important;
-  }
-
-  /* Bullets alinhados à esquerda para evitar espaçamento exagerado */
+  .conteudo h1,
   .conteudo ul li {
-    text-align: left !important;
-    word-spacing: normal !important;
+    text-align: justify !important;
+    text-justify: inter-word !important; /* controla espaçamento entre palavras */
+    word-spacing: normal !important;     /* garante espaçamento normal */
+    display: inline-block;                /* evita espaçamento exagerado nos bullets */
+    width: 100%;                          /* garante que cada linha ocupe toda a largura */
   }
 }
 
@@ -949,6 +947,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
