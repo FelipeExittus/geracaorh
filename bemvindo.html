@@ -405,20 +405,10 @@ footer small {
 }
 
 /* Media query */
+/* Mobile */
 @media (max-width: 600px) {
-  header {
-    height: auto;
-    padding: 10px;
-  }
-
-  .header-left {
-    font-size: 1.2rem;
-    gap: 10px;
-    justify-content: center;
-  }
-
   .header-left img {
-    height: 40px;        /* logo menor no mobile */
+    height: 40px; /* logo menor */
   }
 
   .titulo-desktop {
@@ -426,12 +416,13 @@ footer small {
   }
 
   .titulo-mobile {
-    display: inline-block;
+    display: block;
     font-size: 1.5rem;
     color: white;
     font-weight: bold;
     margin: 0;
   }
+}
 
   .swiper {
     width: 100vw;
@@ -922,3 +913,4 @@ floatb.addEventListener('click', () => {
 </body>
 
 </html>
+
