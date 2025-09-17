@@ -183,14 +183,13 @@ header {
 .header-left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* MANTÉM logo esquerda, título centro, botão direita */
   gap: 20px;
   width: 100%;
   color: #EFEFEF;
   font-size: 1.8rem;
   font-weight: bold;
   user-select: none;
-  flex-wrap: wrap;
 }
 
 .header-left img {
@@ -204,7 +203,9 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: -190px;
+  margin-left: 100px; /* VOCÊ CONTROLA: valores positivos movem para direita */
+  margin-right: auto;  /* deixa o resto do espaço à direita */
+  text-align: center;
 }
 
 .titulo-desktop {
@@ -213,8 +214,10 @@ header {
   color: #013241;
   font-weight: bold;
   line-height: 1.7;
-  margin-left: 2px;
+  margin: 0; /* REMOVE qualquer margem */
+  text-align: center; /* FORÇA centralização */
 }
+
 
 .titulo-mobile {
   display: none;
@@ -516,7 +519,7 @@ footer small {
     padding: 0.5rem;
     flex-wrap: wrap;
   }
-}
+  
 </style>
 
 </head>
@@ -978,6 +981,8 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
+
 
 
 
