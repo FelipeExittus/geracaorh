@@ -18,7 +18,7 @@
   <meta name="robots" content="index, follow" />
  
  
-<style>
+ <style>
 /* Swiper geral */
 .swiper {
   width: 90%;
@@ -95,7 +95,7 @@ body {
   background-color: #ffffff;
   color: #333;
   transition: background-color 0.3s, color 0.3s;
-  padding-top: 200px; /* header + nav */
+  padding-top: 170px; /* header + nav */
 }
 
 body.dark-mode {
@@ -105,7 +105,7 @@ body.dark-mode {
 
 /* Container que engloba header + nav */
 .header-nav-container {
-  position: fixed;
+  position: fixed;  /* fixo na tela */
   top: 0;
   left: 0;
   width: 100%;
@@ -114,42 +114,105 @@ body.dark-mode {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+
+header {
+  background-color: #EFEFEF;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav {
+  background-color: #EFEFEF !important; /* fundo fixo para claro e escuro */
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+/* LINKS DO MENU */
+nav a,
+.dropdown > a {
+  text-decoration: none;
+  color: #009AB2;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+nav a:hover,
+.dropdown:hover > a {
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  color: #009AB2;
+}
+
+/* Dropdown */
+.dropdown-content {
+  background-color: #EFEFEF !important;
+}
+
+.dropdown-content a {
+  background-color: #EFEFEF !important;
+  color: #009AB2;
+}
+
+/* Ajuste no body para não ficar conteúdo escondido atrás do topo fixo */
+body {
+  padding-top: 200px; /* soma aproximada da altura do header + nav */
+}
+
+
 /* Header */
 header {
   background-color: #EFEFEF;
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* logo à esquerda, botão à direita */
   padding: 0 20px;
 }
 
 .header-left {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
-  flex-shrink: 0;
+  width: 100%;
+  color: #EFEFEF;
+  font-size: 1.8rem;
+  font-weight: bold;
+  user-select: none;
+  flex-wrap: wrap;
 }
 
 .header-left img {
-  height: 150px;
+  height: 280px;
   width: auto;
   display: block;
+  margin-top: 11px;
 }
 
 .header-title-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: -190px;
 }
 
 .titulo-desktop {
   display: block;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   color: #013241;
   font-weight: bold;
-  line-height: 1.4;
-  margin: 0;
+  line-height: 1.7;
+  margin-left: 2px;
 }
 
 .titulo-mobile {
@@ -158,18 +221,18 @@ header {
 
 #darkModeToggle {
   background: none;
-  border: 2px solid #009AB2;
+  border: 2px solid #ffffff;
   border-radius: 6px;
   padding: 6px 12px;
   cursor: pointer;
-  color: #009AB2;
+  color: white;
   font-weight: bold;
   transition: all 0.3s;
   font-size: 0.9rem;
 }
 
 #darkModeToggle:hover {
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(255,255,255,0.1);
 }
 
 /* Nav e dropdown */
@@ -196,13 +259,14 @@ nav a,
   display: inline-block;
 }
 
+/* Efeito ao passar o mouse */
 nav a:hover,
 .dropdown:hover > a {
-  color: #013241;
-  font-weight: 700;
-  background-color: #EFEFEF;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: scale(1.05);
+  color: #013241;              /* muda a cor do texto */
+  font-weight: 700;              /* fica mais “negrito” */
+  background-color: #EFEFEF;   /* muda fundo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra moderna */
+  transform: scale(1.05);        /* dá um leve zoom */
 }
 
 nav a.ativo {
@@ -252,6 +316,9 @@ body.dark-mode nav {
   max-width: 900px;
   margin: 2rem auto;
   text-align: justify;
+  hyphens: auto;
+  word-spacing: normal;
+  letter-spacing: normal;
 }
 
 .conteudo h1 {
@@ -340,10 +407,14 @@ footer small {
 /* Media query */
 @media (max-width: 600px) {
   header {
-    flex-direction: column;
     height: auto;
     padding: 10px;
-    text-align: center;
+  }
+
+  .header-left {
+    font-size: 1.2rem;
+    gap: 10px;
+    justify-content: center;
   }
 
   .header-left img {
@@ -358,7 +429,7 @@ footer small {
   .titulo-mobile {
     display: inline-block;
     font-size: 1.5rem;
-    color: #013241;
+    color: white;
     font-weight: bold;
     margin: 0;
   }
@@ -396,32 +467,19 @@ footer small {
 </head>
 <body>
 
+
+<!-- Menu de navegação e Banner são fixos no scroll -->
+<div class="header-nav-container">
   <header>
-    <!-- logo à esquerda -->
     <div class="header-left">
-      <img src="lg.png" alt="Logo Agência Exittus">
-    </div>
-
-    <!-- título no centro -->
-    <div class="header-center">
-      <h1 class="titulo-desktop">Conectando Talentos</h1>
-      <span class="titulo-mobile">Nova Geração RH</span>
-    </div>
-
-    <!-- botão à direita -->
-    <div class="header-right">
+      <img src="lg.png" alt="Logo Agência Exittus" />
+      <div class="header-title-container">
+        <h1 class="titulo-desktop">Conectando Talentos</h1>
+        <span class="titulo-mobile">Exittus RH </span>
+      </div>
       <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
     </div>
   </header>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
-
-</body>
-</html>
 
   <nav>
     <div class="dropdown">
@@ -863,11 +921,4 @@ floatb.addEventListener('click', () => {
 
 </script>
 </body>
-
 </html>
-
-
-
-
-
-
