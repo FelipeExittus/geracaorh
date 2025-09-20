@@ -21,11 +21,10 @@
  <style>
 /* Swiper geral */
    
+
 .swiper {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-  min-height: 200px;
+  margin-top: 0; /* sem espaço acima */
+  padding-top: 0;
   background-color: transparent;
 }
 
@@ -48,7 +47,7 @@
 }
 
 .swiper-slide {
-  background: white;
+  background: EFEFEF;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -97,7 +96,8 @@ body {
   background-color: #ffffff;
   color: #333;
   transition: background-color 0.3s, color 0.3s;
-  padding-top: 170px; /* header + nav */
+  padding-top: 0; /* remove o espaço extra */
+
 }
 
 body.dark-mode {
@@ -107,7 +107,7 @@ body.dark-mode {
 
 /* Container que engloba header + nav */
 .header-nav-container {
-  position: fixed;  /* fixo na tela */
+  position: fixed; /* fica fixo no topo */
   top: 0;
   left: 0;
   width: 100%;
@@ -118,7 +118,7 @@ body.dark-mode {
 
 header {
   background-color: #EFEFEF;
-  height: 100px;
+  height: 60px; /* diminui para reduzir espaço */
   display: flex;
   align-items: center;
   padding: 0 20px;
@@ -129,11 +129,10 @@ nav {
   border-top: 2px solid #009AB2;
   border-bottom: 2px solid #009AB2;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
-  padding: 0.5rem 0;
-  position: relative;
+  padding: 0.2rem 0; /* diminui o padding interno */
 }
 
 /* LINKS DO MENU */
