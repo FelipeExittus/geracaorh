@@ -416,8 +416,6 @@ footer small {
 }
 
 /* Aqui é o início, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */   
-/* Mobile */
-
 @media (max-width: 600px) {
   .header-left {
     display: flex;
@@ -499,11 +497,12 @@ footer small {
 
 /* garante que o container do carrossel ocupe 100% */
 
-/* Carrossel ajustado */
-  .swiper {
-    margin-top: 80px; /* ajusta de acordo com altura do header no mobile */
-    width: 100vw;
-  }
+.swiper {
+  width: 100vw; /* ocupa 100% da viewport */
+  max-width: 100vw;
+  margin: 0; /* remove margens */
+  padding: 0; /* remove paddings */
+}
 
 
   .swiper-wrapper {
@@ -512,10 +511,14 @@ footer small {
     box-sizing: border-box;
   }
 
-  .swiper-slide {
-    min-height: 180px; /* reduz um pouco */
-    padding: 5px;
-  }
+ .swiper-slide {
+  width: 100vw; /* ocupa 100% da largura da viewport */
+  min-height: 220px;
+  padding: 10px;
+  margin-right: 0;
+  box-sizing: border-box;
+  background-color: #EFEFEF; /* cor do fundo */
+}
 
   nav {
     justify-content: center;
@@ -592,43 +595,7 @@ body {
 .social.twitter:hover img {
   filter: none;
 }
-.social-icons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap; /* quebra linha se necessário */
-}
 
-.social-icons a {
-  width: 40px;  /* menor em mobile */
-  height: 40px;
-  border: 1px solid #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s;
-}
-
-/* Cor de ícone ao toque */
-.social-icons a:active img,
-.social-icons a:focus img {
-  filter: brightness(1.2); /* muda visual quando clicado/toque */
-}
-
-  /* Ícones sociais menores */
-  .social {
-    width: 40px;
-    height: 40px;
-  }
-  .social img {
-    width: 20px;
-    height: 20px;
-  }
-
-  /* Texto e bullets mobile */
-  .conteudo p, .conteudo ul li {
-    font-size: 14px;
-  }
-}
 
 </style>
 
@@ -1124,6 +1091,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
