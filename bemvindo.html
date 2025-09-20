@@ -342,27 +342,27 @@ body.dark-mode nav {
 
 /* Botão fale conosco */
 .fale-conosco-btn {
-    display: inline-block;
-    background-color: #009AB2;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    font-family: Arial, sans-serif;
-    letter-spacing: 0.5px;
+  display: inline-block;
+  background-color: #009AB2;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.5px;
 }
 
 .fale-conosco-btn:hover {
-    background-color: #007C91; /* tom mais escuro no hover */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-    transform: translateY(-2px);
+   background-color: #007C91; /* tom mais escuro no hover */
+   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
 }
-   .btn-container {
-    text-align: center; /* centraliza o botão */
-    margin: 20px 0;     /* opcional: espaço acima e abaixo */
+.btn-container {
+  text-align: center; /* centraliza o botão */
+  margin: 20px 0;     /* opcional: espaço acima e abaixo */
 }
 
 /* Footer */
@@ -558,24 +558,24 @@ footer small {
 }
 
 .conteudo ul {
-    list-style: disc;
-    margin-left: 30px;
-    margin-bottom: 1em;
+  list-style: disc;
+  margin-left: 30px;
+  margin-bottom: 1em;
 }
 
 .conteudo ul li {
-    text-align: justify;
-    text-justify: inter-word;
-    word-spacing: -0.1em;
-    letter-spacing: 0.01em;
-    margin: 0 0 0.5em 0;
-    line-height: 1.5;
-    hyphens: auto;
-    overflow-wrap: break-word;
+  text-align: justify;
+  text-justify: inter-word;
+  word-spacing: -0.1em;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5em 0;
+  line-height: 1.5;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .conteudo ul li::marker {
-    color: #009AB2;
+  color: #009AB2;
 }
 
 .conteudo h1 {
@@ -613,8 +613,11 @@ footer small {
 nav {
   justify-content: center;
   gap: 0.2rem;
-  padding: -0.1rem;
+  padding: 0.2rem 0; /* diminui o espaço acima e abaixo do nav */
   flex-wrap: wrap;
+  background-color: #EFEFEF;
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
 }
 
 body {
@@ -1143,6 +1146,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
