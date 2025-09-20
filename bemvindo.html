@@ -375,6 +375,10 @@ footer {
   text-align: center;
   border-top: 2px solid #007b8a;
   font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 body.dark-mode footer {
@@ -382,7 +386,7 @@ body.dark-mode footer {
 }
 
 footer p {
-  margin: 0.4rem 0;
+  margin: 0.3rem 0;
 }
 
 footer small {
@@ -390,6 +394,40 @@ footer small {
   margin-top: 1rem;
   color: #666;
 }
+   /* Container de ícones */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center; /* centraliza no desktop */
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Ícones */
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #009AB2;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.social img {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+}
+
+/* Hover social */
+.social.facebook:hover { border-color: #1877F2; filter: none; }
+.social.instagram:hover { border-color: #E1306C; filter: none; }
+.social.linkedin:hover { border-color: #0077B5; filter: none; }
+.social.youtube:hover { border-color: #FF0000; filter: none; }
 
 /* Botão flutuante WhatsApp */
 .whatsapp-button,
@@ -1131,6 +1169,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
