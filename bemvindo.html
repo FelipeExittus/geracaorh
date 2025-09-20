@@ -595,7 +595,42 @@ body {
 .social.twitter:hover img {
   filter: none;
 }
+.social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* quebra linha se necessário */
+}
 
+.social-icons a {
+  width: 40px;  /* menor em mobile */
+  height: 40px;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+/* Cor de ícone ao toque */
+.social-icons a:active img,
+.social-icons a:focus img {
+  filter: brightness(1.2); /* muda visual quando clicado/toque */
+}
+
+/* Hover para desktop */
+@media (hover: hover) {
+  .social-icons a:hover img {
+    filter: brightness(1.5); /* muda cor no hover */
+  }
+}
+
+/* Ajuste de tamanho em telas pequenas */
+@media (max-width: 480px) {
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+  }
+}
 
 </style>
 
@@ -1091,6 +1126,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
