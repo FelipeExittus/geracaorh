@@ -452,52 +452,43 @@ footer small {
  
 @media (max-width: 600px) {
   
-
-  .header-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    margin-left: 0;
-    padding: 10px 0;
-  }
-
-  .header-left img {
-    height: 200px;
-    width: auto;
-  }
-
-  .titulo-desktop { display: none; }
-  .titulo-mobile { display: none; }
-
-  #darkModeToggle {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: block;
-    color: #013241;
-    border: 2px solid #013241;
-    background: none;
-    border-radius: 6px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-
-  /* Rodapé mobile */
-
-  footer {
-  background-color: #EFEFEF;
-  padding: 2rem;
-  text-align: center;
-  border-top: 2px solid #007b8a;
-  font-size: 0.95rem;
+.header-left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 5px;
+  margin-left: 0;
+  padding: 10px 0;
 }
 
-  footer p {
+.header-left img {
+  height: 200px;
+  width: auto;
+}
+
+.titulo-desktop { display: none; }
+.titulo-mobile { display: none; }
+
+#darkModeToggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: block;
+  color: #013241;
+  border: 2px solid #013241;
+  background: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+/* Rodapé mobile */
+footer {
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+}
+
+footer p {
   margin: 0.3rem 0;
 }
 
@@ -506,13 +497,14 @@ footer small {
   margin-top: 1rem;
   color: #666;
 }
-  footer .redes-sociais {
+
+footer .redes-sociais {
   display: flex; 
   justify-content: center;
   gap: 10px;
   visibility: visible !important;
   opacity: 1 !important;
-  }
+}
 
 /* Ícones */
 .social {
@@ -534,19 +526,17 @@ footer small {
   filter: grayscale(100%);
 }
 
-  footer .redes-sociais a img {
-    width: 30px;
-    height: 30px;
-  }
-  
-  /* Hover: muda cor da borda e do ícone */
+footer .redes-sociais a img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Hover: muda cor da borda e do ícone */
 .social.facebook:hover { border-color: #1877F2; filter: none; }
 .social.instagram:hover { border-color: #1877F2; filter: none; }
 .social.linkedin:hover { border-color: #0077B5; filter: none; }
 .social.youtube:hover { border-color: #1877F2; filter: none; }
-}
-/* fecha media query */
-/* Aqui é o Final, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */
+/* Rodapé mobile */
 
 /* Inicio Texto e bullets alinhados à esquerda para mobile */
 .conteudo p {
@@ -663,6 +653,7 @@ body {
   height: 24px;
   transition: all 0.3s ease;
   filter: grayscale(100%);
+}
 }
 /* Container de ícones botão flutuante*/
 </style>
@@ -1151,6 +1142,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
