@@ -451,25 +451,25 @@ footer small {
 /* Aqui é o início, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */   
 /* Aqui é o início, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */   
 @media (max-width: 600px) {
-
   /* HEADER */
   .header-left {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    margin-left: 0;
+    margin: 0;
     padding: 10px 0;
   }
 
   .header-left img {
-    height: 200px;
     width: auto;
+    max-width: 90%;
+    height: auto;
   }
 
   .titulo-desktop,
   .titulo-mobile {
-    display: none;
+    display: none !important;
   }
 
   #darkModeToggle {
@@ -485,50 +485,21 @@ footer small {
     cursor: pointer;
   }
 
-  /* RODAPÉ MOBILE */
-  footer .redes-sociais,
-  .social-icons {
-    display: flex !important;
-    justify-content: center;
-    gap: 10px;
-    visibility: visible !important;
-    opacity: 1 !important;
-    margin: 15px 0;
-  }
-
-  .social-icons a img,
-  footer .redes-sociais a img {
-    width: 30px;
-    height: 30px;
-  }
-
-  /* TEXTO E BULLETS */
-  .conteudo p {
+  /* CONTEÚDO */
+  .conteudo p,
+  .conteudo ul li {
     text-align: justify;
-    text-align-last: left;
     text-justify: inter-word;
-    word-spacing: -0.05em;
-    letter-spacing: 0.01em;
-    margin: 0 0 1em 0;
+    word-spacing: normal;
+    letter-spacing: normal;
     line-height: 1.6;
     hyphens: auto;
     overflow-wrap: break-word;
   }
 
   .conteudo ul {
-    list-style: disc;
-    margin-left: 30px;
+    margin-left: 25px;
     margin-bottom: 1em;
-  }
-
-  .conteudo ul li {
-    text-align: justify;
-    word-spacing: -0.1em;
-    letter-spacing: 0.01em;
-    margin: 0 0 0.5em 0;
-    line-height: 1.5;
-    hyphens: auto;
-    overflow-wrap: break-word;
   }
 
   .conteudo ul li::marker {
@@ -539,44 +510,56 @@ footer small {
     text-align: center;
   }
 
-  /* SWIPER / CARROSSEL */
-  .swiper {
-    width: 100vw;
-    max-width: 100vw;
-    margin: 0;
-    padding: 0;
-    margin-top: 150px;
-    background-color: #EFEFEF;
-  }
-
-  .swiper-wrapper {
+  /* CARROSSEL SWIPER */
+  .swiper,
+  .swiper-wrapper,
+  .swiper-slide {
+    width: 100vw !important;
+    max-width: 100vw !important;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
   .swiper-slide {
-    width: 100vw;
     min-height: 220px;
-    padding: 10px;
-    margin-right: 0;
-    box-sizing: border-box;
     background-color: #EFEFEF;
   }
 
-  /* NAV MOBILE */
+  .swiper {
+    margin-top: 150px;
+    background-color: #EFEFEF;
+  }
+
+  /* NAV */
   nav {
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.5rem;
     flex-wrap: wrap;
+    padding: 0.5rem;
   }
 
   body {
     padding-top: 0;
   }
 
-  /* ÍCONES SOCIAIS */
+  /* RODAPÉ E ÍCONES SOCIAIS */
+  footer .redes-sociais,
+  .social-icons {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin: 15px 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .social-icons a img,
+  footer .redes-sociais a img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
   .social {
     display: flex;
     align-items: center;
@@ -586,7 +569,6 @@ footer small {
     border: 2px solid #009AB2;
     border-radius: 8px;
     transition: all 0.3s ease;
-    overflow: hidden;
   }
 
   .social img {
@@ -596,19 +578,12 @@ footer small {
     filter: grayscale(100%);
   }
 
-  .social.facebook:hover { border-color: #1877F2; }
-  .social.facebook:hover img { filter: none; }
+  .social.facebook:hover { border-color: #1877F2; filter: none; }
+  .social.instagram:hover { border-color: #E1306C; filter: none; }
+  .social.linkedin:hover { border-color: #0077B5; filter: none; }
+  .social.twitter:hover { border-color: #1DA1F2; filter: none; }
 
-  .social.instagram:hover { border-color: #E1306C; }
-  .social.instagram:hover img { filter: none; }
-
-  .social.linkedin:hover { border-color: #0077B5; }
-  .social.linkedin:hover img { filter: none; }
-
-  .social.twitter:hover { border-color: #1DA1F2; }
-  .social.twitter:hover img { filter: none; }
 }
-
 </style>
 
 </head>
@@ -1103,6 +1078,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
