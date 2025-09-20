@@ -21,6 +21,11 @@
  <style>
 /* Swiper geral */
    
+/* 
+  Comentário: Este bloco controla o container principal do Swiper (carrossel).
+  width: 90% centraliza o carrossel em telas grandes; max-width limita tamanho máximo;
+  margin: 0 auto centraliza horizontalmente; min-height garante um espaço mínimo visual.
+*/
 .swiper {
   width: 90%;
   max-width: 1000px;
@@ -29,6 +34,10 @@
   background-color: transparent;
 }
 
+/* 
+  Comentário: Estilo específico para a imagem #slide1-img — ocupa todo o espaço do container
+  mantendo a proporção (height: auto) e evitando gaps de linha com display:block.
+*/
 #slide1-img {
   width: 100%;    /* ocupa toda a largura do container */
   height: auto;   /* mantém proporção do GIF */
@@ -36,17 +45,27 @@
   margin: 0 auto; /* centraliza se não for 100% */
 }
 
-
+/* 
+  Comentário: Esconde os botões de navegação do Swiper. Mantive a cor caso queira ativar depois.
+*/
 .swiper-button-prev,
 .swiper-button-next {
   display: none !important;
   color: #2b960a;
 }
 
+/* 
+  Comentário: Ajuste do wrapper do Swiper — assegura que os slides estiquem corretamente em altura.
+*/
 .swiper-wrapper {
   align-items: stretch;
 }
 
+/* 
+  Comentário: Estilo de cada slide.
+  border-radius e box-shadow dão aparência de cartão; padding cria espaçamento interno;
+  display:flex com column organiza avatar, comentário, autor verticalmente e centraliza.
+*/
 .swiper-slide {
   background: white;
   border-radius: 10px;
@@ -62,6 +81,9 @@
   margin-right: 20px; /* adiciona espaço entre slides */
 }
 
+/* 
+  Comentário: Avatar (foto da pessoa) — tamanho fixo, formato circular e ajuste de imagem.
+*/
 .avatar {
   width: 60px;
   height: 60px;
@@ -70,27 +92,43 @@
   margin-bottom: 10px;
 }
 
+/* 
+  Comentário: Estrelas de avaliação — cor e tamanho definidos.
+*/
 .stars {
   color: #fbc02d;
   font-size: 18px;
   margin-bottom: 10px;
 }
 
+/* 
+  Comentário: Estilo do texto de comentário — em itálico para dar ênfase de depoimento.
+*/
 .comment {
   font-style: italic;
   margin-bottom: 10px;
 }
 
+/* 
+  Comentário: Autor do comentário — destaque em negrito.
+*/
 .author {
   font-weight: bold;
   color: #333;
 }
 
+/* 
+  Comentário: Bolinha de paginação ativa do Swiper — cor mais escura para indicar slide atual.
+*/
 .swiper-pagination-bullet-active {
   background: #333;
 }
 
 /* Body */
+/* 
+  Comentário: Reset e tipografia geral da página.
+  padding-top cria espaço para o header fixo (header + nav) — ajusta o conteúdo para não ficar atrás do topo fixo.
+*/
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -100,12 +138,18 @@ body {
   padding-top: 170px; /* header + nav */
 }
 
+/* 
+  Comentário: Classe para modo escuro — altera cores quando ativado com JS.
+*/
 body.dark-mode {
   background-color: #000004;
   color: #ffffff;
 }
 
 /* Container que engloba header + nav */
+/* 
+  Comentário: header-nav-container é fixo no topo com z-index alto para ficar sobre o restante do conteúdo.
+*/
 .header-nav-container {
   position: fixed;  /* fixo na tela */
   top: 0;
@@ -116,6 +160,9 @@ body.dark-mode {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* 
+  Comentário: Estilo geral do header (logo, título e botão de modo escuro).
+*/
 header {
   background-color: #EFEFEF;
   height: 100px;
@@ -124,9 +171,11 @@ header {
   padding: 0 20px;
 }
 
-/* Aqui controla o menu de navegação, inclusive o banner cinza */
-
+/* 
+  Comentário: Estilização do nav (faixa de menu) — mantém fundo fixo e bordas superiores/inferiores.
+*/
 nav {
+  background-color: #EFEFEF !important; /* fundo fixo para claro e escuro */
   border-top: 2px solid #009AB2;
   border-bottom: 2px solid #009AB2;
   display: flex;
@@ -134,11 +183,13 @@ nav {
   justify-content: center;
   gap: 1rem;
   padding: 0.5rem 0;
-  background-color: #EFEFEF;
   position: relative;
 }
 
 /* LINKS DO MENU */
+/* 
+  Comentário: Estilo comum para links do menu e itens de dropdown — padding e cor destacada.
+*/
 nav a,
 .dropdown > a {
   text-decoration: none;
@@ -150,6 +201,9 @@ nav a,
   display: inline-block;
 }
 
+/* 
+  Comentário: Hover dos links do menu — efeito visual de foco ao passar o mouse.
+*/
 nav a:hover,
 .dropdown:hover > a {
   background-color: #EFEFEF;
@@ -158,6 +212,9 @@ nav a:hover,
 }
 
 /* Dropdown */
+/* 
+  Comentário: Força cor de fundo do dropdown para manter consistência visual com o nav.
+*/
 .dropdown-content {
   background-color: #EFEFEF !important;
 }
@@ -181,6 +238,9 @@ header {
   padding: 0 20px;
 }
 
+/* 
+  Comentário: header-left organiza logo e título. justify-content: space-between mantém logo à esquerda e botão à direita.
+*/
 .header-left {
   display: flex;
   align-items: center;
@@ -193,6 +253,9 @@ header {
   user-select: none;
 }
 
+/* 
+  Comentário: Define tamanho da imagem do logo no header.
+*/
 .header-left img {
   height: 280px;
   width: auto;
@@ -200,6 +263,9 @@ header {
   margin-top: 11px;
 }
 
+/* 
+  Comentário: Container do título no header — usado para centralizar o título e controlar espaçamento.
+*/
 .header-title-container {
   display: flex;
   flex-direction: column;
@@ -223,6 +289,9 @@ header {
   display: none;
 }
 
+/* 
+  Comentário: Botão de alternância de modo escuro — estilo básico.
+*/
 #darkModeToggle {
   background: none;
   border: 2px solid #ffffff;
@@ -247,7 +316,7 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  padding: 0.rem 0;
+  padding: 0.5rem 0;
   background-color: #EFEFEF;
   position: relative;
 }
@@ -315,6 +384,10 @@ body.dark-mode nav {
 }
 
 /* Conteúdo */
+/* 
+  Comentário: .conteudo controla a área principal da página (texto, listas etc).
+  max-width: 900px deixa o texto confortável para leitura em desktop.
+*/
 .conteudo {
   padding: 2rem;
   max-width: 900px;
@@ -342,27 +415,27 @@ body.dark-mode nav {
 
 /* Botão fale conosco */
 .fale-conosco-btn {
-  display: inline-block;
-  background-color: #009AB2;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  font-family: Arial, sans-serif;
-  letter-spacing: 0.5px;
+    display: inline-block;
+    background-color: #009AB2;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.5px;
 }
 
 .fale-conosco-btn:hover {
-   background-color: #007C91; /* tom mais escuro no hover */
-   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  transform: translateY(-2px);
+    background-color: #007C91; /* tom mais escuro no hover */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
 }
-.btn-container {
-  text-align: center; /* centraliza o botão */
-  margin: 20px 0;     /* opcional: espaço acima e abaixo */
+   .btn-container {
+    text-align: center; /* centraliza o botão */
+    margin: 20px 0;     /* opcional: espaço acima e abaixo */
 }
 
 /* Footer */
@@ -450,221 +523,177 @@ footer small {
   background-color: #4F7214;
   box-shadow: 0 6px 16px rgba(33,136,56,0.7);
 }
-/* Aqui é o início, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */  
- 
-@media (max-width: 600px) {
-  
-.header-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  margin-left: 0;
-  padding: 10px 0;
-}
+/* Aqui é o início, para mobile */  
 
-.header-left img {
-  height: 200px;
-  width: auto;
-}
 
-.titulo-desktop { display: none; }
-.titulo-mobile { display: none; }
+/* ============================= */
+/* CSS MOBILE (isolado)          */
 
-#darkModeToggle {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  display: block;
-  color: #013241;
-  border: 2px solid #013241;
-  background: none;
-  border-radius: 6px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-/* Rodapé mobile */
-
- footer {
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1.5rem;
+/* ============================= */
+@media only screen and (max-device-width: 600px) and (pointer: coarse) {
+  /* variáveis locais para alturas móveis - usadas para calcular padding-top do body */
+  :root {
+    --mobile-header-h: 84px;   /* altura do header no mobile (ajustável) */
+    --mobile-nav-h: 56px;      /* altura do nav no mobile (ajustável) */
+    --mobile-total-h: calc(var(--mobile-header-h) + var(--mobile-nav-h));
   }
 
-  footer p {
-  margin: 0.3rem 0;
-}
+  /* Header: organiza logo/título em coluna e reduz margens */
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-left: 0;
+    padding: 8px 0;
+  }
 
-footer small {
-  display: block;
-  margin-top: 1rem;
-  color: #666;
-}
+  /* Logo: responsivo e proporcional */
+  .header-left img {
+    height: clamp(80px, 18vh, 200px);
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* Esconde título desktop e mostra o título mobile */
+  .titulo-desktop { display: none; }
+  .titulo-mobile {
+    display: block;
+    font-size: clamp(1rem, 4.5vw, 1.4rem);
+    color: #013241;
+  }
+
+  /* Botão modo escuro */
+  #darkModeToggle {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: block;
+    color: #013241;
+    border: 2px solid #013241;
+    background: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    z-index: 1101;
+  }
+
+  /* Footer mobile: empilha itens, reduz espaçamentos */
+  footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem;
+  }
+  footer p { margin: 0.3rem 0; }
+  footer small { display: block; margin-top: 1rem; color: #666; }
+
+  /* Redes sociais no footer */
   footer .redes-sociais {
-  display: flex; 
-  justify-content: center;
-  gap: 10px;
-  visibility: visible !important;
-  opacity: 1 !important;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
-/* Ícones */
-.social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border: 2px solid #009AB2;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  overflow: hidden;
+  /* Ícones sociais: tamanho proporcional no mobile */
+  .social { width: 44px; height: 44px; border-radius: 8px; }
+  .social img { width: 20px; height: 20px; }
+  footer .redes-sociais a img { width: 30px; height: 30px; }
+
+  /* Hover dos ícones */
+  .social.facebook:hover,
+  .social.instagram:hover,
+  .social.linkedin:hover,
+  .social.youtube:hover { filter: none; }
+
+  /* Texto e bullets */
+  .conteudo p {
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-word;
+    word-spacing: -0.05em;
+    letter-spacing: 0.01em;
+    margin: 0 0 1em 0;
+    line-height: 1.6;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  .conteudo ul { list-style: disc; margin-left: 30px; margin-bottom: 1em; }
+  .conteudo ul li {
+    text-align: justify;
+    margin: 0 0 0.5em 0;
+    line-height: 1.5;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+  .conteudo ul li::marker { color: #009AB2; }
+  .conteudo h1 { text-align: center; }
+
+  /* Evita scroll horizontal indesejado */
+  html, body { overflow-x: hidden; }
+
+  /* SWIPER (carrossel) - ocupa 100% do viewport no mobile */
+  .mobile-swiper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #EFEFEF;
+  }
+  .swiper-wrapper {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    gap: 0 !important;
+  }
+  .swiper-slide {
+    width: 100% !important;
+    min-height: 220px;
+    padding: 10px;
+    margin-right: 0 !important;
+    background-color: #EFEFEF;
+  }
+
+  /* Ajustes internos do slide (avatar, texto) para mobile */
+  .swiper-slide .avatar { width: 48px; height: 48px; margin-bottom: 8px; }
+  .swiper-slide .stars { font-size: 16px; margin-bottom: 8px; }
+  .swiper-slide .comment { margin-bottom: 8px; font-size: 0.95rem; }
+  .swiper-slide .author { font-size: 0.95rem; }
+
+  /* Menu de navegação */
+  nav {
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.4rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  nav a, .dropdown > a { padding: 0.35rem 0.6rem; font-size: 0.95rem; }
+
+  /* Padding-top proporcional para conteúdo abaixo do header/nav */
+  body { padding-top: var(--mobile-total-h); }
+
+  /* Header + nav fixos */
+  .header-nav-container { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; }
+  .header-nav-container header { height: var(--mobile-header-h); }
+  .header-nav-container nav { height: var(--mobile-nav-h); display: flex; align-items: center; }
+
+  /* Garante que o swiper comece logo após o header/nav */
+  .swiper { margin-top: 0; }
+
+  /* Mantém comportamento dos botões/ícones flutuantes */
+  .social-icons { display: flex; gap: 10px; justify-content: flex-start; margin-top: 15px; }
+
+  /* Força box-sizing para consistência */
+  *, *::before, *::after { box-sizing: border-box; }
 }
 
-.social img {
-  width: 24px;
-  height: 24px;
-  transition: all 0.3s ease;
-  filter: grayscale(100%);
-}
-
-  footer .redes-sociais a img {
-  width: 30px;
-  height: 30px;
-}
-  
-  /* Hover: muda cor da borda e do ícone */
-  .social.facebook:hover { border-color: #1877F2; filter: none; }
-  .social.instagram:hover { border-color: #1877F2; filter: none; }
-  .social.linkedin:hover { border-color: #0077B5; filter: none; }
-  .social.youtube:hover { border-color: #1877F2; filter: none; }
-}
-/* Rodapé mobile */
-
-/* Inicio Texto e bullets alinhados à esquerda para mobile */
-.conteudo p {
-  text-align: justify;
-  text-align-last: left;
-  text-justify: inter-word;
-  word-spacing: -0.05em;
-  letter-spacing: 0.01em;
-  margin: 0 0 1em 0;
-  line-height: 1.6;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  word-break: normal;
-  overflow-wrap: break-word;
-}
-
-.conteudo ul {
-  list-style: disc;
-  margin-left: 30px;
-  margin-bottom: 1em;
-}
-
-.conteudo ul li {
-  text-align: justify;
-  text-justify: inter-word;
-  word-spacing: -0.1em;
-  letter-spacing: 0.01em;
-  margin: 0 0 0.5em 0;
-  line-height: 1.5;
-  hyphens: auto;
-  overflow-wrap: break-word;
-}
-
-.conteudo ul li::marker {
-  color: #009AB2;
-}
-
-.conteudo h1 {
-    text-align: center;
-}
-/* para mobile, evitar excesso de espaçamento */
-
-/* Final Texto e bullets alinhados à esquerda para mobile */
-
-/*Carrocel para Monile*/
-.swiper {
-  margin-top: 60px; /* reduz o espaço acima */
-}
-
-
-.swiper-wrapper {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.swiper-slide {
-  width: calc(100% - 20px); 
-  margin: 0 10px;           
-  min-height: 220px;
-  background-color: #EFEFEF;
-  min-height: 150px; /* reduz a altura do banner */
-
-}
-
-/* garante que o container do carrossel ocupe 100% */
-
-/* Menu de navegação celular*/
-
-nav {
-  justify-content: center;
-  gap: 0.2rem;
-  padding: 0.1rem 0; /* espaço acima e abaixo do conteúdo */
-  flex-wrap: wrap;
-  background-color: #EFEFEF;
-  border-top: 2px solid #009AB2;
-  border-bottom: 2px solid #009AB2;
-}
-nav a {
-  padding: 0.1rem 0.5rem; /* diminui espaço dentro do link */
-  line-height: 1;         /* reduz altura da linha */
-}
-
-body {
-  padding-top: 0;
-}
-
-.swiper {
-  margin-top: 80px; /* menor espaço no topo para mobile */
-  width: 100vw;
-  background-color: #EFEFEF;
-}
-/* Menu de navegação */
-
-/* Container de ícones botão flutuante*/
-.social-icons {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-start;
-  margin-top: 15px;
-}
-
-/* Estilo dos links */
-.social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border: 2px solid #009AB2;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-/* Imagem do ícone */
-.social img {
-  width: 24px;
-  height: 24px;
-  transition: all 0.3s ease;
-  filter: grayscale(100%);
-}
-/* Container de ícones botão flutuante*/
 </style>
+
 </head>
 <body>
 
