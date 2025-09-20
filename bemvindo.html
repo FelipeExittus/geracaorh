@@ -452,6 +452,7 @@ footer small {
 /* Aqui é o início, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */   
 @media (max-width: 600px) {
 
+  /* HEADER */
   .header-left {
     display: flex;
     flex-direction: column;
@@ -466,8 +467,10 @@ footer small {
     width: auto;
   }
 
-  .titulo-desktop { display: none; }
-  .titulo-mobile { display: none; }
+  .titulo-desktop,
+  .titulo-mobile {
+    display: none;
+  }
 
   #darkModeToggle {
     position: absolute;
@@ -482,41 +485,25 @@ footer small {
     cursor: pointer;
   }
 
-  /* Rodapé mobile */
-  footer .redes-sociais {
-    display: flex; 
-    justify-content: center;
-    gap: 10px;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
+  /* RODAPÉ MOBILE */
+  footer .redes-sociais,
   .social-icons {
-    display: flex !important; /* força exibição */
-    justify-content: center;  /* centraliza no mobile */
+    display: flex !important;
+    justify-content: center;
     gap: 10px;
     visibility: visible !important;
     opacity: 1 !important;
     margin: 15px 0;
   }
 
-  .social-icons a img {
-    width: 30px;  /* tamanho menor para mobile */
-    height: 30px;
-  }
-}
-
+  .social-icons a img,
   footer .redes-sociais a img {
     width: 30px;
     height: 30px;
   }
-  
 
-/* fecha media query */
-/* Aqui é o Final, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */
-
-/* Inicio Texto e bullets alinhados à esquerda para mobile */
-.conteudo p {
+  /* TEXTO E BULLETS */
+  .conteudo p {
     text-align: justify;
     text-align-last: left;
     text-justify: inter-word;
@@ -525,137 +512,101 @@ footer small {
     margin: 0 0 1em 0;
     line-height: 1.6;
     hyphens: auto;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    word-break: normal;
     overflow-wrap: break-word;
-}
+  }
 
-.conteudo ul {
+  .conteudo ul {
     list-style: disc;
     margin-left: 30px;
     margin-bottom: 1em;
-}
+  }
 
-.conteudo ul li {
+  .conteudo ul li {
     text-align: justify;
-    text-justify: inter-word;
     word-spacing: -0.1em;
     letter-spacing: 0.01em;
     margin: 0 0 0.5em 0;
     line-height: 1.5;
     hyphens: auto;
     overflow-wrap: break-word;
-}
+  }
 
-.conteudo ul li::marker {
+  .conteudo ul li::marker {
     color: #009AB2;
-}
+  }
 
-.conteudo h1 {
+  .conteudo h1 {
     text-align: center;
-}
-/* para mobile, evitar excesso de espaçamento */
+  }
 
-/* Final Texto e bullets alinhados à esquerda para mobile */
+  /* SWIPER / CARROSSEL */
+  .swiper {
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    margin-top: 150px;
+    background-color: #EFEFEF;
+  }
 
-/* garante que o container do carrossel ocupe 100% */
-.swiper {
-  width: 100vw;
-  max-width: 100vw;
-  margin: 0;
-  padding: 0;
-}
+  .swiper-wrapper {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-.swiper-wrapper {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  .swiper-slide {
+    width: 100vw;
+    min-height: 220px;
+    padding: 10px;
+    margin-right: 0;
+    box-sizing: border-box;
+    background-color: #EFEFEF;
+  }
 
-.swiper-slide {
-  width: 100vw;
-  min-height: 220px;
-  padding: 10px;
-  margin-right: 0;
-  box-sizing: border-box;
-  background-color: #EFEFEF;
-}
+  /* NAV MOBILE */
+  nav {
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+  }
 
-nav {
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  flex-wrap: wrap;
-}
+  body {
+    padding-top: 0;
+  }
 
-body {
-  padding-top: 0;
-}
+  /* ÍCONES SOCIAIS */
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #009AB2;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
 
-.swiper {
-  margin-top: 150px;
-  width: 100vw;
-  background-color: #EFEFEF;
-}
+  .social img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+  }
 
-/* Container de ícones */
-.social-icons {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-start;
-  margin-top: 15px;
-}
+  .social.facebook:hover { border-color: #1877F2; }
+  .social.facebook:hover img { filter: none; }
 
-/* Estilo dos links */
-.social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border: 2px solid #009AB2;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
+  .social.instagram:hover { border-color: #E1306C; }
+  .social.instagram:hover img { filter: none; }
 
-/* Imagem do ícone */
-.social img {
-  width: 24px;
-  height: 24px;
-  transition: all 0.3s ease;
-  filter: grayscale(100%);
-}
+  .social.linkedin:hover { border-color: #0077B5; }
+  .social.linkedin:hover img { filter: none; }
 
-/* Hover: muda cor da borda e do ícone */
-.social.facebook:hover {
-  border-color: #1877F2;
-}
-.social.facebook:hover img {
-  filter: none;
-  color: #1877F2;
-}
-
-.social.instagram:hover {
-  border-color: #E1306C;
-}
-.social.instagram:hover img {
-  filter: none;
-}
-
-.social.linkedin:hover {
-  border-color: #0077B5;
-}
-.social.linkedin:hover img {
-  filter: none;
-}
-
-.social.twitter:hover {
-  border-color: #1DA1F2;
-}
-.social.twitter:hover img {
-  filter: none;
+  .social.twitter:hover { border-color: #1DA1F2; }
+  .social.twitter:hover img { filter: none; }
 }
 
 </style>
@@ -1152,6 +1103,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
