@@ -19,15 +19,15 @@
  
  
  <style>
+
+  
 /* Swiper geral */
    
-
 .swiper {
-  margin-top: 0; /* sem espaço acima */
+  margin-top: -60px; /* negativo = altura do header */
   padding-top: 0;
-  background-color: transparent;
+  background-color: #EFEFEF;
 }
-
 #slide1-img {
   width: 100%;    /* ocupa toda a largura do container */
   height: auto;   /* mantém proporção do GIF */
@@ -47,7 +47,7 @@
 }
 
 .swiper-slide {
-  background: EFEFEF;
+  background: #EFEFEF;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -449,10 +449,24 @@ footer small {
 }
 /* Aqui é o início, para mobile */  
  
+/* Estilo do botão voltar ao topo */
 
+#scrollTopBtn {
+  position: fixed;       /* fixo na tela */
+  left: 20px;            /* distância da esquerda */
+  bottom: 40px;          /* distância de baixo */
+  z-index: 1000;         /* acima de outros elementos */
+  cursor: pointer;
+  display: none;         /* escondido por padrão */
+  width: 50px;           /* tamanho do botão */
+  height: 50px;
+}
 
-
-
+#scrollTopBtn img {
+  width: 100%;           /* imagem ocupa todo o botão */
+  height: 100%;
+  display: block;
+}
 
 
 @media (max-width: 600px) {
@@ -542,10 +556,29 @@ footer small {
     height: 30px;
   }
 
-  .social.facebook:hover { border-color: #1877F2; filter: none; }
-  .social.instagram:hover { border-color: #1877F2; filter: none; }
-  .social.linkedin:hover { border-color: #0077B5; filter: none; }
-  .social.youtube:hover { border-color: #1877F2; filter: none; }
+.social.facebook:hover { 
+  border-color: #0077B5; /* só muda a borda, mantém a imagem original */
+  filter: none;
+  color: unset; /* remove cor aplicada ao ícone */
+}
+
+.social.instagram:hover { 
+ border-color: #0077B5; /* só muda a borda, mantém a imagem original */
+  filter: none;
+  color: unset; /* remove cor aplicada ao ícone */
+}
+
+.social.linkedin:hover { 
+ border-color: #0077B5; /* só muda a borda, mantém a imagem original */
+  filter: none;
+  color: unset; /* remove cor aplicada ao ícone */
+}
+
+.social.youtube:hover { 
+ border-color: #0077B5; /* só muda a borda, mantém a imagem original */
+  filter: none;
+  color: unset; /* remove cor aplicada ao ícone */
+}
 
   /* Menu de navegação mobile */
   nav {
@@ -780,15 +813,20 @@ footer small {
 
 </script>
 
+
+<!-- Faixa do GIF com fundo preto -->
+<section style="background-color: black; display: flex; justify-content: center; align-items: center; padding: 50px 0;">
+    <img id="loop" src="loop.gif" alt="GIF Loop" style="width: 400px; height: auto;">
+</section>
+
+<!-- Linha azul -->
+<div style="width: 100%; height: 2px; background-color: #009AB2; margin: 1px 0 0 0;"></div>
+
+<!-- Conteúdo de texto -->
 <section class="conteudo">
-    <img src="loop.gif" alt="Globo animado com conexões" id="slide1-img" />
-
-    <div style="width: 100%; height: 2px; background-color: #009AB2; margin: 10px 0;"></div>
-
-     <p>
-       As conexões que moldam o mundo moderno, conhecidas como networking, facilitam a empregabilidade, aumentam o engajamento e permitem conhecer e ajudar pessoas, que, por sua vez, contribuirão para a sua jornada.
+    <p>
+       No mundo moderno, a área de Recursos Humanos evoluiu para um modelo altamente conectado e tecnológico. O recrutamento do século XXI, especialmente em 2025, utiliza inteligência artificial, sistemas ATS e estratégias de networking para identificar e engajar talentos. Plataformas como LinkedIn permitem construir redes de contatos sólidas, explorar nichos específicos e receber recomendações valiosas. Além disso, nossas comunidades no Facebook, WhatsApp, grupos especializados e contatos pessoais ampliam ainda mais o alcance das conexões, oferecendo acesso direto a oportunidades, currículos modernos e toda a rede que a nova geração de profissionais precisa. Essas conexões não apenas facilitam a empregabilidade, mas também aumentam o engajamento, criam oportunidades de aprendizado e colaboração, e impulsionam a jornada profissional de cada indivíduo, tudo baseado nas ferramentas mais tecnológicas disponíveis atualmente..
     </p>
-
 
 <h1 style="text-align: center; color: #009AB2; font-size: 1.8rem;">
   O que você vai ver aqui no site
@@ -1096,6 +1134,11 @@ window.onload = () => {
 }
 </style>
 
+<!-- Botão de voltar ao topo com ícone PNG -->
+<a href="#" id="scrollTopBtn" title="Voltar ao topo">
+  <img src="cima.png" alt="Voltar ao topo" />
+</a>
+
 <script>
 const floatb = document.getElementById('floatb');
 const floatbOptions = document.getElementById('floatbOptions');
@@ -1115,16 +1158,42 @@ floatb.addEventListener('click', () => {
 });
 </script>
 
-
 <script>
     const contactBtn = document.getElementById('contactBtn');
     const contactFloat = document.querySelector('.contact-float');
     contactBtn.addEventListener('click', () => contactFloat.classList.toggle('active'));
   </script>
 
+<script>
+// Mostrar botão quando a página rolar para baixo
+window.onscroll = function() { scrollFunction(); };
+
+function scrollFunction() {
+  const btn = document.getElementById("scrollTopBtn");
+  if (!btn) return;
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+}
+
+// Subir ao topo ao clicar
+document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.getElementById("scrollTopBtn");
+  if (!btn) return;
+  btn.addEventListener("click", function(e){
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
+
 </script>
 </body>
 </html>
+
+
 
 
 
