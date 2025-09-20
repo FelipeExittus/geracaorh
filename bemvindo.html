@@ -613,11 +613,15 @@ footer small {
 nav {
   justify-content: center;
   gap: 0.2rem;
-  padding: 0.1rem 0; /* diminui o espaço acima e abaixo do nav */
+  padding: 0.2rem 0; /* espaço acima e abaixo do conteúdo */
   flex-wrap: wrap;
   background-color: #EFEFEF;
   border-top: 2px solid #009AB2;
   border-bottom: 2px solid #009AB2;
+}
+nav a {
+  padding: 0.1rem 0.5rem; /* diminui espaço dentro do link */
+  line-height: 1;         /* reduz altura da linha */
 }
 
 body {
@@ -1146,6 +1150,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
