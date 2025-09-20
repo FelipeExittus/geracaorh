@@ -449,7 +449,9 @@ footer small {
 }
 
 /* Aqui é o início, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */   
+/* Aqui é o início, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */   
 @media (max-width: 600px) {
+
   .header-left {
     display: flex;
     flex-direction: column;
@@ -479,41 +481,36 @@ footer small {
     padding: 5px 10px;
     cursor: pointer;
   }
-}
-  /* Aqui é o Final, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */
 
- /* rodapé mobile */
-
-
- footer .redes-sociais {
-      display: flex; 
-      justify-content: center;
-      gap: 10px;
-      visibility: visible !important;
-      opacity: 1 !important;
+  /* Rodapé mobile */
+  footer .redes-sociais {
+    display: flex; 
+    justify-content: center;
+    gap: 10px;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   footer .redes-sociais a img {
-      width: 30px;
-      height: 30px;
+    width: 30px;
+    height: 30px;
   }
-}
-  /* rodapé mobile */
 
+} /* fecha media query */
+/* Aqui é o Final, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */
 
-  /* Inicio Texto e bullets alinhados à esquerda para mobile */
+/* Inicio Texto e bullets alinhados à esquerda para mobile */
 .conteudo p {
     text-align: justify;
     text-align-last: left;
-    text-justify: inter-word; /* distribui espaço apenas entre palavras */
-    word-spacing: -0.05em;   /* reduz ligeiramente o espaço entre palavras */
-    letter-spacing: 0.01em;  /* adiciona um pouco de espaço entre letras */
+    text-justify: inter-word;
+    word-spacing: -0.05em;
+    letter-spacing: 0.01em;
     margin: 0 0 1em 0;
     line-height: 1.6;
     hyphens: auto;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
-    /* Força quebra de palavras longas para evitar lacunas */
     word-break: normal;
     overflow-wrap: break-word;
 }
@@ -525,9 +522,9 @@ footer small {
 }
 
 .conteudo ul li {
-    text-align: justify;      /* mantém bullets justificados também */
+    text-align: justify;
     text-justify: inter-word;
-    word-spacing: -0.1em;    /* mesmo ajuste dos parágrafos */
+    word-spacing: -0.1em;
     letter-spacing: 0.01em;
     margin: 0 0 0.5em 0;
     line-height: 1.5;
@@ -547,52 +544,50 @@ footer small {
 /* Final Texto e bullets alinhados à esquerda para mobile */
 
 /* garante que o container do carrossel ocupe 100% */
-
 .swiper {
-  width: 100vw; /* ocupa 100% da viewport */
+  width: 100vw;
   max-width: 100vw;
-  margin: 0; /* remove margens */
-  padding: 0; /* remove paddings */
+  margin: 0;
+  padding: 0;
 }
 
+.swiper-wrapper {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .swiper-wrapper {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
- .swiper-slide {
-  width: 100vw; /* ocupa 100% da largura da viewport */
+.swiper-slide {
+  width: 100vw;
   min-height: 220px;
   padding: 10px;
   margin-right: 0;
   box-sizing: border-box;
-  background-color: #EFEFEF; /* cor do fundo */
+  background-color: #EFEFEF;
 }
 
-  nav {
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    flex-wrap: wrap;
-  }
+nav {
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+}
 
 body {
-  padding-top: 0; /* zera o espaço */
+  padding-top: 0;
 }
 
 .swiper {
-  margin-top: 150px; /* altura exata do header + nav */
+  margin-top: 150px;
   width: 100vw;
-  background-color: #EFEFEF; /* ou cor que quiser */
+  background-color: #EFEFEF;
 }
 
 /* Container de ícones */
 .social-icons {
   display: flex;
   gap: 10px;
-  justify-content: flex-start; /* alinha à esquerda */
+  justify-content: flex-start;
   margin-top: 15px;
 }
 
@@ -601,9 +596,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;      /* quadrado */
-  height: 50px;     /* quadrado */
-  border: 2px solid #009AB2; /* borda padrão */
+  width: 50px;
+  height: 50px;
+  border: 2px solid #009AB2;
   border-radius: 8px;
   transition: all 0.3s ease;
   overflow: hidden;
@@ -614,7 +609,7 @@ body {
   width: 24px;
   height: 24px;
   transition: all 0.3s ease;
-  filter: grayscale(100%); /* deixa cinza inicialmente */
+  filter: grayscale(100%);
 }
 
 /* Hover: muda cor da borda e do ícone */
@@ -623,7 +618,7 @@ body {
 }
 .social.facebook:hover img {
   filter: none;
-  color: #1877F2; /* se a imagem for SVG, caso contrário usar a imagem colorida */
+  color: #1877F2;
 }
 
 .social.instagram:hover {
@@ -646,7 +641,6 @@ body {
 .social.twitter:hover img {
   filter: none;
 }
-
 
 </style>
 
@@ -1142,6 +1136,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
