@@ -490,36 +490,20 @@ footer small {
  /* rodapé mobile */
 
 
-  .social img {
-    width: 20px;
-    height: 20px;
-  }
+footer .redes-sociais {
+        display: flex; /* ou block, dependendo do layout */
+        justify-content: center; /* centraliza os ícones */
+        gap: 10px; /* espaço entre os ícones */
+    }
+
+    footer .redes-sociais a img {
+        width: 30px; /* ajusta o tamanho no mobile */
+        height: 30px;
+    }
 }
-  footer {
-    padding: 3rem 1.5rem;  /* aumenta o rodapé */
-    text-align: left;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    align-items: flex-start; /* ícones e texto à esquerda */
-    gap: 1.5rem;
-  }
-
-  .social-icons {
-    justify-content: flex-start; /* alinha ícones à esquerda */
-    gap: 12px;
-  }
-
-  .social {
-    width: 45px;
-    height: 45px;
-  }
-
-  .social img {
-    width: 22px;
-    height: 22px;
-  }
+   footer .redes-sociais {
+    visibility: visible !important;
+    opacity: 1 !important;
 }
   /* rodapé mobile */
 
@@ -1165,6 +1149,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
