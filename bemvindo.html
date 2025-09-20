@@ -491,10 +491,26 @@ footer small {
     opacity: 1 !important;
   }
 
+  .social-icons {
+    display: flex !important; /* força exibição */
+    justify-content: center;  /* centraliza no mobile */
+    gap: 10px;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 15px 0;
+  }
+
+  .social-icons a img {
+    width: 30px;  /* tamanho menor para mobile */
+    height: 30px;
+  }
+}
+
   footer .redes-sociais a img {
     width: 30px;
     height: 30px;
   }
+  
 
 } /* fecha media query */
 /* Aqui é o Final, modificamos o Banner para mobile, logo e modo claro e escuro, tamanhos */
@@ -1136,6 +1152,7 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
 
 
 
