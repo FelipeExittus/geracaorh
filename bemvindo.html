@@ -495,12 +495,15 @@ footer small {
 
 /* Final Texto e bullets alinhados à esquerda para mobile */
 
-  .swiper {
-    width: 100vw;
-    padding-left: 10px;
-    padding-right: 10px;
-    box-sizing: border-box;
-  }
+/* garante que o container do carrossel ocupe 100% */
+
+.swiper {
+  width: 100vw; /* ocupa 100% da viewport */
+  max-width: 100vw;
+  margin: 0; /* remove margens */
+  padding: 0; /* remove paddings */
+}
+
 
   .swiper-wrapper {
     margin: 0;
@@ -508,28 +511,92 @@ footer small {
     box-sizing: border-box;
   }
 
-  .swiper-slide {
-    width: calc(100vw - 20px);
-    min-height: 220px;
-    padding: 10px;
-    margin-right: 0;
-    box-sizing: border-box;
-  }
+ .swiper-slide {
+  width: 100vw; /* ocupa 100% da largura da viewport */
+  min-height: 220px;
+  padding: 10px;
+  margin-right: 0;
+  box-sizing: border-box;
+  background-color: #EFEFEF; /* cor do fundo */
+}
 
- nav {
+  nav {
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.2rem 0; /* menos espaço acima e abaixo dos links */
+    padding: 0.5rem;
     flex-wrap: wrap;
-    background-color: #EFEFEF; /* mantém a cor atual */
+  }
+
+body {
+  padding-top: 0; /* zera o espaço */
 }
 
-nav a,
-.dropdown > a {
-    padding: 0.2rem 0.5rem; /* diminui altura dos links */
-    font-size: 0.9rem;      /* opcional: reduz fonte, mantendo legível */
+.swiper {
+  margin-top: 150px; /* altura exata do header + nav */
+  width: 100vw;
+  background-color: #EFEFEF; /* ou cor que quiser */
 }
-  
+
+/* Container de ícones */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start; /* alinha à esquerda */
+  margin-top: 15px;
+}
+
+/* Estilo dos links */
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;      /* quadrado */
+  height: 50px;     /* quadrado */
+  border: 2px solid #009AB2; /* borda padrão */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Imagem do ícone */
+.social img {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+  filter: grayscale(100%); /* deixa cinza inicialmente */
+}
+
+/* Hover: muda cor da borda e do ícone */
+.social.facebook:hover {
+  border-color: #1877F2;
+}
+.social.facebook:hover img {
+  filter: none;
+  color: #1877F2; /* se a imagem for SVG, caso contrário usar a imagem colorida */
+}
+
+.social.instagram:hover {
+  border-color: #E1306C;
+}
+.social.instagram:hover img {
+  filter: none;
+}
+
+.social.linkedin:hover {
+  border-color: #0077B5;
+}
+.social.linkedin:hover img {
+  filter: none;
+}
+
+.social.twitter:hover {
+  border-color: #1DA1F2;
+}
+.social.twitter:hover img {
+  filter: none;
+}
+
+
 </style>
 
 </head>
@@ -600,41 +667,41 @@ nav a,
 <!-- Fim do menu e banner fixos -->
 
 
-  <h2 style="text-align:center;">💬 Avaliações do Google</h2>
+
 
   <div class="swiper">
     <div class="swiper-wrapper">
 
       <!-- Slides -->
-      <div class="swiper-slide" style="color: #4F7214;">
+      <div class="swiper-slide" style="color: #009AB2;">
         <img class="avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjXBTjXwS527NCxCSArd_ThvRsQDuKJZbU9fiiBJ-b9gDl-YKZA=s36-c-rp-mo-br100" alt="Cleiciane Gomes">
         <div class="stars">★★★★★</div>
         <div class="comment">"Excelente atendimento e profissionalismo! Muito atenciosos e prestativos. Recomendo a agência!"</div>
         <div class="author">Cleiciane Gomes</div>
       </div>
 
-      <div class="swiper-slide" style="color: #4F7214;">
+      <div class="swiper-slide" style="color: #009AB2;">
         <img class="avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjVUTP2Sb35AulgVxuOPdwCGcgEwK-2dGoZc7lG2ebw80DoU5yA=s36-c-rp-mo-br100" alt="Branco Odontologia">
         <div class="stars">★★★★★</div>
         <div class="comment">"Iniciamos processo seletivo com eles e o resultado foi rápido e eficiente. Recomendo!!"</div>
         <div class="author">Branco Odontologia</div>
       </div>
 
-     <div class="swiper-slide" style="color: #4F7214;">
+     <div class="swiper-slide" style="color: #009AB2;">
         <img class="avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjVkVNAwpbpacn-POBkzBWDQzdDKzIkS4T2-L8pkCShPb_7J78L3=s36-c-rp-mo-ba3-br100" alt="Cristiano Vianna">
         <div class="stars">★★★★★</div>
         <div class="comment">"Excelente empresa! Excelente serviço. Profissionais, éticos e entregam muita qualidade."</div>
         <div class="author">Cristiano Vianna</div>
       </div>
 
-      <div class="swiper-slide" style="color: #4F7214;">
+      <div class="swiper-slide" style="color: #009AB2;">
         <img class="avatar" src="https://lh3.googleusercontent.com/a/ACg8ocLQcVwFPoDruelT8qbmEIfFJtrxanZ-s3XRwCCcLEmxAP-lQA=s36-c-rp-mo-br100" alt="Carlos Santos">
         <div class="stars">★★★★★</div>
         <div class="comment">"Excelente empresa! Busca um atendimento humano e empático sempre de forma ágil."</div>
         <div class="author">Carlos Santos</div>
       </div>
 
-      <div class="swiper-slide" style="color: #4F7214;">
+      <div class="swiper-slide" style="color: #009AB2;">
         <img class="avatar" src="https://lh3.googleusercontent.com/a-/ALV-UjWpQLLtADszA54-Z16-Ic9iCLQoclEIvPUdwAAVgOILKfXH5MY=s36-c-rp-mo-br100" alt="Nonno Eugênio Pizzeria">
         <div class="stars">★★★★★</div>
         <div class="comment">"Excelente atendimento"</div>
@@ -799,11 +866,34 @@ body.dark-mode .conteudo h1 {
   </a>
 </div>
   
+
+
+
+
  <footer>
     <p><strong>CNPJ:</strong> 46.599.025/0001-54</p>
     <p><strong>Telefone:</strong> (51) 99338-1495 e (51) 99697-6579 </p>
     <p><strong>E-mail:</strong> adm@agenciaexittus.com</p>
     <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
+
+ <!-- Ícones de redes sociais -->
+  <div class="social-icons">
+    <a href="https://www.facebook.com" target="_blank" class="social facebook">
+      <img src="facebook1.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com" target="_blank" class="social instagram">
+      <img src="instagram1.png" alt="Instagram">
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" class="social linkedin">
+      <img src="linkedin1.png" alt="LinkedIn">
+    </a>
+    <a href="https://www.youtube.com" target="_blank" class="social youtube">
+      <img src="youtube1.png" alt="YouTube">
+    </a>
+  </div>
+
+
+
   </footer>
 
 
@@ -1001,7 +1091,6 @@ floatb.addEventListener('click', () => {
 </script>
 </body>
 </html>
-
 
 
 
