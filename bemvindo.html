@@ -507,7 +507,7 @@ footer small {
   
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
-  
+
   /* Títulos */
   .titulo-desktop {
     display: none !important;
@@ -554,7 +554,7 @@ footer small {
     padding: 3px 5px;
   }
 
-  /* Carrossel */
+  /* Carrossel mobile */
   .swiper {
     margin-top: 0;
     padding-top: 0;
@@ -569,7 +569,7 @@ footer small {
     min-height: 220px;
   }
 
-  /* Botão dark mode */
+  /* Botão dark mode mobile */
   #darkModeToggle {
     position: absolute;
     top: 10px;
@@ -581,6 +581,21 @@ footer small {
     border-radius: 6px;
     padding: 5px 10px;
     cursor: pointer;
+  }
+
+  /* Botão voltar ao topo */
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    left: 15px; /* canto esquerdo no mobile */
+    z-index: 9999;
+    width: 45px;
+    height: 45px;
+  }
+  #scrollTopBtn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   /* Rodapé mobile */
@@ -603,19 +618,19 @@ footer small {
   footer .redes-sociais {
     display: flex;
     justify-content: center;
-    gap: 5px; /* reduzindo espaço */
+    gap: 5px;
     visibility: visible !important;
     opacity: 1 !important;
   }
 
+  /* Redes sociais principais */
   .plataformas-sociais {
     display: flex;
     justify-content: center;
-    gap: 5px; /* bem juntinho */
+    gap: 5px;
     margin-top: 30px;
     flex-wrap: nowrap;
   }
-
   .plataformas-sociais a {
     display: inline-flex;
     align-items: center;
@@ -626,7 +641,6 @@ footer small {
     opacity: 1 !important;
     text-decoration: none;
   }
-
   .plataformas-sociais a img {
     width: 30px;
     height: 30px;
@@ -646,7 +660,6 @@ footer small {
     transition: all 0.3s ease;
     overflow: hidden;
   }
-
   .social img {
     width: 24px;
     height: 24px;
@@ -659,11 +672,10 @@ footer small {
     display: none;
   }
 
-  /* Conteúdo */
+  /* Conteúdo mobile */
   .conteudo p {
     text-align: justify;
     text-align-last: left;
-    text-justify: inter-word;
     word-spacing: -0.05em;
     letter-spacing: 0.01em;
     margin: 0 0 1em 0;
@@ -671,13 +683,11 @@ footer small {
     hyphens: auto;
     overflow-wrap: break-word;
   }
-
   .conteudo ul {
     list-style: disc;
     margin-left: 30px;
     margin-bottom: 1em;
   }
-
   .conteudo ul li {
     text-align: justify;
     word-spacing: -0.1em;
@@ -685,16 +695,14 @@ footer small {
     margin: 0 0 0.5em 0;
     line-height: 1.5;
   }
-
   .conteudo ul li::marker {
     color: #009AB2;
   }
-
   .conteudo h1 {
     text-align: center;
   }
 
-  /* Botões flutuantes */
+  /* Botões flutuantes (ex: WhatsApp) */
   .social-icons {
     display: flex;
     gap: 10px;
@@ -1223,6 +1231,8 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
+
 
 
 
