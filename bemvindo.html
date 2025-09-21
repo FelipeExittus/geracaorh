@@ -551,8 +551,8 @@ nav a {
   }
 }
 /* Títulos específicos */
-  .titulo-desktop { display: none !important; }
-  .titulo-mobile { display: block !important; }
+.titulo-desktop { display: none !important; }
+.titulo-mobile { display: block !important; }
 }
 
 /* Botão dark mode */
@@ -619,9 +619,11 @@ footer .redes-sociais a img {
 
 /* Ajusta os ícones de redes sociais no mobile */
 .plataformas-sociais {
-  margin-top: 50px;        /* desce os ícones */
-  text-align: center;      /* centraliza horizontalmente */
-  margin: 0 12px; /* <-- ESSE VALOR controla o espaço lateral */
+  margin-top: 30px;           /* espaço para baixo */
+  display: flex;              /* coloca em linha */
+  justify-content: center;    /* centraliza todos os ícones */
+  gap: 5px;                   /* espaço horizontal entre os ícones */
+  flex-wrap: nowrap;          /* evita quebra de linha */
 }
 
 .plataformas-sociais a img {
@@ -632,14 +634,15 @@ footer .redes-sociais a img {
   }
 }
 .plataformas-sociais a {
-  display: inline-block;
-  margin: 0 5px; /* <-- ESSE VALOR controla o espaço lateral */
+  display: inline-flex;       /* faz cada link se comportar como um bloco flex */
+  align-items: center;        /* centraliza ícone verticalmente dentro do link */
+  justify-content: center;
   background: none;
   border: none;
   box-shadow: none;
   filter: none !important; 
   opacity: 1 !important;   
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 /* Esconde menu desktop */
@@ -1214,6 +1217,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
