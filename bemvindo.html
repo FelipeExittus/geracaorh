@@ -508,6 +508,11 @@ footer small {
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
 
+    /* Zera padding do body no mobile */
+  body {
+    padding-top: 0 !important;
+  }
+
   /* Títulos */
   .titulo-desktop {
     display: none !important;
@@ -556,7 +561,7 @@ footer small {
 
   /* Carrossel mobile */
   .swiper {
-    margin-top: 200px; /* ajusta para altura do header + nav no mobile */
+    margin-top: 0 !important; /* encosta no nav */
     padding-top: 0;
     background-color: #EFEFEF;
   }
@@ -1231,6 +1236,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
