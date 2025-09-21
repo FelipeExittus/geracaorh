@@ -505,40 +505,46 @@ footer small {
 
 
   
-/* ===== MOBILE DINÂMICO ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 600px) {
 
-  /* Reset básico */
-  html, body {
+  /* Zera padding do body no mobile */
+  body {
+    padding-top: 0;
     margin: 0;
-    padding: 0;
   }
 
-  body {
-    padding-top: 0 !important;
+  /* Títulos */
+  .titulo-desktop {
+    display: none !important;
+  }
+  .titulo-mobile {
+    display: block !important;
+    font-size: 1.8rem;
+    text-align: center;
   }
 
   /* Header mobile */
+  .header-left img {
+    display: block;
+    margin: 30px auto 20px auto;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+  }
+
+  .header-title-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
   .header-left {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    margin: 0;
+    margin-left: 0;
     padding: 10px 0;
-  }
-
-  .header-left img {
-    display: block;
-    max-width: 220px;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .header-title-container {
-    margin: 0;
-    text-align: center;
   }
 
   /* Nav mobile */
@@ -546,62 +552,52 @@ footer small {
     display: flex;
     justify-content: center;
     gap: 0.2rem;
-    padding: 0;
+    padding: 0.1rem 0;
     margin: 0;
   }
-
   nav a {
     font-size: 14px;
     padding: 3px 5px;
   }
 
-  /* Container swiper abaixo do nav */
-  .swiper-container-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Carrossel */
+  /* Carrossel mobile */
   .swiper {
-    width: 100%;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    margin-top: 190px; /* altura do header + nav no mobile */
     background-color: #EFEFEF;
   }
   .swiper-wrapper {
-    display: flex;
     align-items: stretch;
-    margin: 0;
-    padding: 0;
   }
   .swiper-slide {
     padding: 10px;
-    margin: 0;
+    margin-right: 0;
     min-height: 220px;
   }
 
-  /* Botão dark mode */
+  /* Botão dark mode mobile */
   #darkModeToggle {
     position: absolute;
     top: 10px;
     left: 10px;
+    display: block;
+    color: #013241;
     border: 2px solid #013241;
+    background: none;
     border-radius: 6px;
     padding: 5px 10px;
-    background: none;
-    color: #013241;
     cursor: pointer;
-    z-index: 9999;
   }
 
   /* Botão voltar ao topo */
   #scrollTopBtn {
     position: fixed;
     bottom: 25px;
-    left: 15px;
+    left: 15px; /* canto esquerdo no mobile */
+    z-index: 9999;
     width: 45px;
     height: 45px;
-    z-index: 9999;
   }
   #scrollTopBtn img {
     width: 100%;
@@ -625,27 +621,62 @@ footer small {
     color: #666;
   }
 
-  /* Redes sociais */
-  footer .redes-sociais,
+  /* Redes sociais no rodapé */
+  footer .redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Redes sociais principais */
   .plataformas-sociais {
     display: flex;
     justify-content: center;
     gap: 5px;
+    margin-top: 30px;
     flex-wrap: nowrap;
   }
   .plataformas-sociais a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    background: none;
     border: none;
     box-shadow: none;
-    background: none;
+    opacity: 1 !important;
+    text-decoration: none;
   }
   .plataformas-sociais a img {
     width: 30px;
     height: 30px;
+    display: inline-block;
     filter: none !important;
+  }
+
+  /* Ícones gerais */
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #009AB2;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .social img {
+    width: 24px;
+    height: 24px;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+  }
+
+  /* Esconde menu desktop */
+  .nav-desktop {
+    display: none;
   }
 
   /* Conteúdo mobile */
@@ -665,6 +696,9 @@ footer small {
     margin-bottom: 1em;
   }
   .conteudo ul li {
+    text-align: justify;
+    word-spacing: -0.1em;
+    letter-spacing: 0.01em;
     margin: 0 0 0.5em 0;
     line-height: 1.5;
   }
@@ -675,7 +709,7 @@ footer small {
     text-align: center;
   }
 
-  /* Botões flutuantes */
+  /* Botões flutuantes (ex: WhatsApp) */
   .social-icons {
     display: flex;
     gap: 10px;
@@ -683,11 +717,8 @@ footer small {
     margin-top: 15px;
   }
 
-  /* Esconde menu desktop */
-  .nav-desktop {
-    display: none;
-  }
 }
+
 
 /* Container de ícones botão flutuante*/
 </style>
@@ -1208,6 +1239,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
