@@ -23,7 +23,12 @@
   position: relative;
   top: 25px; /* ajusta para baixo conforme necessário */
   z-index: 2000; /* força aparecer acima de tudo */
- 
+  
+ /* DESKTOP */
+.titulo-desktop {
+  display: block; /* aparece no desktop */
+}
+
 }
 /* Swiper geral */
 .swiper {
@@ -487,17 +492,22 @@ footer small {
 
 @media (max-width: 600px) {
 
+    .titulo-desktop {
+    display: none !important; /* esconde no celular */
+  }
+
  /* Header mobile */
 
   .header-left img {
-    margin-top: 20px; /* ajusta para descer a logo */
-    height: auto;      /* mantém proporção */
-    max-height: 120px; /* controla tamanho */
+    display: block;
+    margin-top: 20px; /* desce um pouco */
+    max-height: 120px;
+    height: auto;
   }
 }
-     .header-title-container {
-    margin-left: 0;  /* remove offset do desktop */
-    text-align: center;
+.header-title-container {
+  margin-left: 0;  /* remove offset do desktop */
+  text-align: center;
   }
 }
 .header-left {
@@ -1203,6 +1213,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
