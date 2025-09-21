@@ -491,18 +491,18 @@ footer small {
 }
 
 @media (max-width: 600px) {
-
-    .titulo-desktop {
-    display: none !important; /* esconde no celular */
-  }
+  
+.titulo-desktop {
+  display: none !important; /* esconde no celular */
+}
 
  /* Header mobile */
-  .header-left img {
-    display: block;
-    margin: 30px auto 20px auto; /* 30px de espaço no topo, auto centraliza laterais, 20px embaixo */
-    max-width: 220px;            /* aumenta a largura máxima da logo */
-    width: 100%;                 /* ocupa até o limite definido no max-width */
-    height: auto;                /* mantém proporção */
+.header-left img {
+  display: block;
+  margin: 30px auto 20px auto; /* 30px de espaço no topo, auto centraliza laterais, 20px embaixo */
+  max-width: 220px;            /* aumenta a largura máxima da logo */
+  width: 100%;                 /* ocupa até o limite definido no max-width */
+  height: auto;                /* mantém proporção */
   }
 }
 .header-title-container {
@@ -576,20 +576,20 @@ footer {
   padding: 1.5rem;
 }
 
-  footer p { margin: 0.3rem 0; }
+footer p { margin: 0.3rem 0; }
 
-  footer small {
-    display: block;
-    margin-top: 1rem;
-    color: #666;
-  }
+footer small {
+  display: block;
+  margin-top: 1rem;
+  color: #666;
+}
 
-  footer .redes-sociais {
-    display: flex; 
-    justify-content: center;
-    gap: 10px;
-    visibility: visible !important;
-    opacity: 1 !important;
+footer .redes-sociais {
+  display: flex; 
+  justify-content: center;
+  gap: 10px;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
   /* Ícones redes sociais */
@@ -614,31 +614,31 @@ footer {
 
 footer .redes-sociais a img {
   width: 30px;
-   height: 30px;
+  height: 30px;
 }
 
-.plataformas-sociais {
-  margin-top: 30px; /* afasta o bloco de ícones um pouco mais para baixo */
-  text-align: center; /* centraliza os ícones horizontalmente */
-}
+  .plataformas-sociais {
+    margin-top: 40px;        /* desce os ícones */
+    text-align: center;      /* centraliza horizontalmente */
+  }
 
-.plataformas-sociais a img {
-  width: 50px;      /* tamanho do ícone */
-  height: 50px;     /* mantém proporção quadrada */
-  display: block;   
-  filter: none !important; /* remove qualquer efeito de preto e branco */
+  .plataformas-sociais a img {
+    width: 60px;            /* tamanho dos ícones no mobile */
+    height: 60px;
+    display: inline-block;
+    filter: none !important; /* mantém as cores originais */
+  }
 }
-.plataformas-sociais a {
-  display: inline-block; 
-  margin: 0 15px;        
-  background: none;
-  border: none;
-  box-shadow: none;
-  filter: none !important; 
-  opacity: 1 !important;   
-  text-decoration: none; /* remove sublinhado de links */
-}
-
+  .plataformas-sociais a {
+    display: inline-block;
+    margin: 0 12px;          /* espaço entre ícones */
+    background: none;
+    border: none;
+    box-shadow: none;
+    filter: none !important; 
+    opacity: 1 !important;   
+    text-decoration: none; 
+  }
 
 /* Esconde menu desktop */
 .nav-desktop { display: none; }
@@ -662,19 +662,19 @@ footer .redes-sociais a img {
 .conteudo ul {
   list-style: disc;
   margin-left: 30px;
-   margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
-  .conteudo ul li {
-    text-align: justify;
-    text-justify: inter-word;
-    word-spacing: -0.1em;
-    letter-spacing: 0.01em;
-    margin: 0 0 0.5em 0;
-    line-height: 1.5;
-    hyphens: auto;
-    overflow-wrap: break-word;
-  }
+.conteudo ul li {
+  text-align: justify;
+  text-justify: inter-word;
+  word-spacing: -0.1em;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5em 0;
+  line-height: 1.5;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
 
   .conteudo ul li::marker {
     color: #009AB2;
@@ -695,7 +695,6 @@ footer .redes-sociais a img {
 
 /* Container de ícones botão flutuante*/
 </style>
-
 </head>
 <body>
 
@@ -972,20 +971,20 @@ body.dark-mode .conteudo h1 {
     <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
 
  <!-- Ícones de redes sociais -->
-  <div class="social-icons">
-    <a href="https://www.facebook.com" target="_blank" class="social facebook">
-      <img src="facebook1.png" alt="Facebook">
-    </a>
-    <a href="https://www.instagram.com" target="_blank" class="social instagram">
-      <img src="instagram1.png" alt="Instagram">
-    </a>
-    <a href="https://www.linkedin.com" target="_blank" class="social linkedin">
-      <img src="linkedin1.png" alt="LinkedIn">
-    </a>
-    <a href="https://www.youtube.com" target="_blank" class="social youtube">
-      <img src="youtube1.png" alt="YouTube">
-    </a>
-  </div>
+<div class="plataformas-sociais">
+  <a href="https://www.facebook.com" target="_blank" class="social facebook">
+    <img src="facebook1.png" alt="Facebook">
+  </a>
+  <a href="https://www.instagram.com" target="_blank" class="social instagram">
+    <img src="instagram1.png" alt="Instagram">
+  </a>
+  <a href="https://www.linkedin.com" target="_blank" class="social linkedin">
+    <img src="linkedin1.png" alt="LinkedIn">
+  </a>
+  <a href="https://www.youtube.com" target="_blank" class="social youtube">
+    <img src="youtube1.png" alt="YouTube">
+  </a>
+</div>
 
   </footer>
 
@@ -1213,6 +1212,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
