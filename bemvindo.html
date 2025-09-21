@@ -427,6 +427,7 @@ footer small {
 .plataformas-sociais {
   margin-top: 30px; /* afasta o bloco de ícones um pouco mais para baixo */
   text-align: center; /* centraliza os ícones horizontalmente */
+  gap: 2px; /* espaço mínimo entre ícones */
 }
 
 .plataformas-sociais a img {
@@ -436,14 +437,18 @@ footer small {
   filter: none !important; /* remove qualquer efeito de preto e branco */
 }
 .plataformas-sociais a {
-  display: inline-block; 
-  margin: 0 15px;        
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0; /* zera qualquer margem */
+  padding: 0; /* zera padding se tiver */
   background: none;
   border: none;
   box-shadow: none;
   filter: none !important; 
   opacity: 1 !important;   
-  text-decoration: none; /* remove sublinhado de links */
+  text-decoration: none;
+}
 }
 
 /* Botão flutuante WhatsApp */
@@ -681,9 +686,9 @@ footer .redes-sociais a img {
   overflow-wrap: break-word;
 }
 
-  .conteudo ul li::marker {
-    color: #009AB2;
-  }
+.conteudo ul li::marker {
+ color: #009AB2;
+}
 
   .conteudo h1 {
     text-align: center;
@@ -1217,6 +1222,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
