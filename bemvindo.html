@@ -565,11 +565,13 @@ footer small {
   }
 
   /* Carrossel */
-  .swiper {
-    margin-top: 0;
-    padding-top: 0;
-    background-color: #EFEFEF;
-  }
+  width: 100vw;         /* largura total da tela */
+  margin: 0;            /* remove qualquer margem */
+  padding: 0;           /* remove qualquer padding */
+  background-color: #EFEFEF;
+  box-sizing: border-box; /* garante que padding/margin não aumentem a largura */
+  overflow: hidden;     /* evita scroll horizontal */
+}
   .swiper-wrapper {
     align-items: stretch;
   }
@@ -619,12 +621,12 @@ footer small {
   }
 
   .plataformas-sociais {
-    display: flex;
-    justify-content: center;
-    gap: 5px; /* bem juntinho */
-    margin-top: 30px;
-    flex-wrap: nowrap;
-  }
+  display: flex;            /* coloca tudo em linha */
+  justify-content: center;  /* centraliza o grupo de ícones */
+  gap: 3px;                 /* espaço mínimo entre os ícones */
+  flex-wrap: nowrap;        /* impede quebra de linha */
+  margin-top: 10px;         /* ajuste conforme necessidade */
+}
 
   .plataformas-sociais a {
     display: inline-flex;
@@ -1233,6 +1235,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
