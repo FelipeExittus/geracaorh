@@ -378,7 +378,13 @@ body.dark-mode nav {
   text-align: center; /* centraliza o botão */
   margin: 20px 0;     /* opcional: espaço acima e abaixo */
 }
-
+#scrollTopBtn {
+  width: 45px; /* botão cima*/
+  height: 45px;
+  bottom: 15px;
+  right: 15px;
+}
+   
 /* Footer */
 footer {
   background-color: #EFEFEF;
@@ -488,17 +494,25 @@ footer small {
 
 /* Botão de voltar ao topo - Desktop */
 #scrollTopBtn {
-  position: fixed;   /* fixo na tela */
-  bottom: 25px;      /* distância da parte inferior */
-  left: 25px;        /* distância da lateral esquerda */
-  z-index: 999;      /* fica acima de outros elementos */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgb(253, 253, 253);
+  background-image: url('cima.png');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
   cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
 
-#scrollTopBtn img {
-  width: 50px;       /* tamanho do ícone no desktop */
-  height: 50px;
-  display: block;
+#scrollTopBtn:hover {
+  background-color: rgb(0, 20, 204);    /* mesma cor de hover das redes sociais */
+  transform: scale(1.1);     /* efeito de aumentar levemente */
 }
 
 /* ===== MOBILE ===== */
@@ -702,27 +716,28 @@ body {
     margin-left: 30px;
     margin-bottom: 1em;
 }
-  .conteudo ul li {
-    text-align: justify;
-    word-spacing: -0.1em;
-    letter-spacing: 0.01em;
-    margin: 0 0 0.5em 0;
-    line-height: 1.5;
+.conteudo ul li {
+  text-align: justify;
+  word-spacing: -0.1em;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5em 0;
+  line-height: 1.5;
 }
-  .conteudo ul li::marker {
-    color: #009AB2;
+.conteudo ul li::marker {
+  color: #009AB2;
 }
-  .conteudo h1 {
-    text-align: center;
-  }
+.conteudo h1 {
+  text-align: center;
+}
 
   /* Botões flutuantes (ex: WhatsApp) */
-  .social-icons {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-    margin-top: 15px;
-  }
+.social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 15px;
+}
+   
 #cookie-banner {
   display: none; /* ou flex só se quiser que apareça sem JS, mas o script já controla */
   position: fixed;
@@ -737,17 +752,16 @@ body {
   z-index: 9999;
 }
 
-  #cookie-banner button {
-    width: 60%;              /* botão ocupa toda largura */
-    padding: 0.5rem 0;        /* ajuste vertical */
-    font-size: 0.9rem;        /* fonte menor */
-  }
-
+#cookie-banner button {
+  width: 60%;              /* botão ocupa toda largura */
+  padding: 0.5rem 0;        /* ajuste vertical */
+  font-size: 0.9rem;        /* fonte menor */
+}
+   
 /* Container de ícones botão flutuante*/
 </style>
 </head>
 <body>
-
 
 <!-- Menu de navegação e Banner são fixos no scroll -->
 <div class="header-nav-container">
@@ -1322,10 +1336,10 @@ window.addEventListener('load', () => {
     }
 });
 </script>
-
 </script>
 </body>
 </html>
+
 
 
 
