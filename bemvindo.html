@@ -18,30 +18,22 @@
   <meta name="robots" content="index, follow" />
  <style>
 
-.titulo-desktop {
-  display: block !important;
-  position: relative;
-  top: 25px; /* ajusta para baixo conforme necessário */
-  z-index: 2000; /* força aparecer acima de tudo */
-  
- /* DESKTOP */
-.titulo-desktop {
-  display: block; /* aparece no desktop */
+
+.swiper {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 200px;
+  background-color: transparent;
 }
 
-}
-/* Swiper geral */
-.swiper {
-  margin-top: -60px; /* negativo = altura do header */
-  padding-top: 0;
-  background-color: #EFEFEF;
-}
 #slide1-img {
   width: 100%;    /* ocupa toda a largura do container */
   height: auto;   /* mantém proporção do GIF */
   display: block; /* evita espaçamento embaixo */
   margin: 0 auto; /* centraliza se não for 100% */
 }
+
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -54,7 +46,7 @@
 }
 
 .swiper-slide {
-  background: #EFEFEF;
+  background: white;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -103,8 +95,7 @@ body {
   background-color: #ffffff;
   color: #333;
   transition: background-color 0.3s, color 0.3s;
-  padding-top: 0; /* remove o espaço extra */
-
+  padding-top: 170px; /* header + nav */
 }
 
 body.dark-mode {
@@ -114,7 +105,7 @@ body.dark-mode {
 
 /* Container que engloba header + nav */
 .header-nav-container {
-  position: fixed; /* fica fixo no topo */
+  position: fixed;  /* fixo na tela */
   top: 0;
   left: 0;
   width: 100%;
@@ -125,7 +116,7 @@ body.dark-mode {
 
 header {
   background-color: #EFEFEF;
-  height: 60px; /* diminui para reduzir espaço */
+  height: 100px;
   display: flex;
   align-items: center;
   padding: 0 20px;
@@ -136,10 +127,11 @@ nav {
   border-top: 2px solid #009AB2;
   border-bottom: 2px solid #009AB2;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  padding: 0.2rem 0; /* diminui o padding interno */
+  padding: 0.5rem 0;
+  position: relative;
 }
 
 /* LINKS DO MENU */
@@ -346,27 +338,27 @@ body.dark-mode nav {
 
 /* Botão fale conosco */
 .fale-conosco-btn {
-  display: inline-block;
-  background-color: #009AB2;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  font-family: Arial, sans-serif;
-  letter-spacing: 0.5px;
+    display: inline-block;
+    background-color: #009AB2;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.5px;
 }
 
 .fale-conosco-btn:hover {
-  background-color: #007C91; /* tom mais escuro no hover */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  transform: translateY(-2px);
+    background-color: #007C91; /* tom mais escuro no hover */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
 }
-.btn-container {
-  text-align: center; /* centraliza o botão */
-  margin: 20px 0;     /* opcional: espaço acima e abaixo */
+   .btn-container {
+    text-align: center; /* centraliza o botão */
+    margin: 20px 0;     /* opcional: espaço acima e abaixo */
 }
 
 /* Footer */
@@ -411,8 +403,6 @@ footer small {
   justify-content: center;
   width: 50px;
   height: 50px;
-  border: 2px solid #009AB2;
-  border-radius: 8px;
   transition: all 0.3s ease;
   overflow: hidden;
 }
@@ -424,10 +414,41 @@ footer small {
   filter: grayscale(100%);
 }
 
+.social {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block; /* mantém alinhamento */
+}
+
+.social:hover {
+  border: none;
+  background: none;
+  filter: none; /* remove qualquer efeito do hover */
+}
+
+/* Botão flutuante WhatsApp */
+.whatsapp-button,
+.contact-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+}
+
+.whatsapp-button img,
+#contactBtn img,
+.contact-options a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .plataformas-sociais {
   margin-top: 30px; /* afasta o bloco de ícones um pouco mais para baixo */
   text-align: center; /* centraliza os ícones horizontalmente */
-  gap: 2px; /* espaço mínimo entre ícones */
 }
 
 .plataformas-sociais a img {
@@ -437,18 +458,14 @@ footer small {
   filter: none !important; /* remove qualquer efeito de preto e branco */
 }
 .plataformas-sociais a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0; /* zera qualquer margem */
-  padding: 0; /* zera padding se tiver */
+  display: inline-block; 
+  margin: 0 15px;        
   background: none;
   border: none;
   box-shadow: none;
   filter: none !important; 
   opacity: 1 !important;   
-  text-decoration: none;
-}
+  text-decoration: none; /* remove sublinhado de links */
 }
 
 /* Botão flutuante WhatsApp */
@@ -495,212 +512,204 @@ footer small {
   display: block;
 }
 
+  
+/* ===== MOBILE ===== */
 @media (max-width: 600px) {
   
-.titulo-desktop {
-  display: none !important; /* esconde no celular */
-}
-
- /* Header mobile */
-.header-left img {
-  display: block;
-  margin: 30px auto 20px auto; /* 30px de espaço no topo, auto centraliza laterais, 20px embaixo */
-  max-width: 220px;            /* aumenta a largura máxima da logo */
-  width: 100%;                 /* ocupa até o limite definido no max-width */
-  height: auto;                /* mantém proporção */
+  /* Títulos */
+  .titulo-desktop {
+    display: none !important;
   }
-}
-.header-title-container {
-  margin-left: 0;  /* remove offset do desktop */
-  text-align: center;
+  .titulo-mobile {
+    display: block !important;
+    font-size: 1.8rem;
+    text-align: center;
   }
-}
-.header-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  margin-left: 0;
-  padding: 10px 0; /* ajuste a altura conforme necessário */
-}
-  
- /* Nav mobile */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 0.2rem;
-  padding: 0.1rem 0;
-  margin: 0;             /* remove espaço acima e abaixo */
-}
-  
-nav a {
-  font-size: 14px;
-  padding: 3px 5px;       /* reduz altura dos links */
-  } 
-  
-/* Carrossel (Swiper) */
-.swiper {
-  margin-top: 0px; /* ajuste o valor até colar perfeitamente */
-  padding-top: 0;
-  background-color: #EFEFEF;
-}
 
-.swiper-wrapper {
-  align-items: stretch;
-}
-
-.swiper-slide {
-  padding: 10px;       /* reduz o padding */
-  margin-right: 0;     /* remove o espaço lateral que empurra o swiper */
-  min-height: 220px;   /* reduz a altura mínima para mobile */
+  /* Header mobile */
+  .header-left img {
+    display: block;
+    margin: 30px auto 20px auto;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
   }
-}
-/* Títulos específicos */
-.titulo-desktop { display: none !important; }
-.titulo-mobile { display: block !important; }
-}
 
-/* Botão dark mode */
-#darkModeToggle {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  display: block;
-  color: #013241;
-  border: 2px solid #013241;
-  background: none;
-  border-radius: 6px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-/* Rodapé mobile */
-footer {
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1.5rem;
-}
-
-footer p { margin: 0.3rem 0; }
-
-footer small {
-  display: block;
-  margin-top: 1rem;
-  color: #666;
-}
-
-footer .redes-sociais {
-  display: flex; 
-  justify-content: center;
-  gap: 10px;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-  /* Ícones redes sociais */
-.social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border: 2px solid #009AB2;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.social img {
-  width: 24px;
-  height: 24px;
-  transition: all 0.3s ease;
-  filter: grayscale(100%);
-}
-
-footer .redes-sociais a img {
-  width: 30px;
-  height: 30px;
-}
-
-/* Ajusta os ícones de redes sociais no mobile */
-.plataformas-sociais {
-  margin-top: 30px;           /* espaço para baixo */
-  display: flex;              /* coloca em linha */
-  justify-content: center;    /* centraliza todos os ícones */
-  gap: 5px;                   /* espaço horizontal entre os ícones */
-  flex-wrap: nowrap;          /* evita quebra de linha */
-}
-
-.plataformas-sociais a img {
-  width: 30px;            /* tamanho dos ícones no mobile */
-  height: 30px;
-  display: inline-block;
-  filter: none !important; /* mantém as cores originais */
+  .header-title-container {
+    margin-left: 0;
+    text-align: center;
   }
-}
-.plataformas-sociais a {
-  display: inline-flex;       /* faz cada link se comportar como um bloco flex */
-  align-items: center;        /* centraliza ícone verticalmente dentro do link */
-  justify-content: center;
-  background: none;
-  border: none;
-  box-shadow: none;
-  filter: none !important; 
-  opacity: 1 !important;   
-  text-decoration: none;
-}
 
-/* Esconde menu desktop */
-.nav-desktop { display: none; }
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-left: 0;
+    padding: 10px 0;
+  }
 
-/* Texto e bullets */
-.conteudo p {
-  text-align: justify;
-  text-align-last: left;
-  text-justify: inter-word;
-  word-spacing: -0.05em;
-  letter-spacing: 0.01em;
-  margin: 0 0 1em 0;
-  line-height: 1.6;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  word-break: normal;
-  overflow-wrap: break-word;
-}
+  /* Nav mobile */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.1rem 0;
+    margin: 0;
+  }
+  nav a {
+    font-size: 14px;
+    padding: 3px 5px;
+  }
 
-.conteudo ul {
-  list-style: disc;
-  margin-left: 30px;
-  margin-bottom: 1em;
-}
+  /* Carrossel */
+  .swiper {
+    margin-top: 0;
+    padding-top: 0;
+    background-color: #EFEFEF;
+  }
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+  .swiper-slide {
+    padding: 10px;
+    margin-right: 0;
+    min-height: 220px;
+  }
 
-.conteudo ul li {
-  text-align: justify;
-  text-justify: inter-word;
-  word-spacing: -0.1em;
-  letter-spacing: 0.01em;
-  margin: 0 0 0.5em 0;
-  line-height: 1.5;
-  hyphens: auto;
-  overflow-wrap: break-word;
-}
+  /* Botão dark mode */
+  #darkModeToggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+    color: #013241;
+    border: 2px solid #013241;
+    background: none;
+    border-radius: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
 
-.conteudo ul li::marker {
- color: #009AB2;
-}
+  /* Rodapé mobile */
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+  }
+  footer p {
+    margin: 0.3rem 0;
+  }
+  footer small {
+    display: block;
+    margin-top: 1rem;
+    color: #666;
+  }
+
+  /* Redes sociais no rodapé */
+  footer .redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* reduzindo espaço */
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .plataformas-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* bem juntinho */
+    margin-top: 30px;
+    flex-wrap: nowrap;
+  }
+
+  .plataformas-sociais a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    box-shadow: none;
+    opacity: 1 !important;
+    text-decoration: none;
+  }
+
+  .plataformas-sociais a img {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    filter: none !important;
+  }
+
+  /* Ícones gerais */
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #009AB2;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .social img {
+    width: 24px;
+    height: 24px;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+  }
+
+  /* Esconde menu desktop */
+  .nav-desktop {
+    display: none;
+  }
+
+  /* Conteúdo */
+  .conteudo p {
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-word;
+    word-spacing: -0.05em;
+    letter-spacing: 0.01em;
+    margin: 0 0 1em 0;
+    line-height: 1.6;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  .conteudo ul {
+    list-style: disc;
+    margin-left: 30px;
+    margin-bottom: 1em;
+  }
+
+  .conteudo ul li {
+    text-align: justify;
+    word-spacing: -0.1em;
+    letter-spacing: 0.01em;
+    margin: 0 0 0.5em 0;
+    line-height: 1.5;
+  }
+
+  .conteudo ul li::marker {
+    color: #009AB2;
+  }
 
   .conteudo h1 {
     text-align: center;
   }
 
-  /* Container de ícones botão flutuante*/
+  /* Botões flutuantes */
   .social-icons {
     display: flex;
     gap: 10px;
     justify-content: flex-start;
     margin-top: 15px;
   }
+
 }
 
 /* Container de ícones botão flutuante*/
@@ -1222,6 +1231,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
