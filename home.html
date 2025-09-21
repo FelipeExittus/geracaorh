@@ -558,7 +558,7 @@ footer small {
 
   /* Carrossel mobile */
   .swiper {
-    margin-top: 250px; /* aumenta para ficar abaixo do nav */
+    margin-top: 157px; /* aumenta para ficar abaixo do nav */
     padding: 0;
     background-color: #EFEFEF;
   }
@@ -663,16 +663,16 @@ footer small {
 }
 
   /* Ícones gerais */
-.social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border: 2px solid #009AB2;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  overflow: hidden;
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #009AB2;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
   .social img {
     width: 24px;
@@ -722,6 +722,21 @@ footer small {
     gap: 10px;
     justify-content: flex-start;
     margin-top: 15px;
+  }
+  #cookie-banner {
+    width: 90%;               /* ocupa quase toda a tela */
+    padding: 1rem 1.5rem;     /* padding reduzido */
+    font-size: 0.9rem;        /* tamanho da fonte menor */
+    flex-direction: column;   /* empilha texto e botão */
+    text-align: center;       /* centraliza o texto */
+    gap: 0.5rem;              /* diminui espaço entre elementos */
+    bottom: 15px;             /* afasta menos do rodapé */
+  }
+
+  #cookie-banner button {
+    width: 100%;              /* botão ocupa toda largura */
+    padding: 0.5rem 0;        /* ajuste vertical */
+    font-size: 0.9rem;        /* fonte menor */
   }
 
   
@@ -793,9 +808,6 @@ footer small {
   </nav>
 </div>
 <!-- Fim do menu e banner fixos -->
-
-
-
 
   <div class="swiper">
     <div class="swiper-wrapper">
@@ -1312,6 +1324,8 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+
+
 
 
 
