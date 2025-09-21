@@ -17,7 +17,14 @@
   <meta property="og:url" content="https://agenciaexittus.github.io/agenciaexittus/" />
   <meta name="robots" content="index, follow" />
  <style>
-   
+
+.titulo-desktop {
+  display: block !important;
+  position: relative;
+  top: 25px; /* ajusta para baixo conforme necessário */
+  z-index: 2000; /* força aparecer acima de tudo */
+ 
+}
 /* Swiper geral */
 .swiper {
   margin-top: -60px; /* negativo = altura do header */
@@ -30,7 +37,6 @@
   display: block; /* evita espaçamento embaixo */
   margin: 0 auto; /* centraliza se não for 100% */
 }
-
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -413,11 +419,27 @@ footer small {
   filter: grayscale(100%);
 }
 
-/* Hover social */
-.social.facebook:hover; 
-.social.instagram:hover;
-.social.linkedin:hover; 
-.social.youtube:hover; 
+.plataformas-sociais {
+  margin-top: 30px; /* afasta o bloco de ícones um pouco mais para baixo */
+  text-align: center; /* centraliza os ícones horizontalmente */
+}
+
+.plataformas-sociais a img {
+  width: 50px;      /* tamanho do ícone */
+  height: 50px;     /* mantém proporção quadrada */
+  display: block;   
+  filter: none !important; /* remove qualquer efeito de preto e branco */
+}
+.plataformas-sociais a {
+  display: inline-block; 
+  margin: 0 15px;        
+  background: none;
+  border: none;
+  box-shadow: none;
+  filter: none !important; 
+  opacity: 1 !important;   
+  text-decoration: none; /* remove sublinhado de links */
+}
 
 
 /* Botão flutuante WhatsApp */
@@ -1168,6 +1190,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
