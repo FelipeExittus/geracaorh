@@ -599,223 +599,221 @@ footer small {
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
 
-/* Conteúdo */
-.sobre-nos {
-  padding: 2rem;
-  max-width: 900px;
-  margin: 2rem auto;
-  text-align: justify;
-  hyphens: auto;
-  word-spacing: normal;
-  letter-spacing: normal;
+  /* Sobre Nós */
+  .sobre-nos {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: justify;
+    hyphens: auto;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
 
-.sobre-nos ul li {
-  border-bottom: 2px solid #009AB2; /* linha azul embaixo */
-  padding-bottom: 8px; /* espaço entre o texto e a linha */
-  margin-bottom: 8px; /* espaço entre a linha e o próximo item */
-  text-align: justify;
+  .sobre-nos ul li {
+    border-bottom: 2px solid #009AB2; /* linha azul embaixo */
+    padding-bottom: 8px; /* espaço entre o texto e a linha */
+    margin-bottom: 8px;  /* espaço entre a linha e o próximo item */
+    text-align: justify;
+  }
 
-}
+  .sobre-nos h1 {
+    text-align: center;
+    color: #009AB2;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(100,124,1,0.3);
+  }
 
-.sobre-nos  h1 {
-  text-align: center;
-  color: #009AB2;
-  margin-bottom: 1.5rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(100,124,1,0.3);
-}
+  .sobre-nos p {
+    margin-bottom: 1rem;
+  }
 
-.sobre-nos p {
-  margin-bottom: 1rem;
-}
-
-.cards {
-    grid-template-columns: 1fr; /* 1 card por linha no celular */
-    grid-template-rows: auto;   /* altura automática */
-    gap: 10px;                  /* menos espaço entre os cards */
-    padding: 10px;              /* padding menor */
-    margin-top: 80px; /* 🔹 Aumente este valor para descer os cards */
-
+  /* Cards */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 card por linha */
+    grid-template-rows: auto;   
+    gap: 10px;                  
+    padding: 10px;              
+    margin-top: 150px; /* ajusta distância do nav */
   }
 
   .card {
-    padding: 15px;             /* card mais compacto */
-    border-radius: 10px;       /* borda levemente menor */
+    padding: 15px;             
+    border-radius: 10px;       
+    text-align: justify;
   }
 
   .card h2 {
-    font-size: 1.2rem;         /* título menor */
+    font-size: 1.2rem;         
     margin-bottom: 8px;
   }
 
   .card p {
-    font-size: 0.9rem;         /* texto menor */
-    line-height: 1.3;          /* altura de linha mais compacta */
-    margin-bottom: 0.4rem;     /* menor espaço entre parágrafos */
+    font-size: 0.9rem;         
+    line-height: 1.3;          
+    margin-bottom: 0.4rem;     
   }
-}
+
   /* Zera padding do body no mobile */
-body {
-  padding-top: 0;
-  margin: 0;
-}
+  body {
+    padding-top: 0;
+    margin: 0;
+  }
 
-/* Títulos */
-.titulo-desktop {
-  display: none !important;
-}
-.titulo-mobile {
-  display: block !important;
-  font-size: 1.8rem;
-  text-align: center;
-}
+  /* Títulos */
+  .titulo-desktop {
+    display: none !important;
+  }
+  .titulo-mobile {
+    display: block !important;
+    font-size: 1.8rem;
+    text-align: center;
+  }
 
-/* Header mobile */
-.header-left img {
-  display: block;
-  margin: 30px auto 20px auto;
-  max-width: 220px;
-  width: 100%;
-  height: auto;
-}
+  /* Header mobile */
+  .header-left img {
+    display: block;
+    margin: 30px auto 20px auto;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+  }
 
-.header-title-container {
-  margin-left: 0;
-  text-align: center;
-}
+  .header-title-container {
+    margin-left: 0;
+    text-align: center;
+  }
 
-.header-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  margin-left: 0;
-  padding: 10px 0;
-}
-  
-/* Nav mobile */
- nav {
-  display: flex;
-  justify-content: center;
-  gap: 0.2rem;
-  padding: 0.1rem 0;
-  margin: 0;
-}
-nav a {
-  font-size: 14px;
-  padding: 3px 5px;
-}
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-left: 0;
+    padding: 10px 0;
+  }
 
-/* Carrossel mobile */
-.swiper {
-  margin-top: 157px; /* aumenta para ficar abaixo do nav */
-  padding: 0;
-  background-color: #EFEFEF;
-}
-  
-.swiper-wrapper {
-  align-items: stretch;
-}
-.swiper-slide {
-  padding: 10px;
-  margin-right: 0;
-  min-height: 220px;
-}
+  /* Nav mobile */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.1rem 0;
+    margin: 0;
+  }
+  nav a {
+    font-size: 14px;
+    padding: 3px 5px;
+  }
 
-/* Botão dark mode mobile */
-#darkModeToggle {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  display: block;
-  color: #013241;
-  border: 2px solid #013241;
-  background: none;
-  border-radius: 6px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
+  /* Carrossel mobile */
+  .swiper {
+    margin-top: 157px; /* abaixo do nav */
+    padding: 0;
+    background-color: #EFEFEF;
+  }
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+  .swiper-slide {
+    padding: 10px;
+    margin-right: 0;
+    min-height: 220px;
+  }
 
-/* Botão voltar ao topo */
-#scrollTopBtn {
-  position: fixed;
-  bottom: 25px;
-  left: 15px; /* canto esquerdo no mobile */
-  z-index: 9999;
-  width: 45px;
-  height: 45px;
-}
-#scrollTopBtn img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+  /* Botão dark mode mobile */
+  #darkModeToggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+    color: #013241;
+    border: 2px solid #013241;
+    background: none;
+    border-radius: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
 
-/* Rodapé mobile */
-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1.5rem;
-}
-  
-footer p {
-  margin: 0.3rem 0;
-}
-  
-footer small {
-  display: block;
-  margin-top: 1rem;
-  color: #666;
-}
+  /* Botão voltar ao topo */
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    left: 15px;
+    z-index: 9999;
+    width: 45px;
+    height: 45px;
+  }
+  #scrollTopBtn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 
-/* Redes sociais no rodapé */
-footer .redes-sociais {
-  display: flex;
-  justify-content: center;
-  gap: 2px;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
+  /* Rodapé mobile */
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+  }
+  footer p {
+    margin: 0.3rem 0;
+  }
+  footer small {
+    display: block;
+    margin-top: 1rem;
+    color: #666;
+  }
 
-footer .redes-sociais a,
-footer .redes-sociais a img {
-  margin: 0 !important; /* zera margens externas */
-  padding: 0 !important; /* zera padding */
-}
+  /* Redes sociais no rodapé */
+  footer .redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  footer .redes-sociais a,
+  footer .redes-sociais a img {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-/* Redes sociais principais */
-.plataformas-sociais {
-  display: flex;
-  justify-content: center;
-  gap: 2px; /* diminui o espaço */
-  margin-top: 30px;
-  flex-wrap: nowrap;
-}
-.plataformas-sociais a,
-.plataformas-sociais a img {
-  margin: 0 !important; /* zera margens externas */
-  padding: 0 !important; /* zera padding */
-}
-.plataformas-sociais a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  box-shadow: none;
-  opacity: 1 !important;
-  text-decoration: none;
-}
-.plataformas-sociais a img {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  filter: none !important;
-}
+  /* Redes sociais principais */
+  .plataformas-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin-top: 30px;
+    flex-wrap: nowrap;
+  }
+  .plataformas-sociais a,
+  .plataformas-sociais a img {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .plataformas-sociais a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    box-shadow: none;
+    opacity: 1 !important;
+    text-decoration: none;
+  }
+  .plataformas-sociais a img {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    filter: none !important;
+  }
 
   /* Ícones gerais */
   .social {
@@ -828,18 +826,18 @@ footer .redes-sociais a img {
     border-radius: 8px;
     transition: all 0.3s ease;
     overflow: hidden;
-}
+  }
   .social img {
     width: 24px;
     height: 24px;
     filter: grayscale(100%);
     transition: all 0.3s ease;
-}
+  }
 
   /* Esconde menu desktop */
   .nav-desktop {
     display: none;
-}
+  }
 
   /* Conteúdo mobile */
   .conteudo p {
@@ -851,59 +849,58 @@ footer .redes-sociais a img {
     line-height: 1.6;
     hyphens: auto;
     overflow-wrap: break-word;
-}
+  }
   .conteudo ul {
     list-style: disc;
     margin-left: 30px;
     margin-bottom: 1em;
-}
-.conteudo ul li {
-  text-align: justify;
-  word-spacing: -0.1em;
-  letter-spacing: 0.01em;
-  margin: 0 0 0.5em 0;
-  line-height: 1.5;
-}
-.conteudo ul li::marker {
-  color: #009AB2;
-}
-.conteudo h1 {
-  text-align: center;
-}
+  }
+  .conteudo ul li {
+    text-align: justify;
+    word-spacing: -0.1em;
+    letter-spacing: 0.01em;
+    margin: 0 0 0.5em 0;
+    line-height: 1.5;
+  }
+  .conteudo ul li::marker {
+    color: #009AB2;
+  }
+  .conteudo h1 {
+    text-align: center;
+  }
 
   /* Botões flutuantes (ex: WhatsApp) */
-.social-icons {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-start;
-  margin-top: 15px;
-}
-   
-#cookie-banner {
-  display: none; /* ou flex só se quiser que apareça sem JS, mas o script já controla */
-  position: fixed;
-  bottom: 15px;
-  width: 90%;
-  padding: 1rem 1.5rem;
-  font-size: 0.9rem;
-  flex-direction: column;
-  text-align: center;
-  gap: 0.5rem;
-  background: #fff; /* ou cor desejada */
-  z-index: 9999;
-}
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
 
-#cookie-banner button {
-  width: 60%;              /* botão ocupa toda largura */
-  padding: 0.5rem 0;        /* ajuste vertical */
-  font-size: 0.9rem;        /* fonte menor */
- }
+  #cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    width: 90%;
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    background: #fff;
+    z-index: 9999;
+  }
 
+  #cookie-banner button {
+    width: 60%;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+}
 /* Container de ícones botão flutuante*/
 </style>
 </head>
 <body>
-
 
 
 <!-- Menu de navegação e Banner são fixos no scroll -->
@@ -923,8 +920,8 @@ footer .redes-sociais a img {
     <div class="dropdown">
       <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
       <div class="dropdown-content">
-        <a href="home.html" class="ativo">Bem vindos</a>
-        <a href="sobre.html">CULTURA</a>
+        <a href="home.html" >Bem vindos</a>
+        <a href="cultura.html"class="ativo">Cultura</a>
       </div>
     </div>
 
@@ -1021,12 +1018,12 @@ footer .redes-sociais a img {
     </p>
 
     <ul>
-      <li><strong>Transparência:</strong> comunicamos de forma clara e honesta, criando confiança e credibilidade.</li>
-      <li><strong>Humanização:</strong> cada processo é pensado para valorizar pessoas, respeitando suas histórias e talentos.</li>
-      <li><strong>Engajamento:</strong> incentivamos a participação ativa de todos, promovendo colaboração e networking de qualidade.</li>
-      <li><strong>Inovação e criatividade:</strong> aplicamos tecnologias modernas, métodos ágeis e soluções criativas que acompanham as tendências do século XXI.</li>
-      <li><strong>Aprendizado contínuo:</strong> compartilhamos conhecimento, promovendo desenvolvimento pessoal e profissional.</li>
-      <li><strong>Justiça e ética:</strong> buscamos sempre relações equilibradas e decisões guiadas pelos valores que defendemos.</li>
+      <li>Transparência: Comunicamos de forma clara e honesta, criando confiança e credibilidade.</li>
+      <li>Humanização: Cada processo é pensado para valorizar pessoas, respeitando suas histórias e talentos.</li>
+      <li>Engajamento: Incentivamos a participação ativa de todos, promovendo colaboração e networking de qualidade.</li>
+      <li>Inovação e criatividade: Aplicamos tecnologias modernas, métodos ágeis e soluções criativas que acompanham as tendências do século XXI.</li>
+      <li>>Aprendizado contínuo: Compartilhamos conhecimento, promovendo desenvolvimento pessoal e profissional.</li>
+      <li>Justiça e ética: Buscamos sempre relações equilibradas e decisões guiadas pelos valores que defendemos.</li>
     </ul>
     <hr>
 
@@ -1036,17 +1033,18 @@ footer .redes-sociais a img {
 
     <p><strong>Valores:</strong></p>
     <ul>
-      <li><strong>Ética e Integridade:</strong> todas as nossas ações seguem princípios claros, sem comprometer a confiança de ninguém.</li>
-      <li><strong>Transparência:</strong> informamos com clareza, sem intermediários, garantindo honestidade e clareza em cada etapa.</li>
-      <li><strong>Humanização:</strong> colocamos pessoas no centro de decisões, respeitando diferenças e promovendo empatia.</li>
-      <li><strong>Inovação:</strong> buscamos soluções criativas e tecnologias modernas para gerar resultados efetivos.</li>
-      <li><strong>Engajamento:</strong> incentivamos a participação ativa de colaboradores, clientes e comunidade.</li>
-      <li><strong>Aprendizado contínuo:</strong> compartilhamos conhecimento para fomentar crescimento sustentável.</li>
-      <li><strong>Compromisso social:</strong> contribuímos para o desenvolvimento das pessoas e organizações de forma ética e justa.</li>
-    </ul>
-    <hr>
+    <li>Ética e Integridade: todas as nossas ações seguem princípios claros, sem comprometer a confiança de ninguém.</li>
+    <li>Transparência: informamos com clareza, sem intermediários, garantindo honestidade e clareza em cada etapa.</li>
+    <li>Humanização: colocamos pessoas no centro de decisões, respeitando diferenças e promovendo empatia.</li>
+    <li>Inovação: buscamos soluções criativas e tecnologias modernas para gerar resultados efetivos.</li>
+    <li>Engajamento: incentivamos a participação ativa de colaboradores, clientes e comunidade.</li>
+    <li>Aprendizado contínuo: compartilhamos conhecimento para fomentar crescimento sustentável.</li>
+    <li>Compromisso social: contribuímos para o desenvolvimento das pessoas e organizações de forma ética e justa.</li>
+   </ul>
+   <hr>
 
-    <p><strong>Nosso Propósito:</strong> Construir pontes que conectam talentos a oportunidades, promovendo <strong>crescimento profissional, inovação e relações justas</strong>. Atuamos para que cada empresa e cada profissional alcancem seu máximo potencial, sempre pautados por <strong>ética, humanização e modernidade</strong>.</p>
+
+    <p><strong>Nosso Propósito:</strong> Construir pontes que conectam talentos a oportunidades, promovendo crescimento profissional, inovação e relações justas. Atuamos para que cada empresa e cada profissional alcancem seu máximo potencial, sempre pautados por ética, humanização e modernidade.</p>
 
     <ul>
       <li>Oferecemos soluções personalizadas de recrutamento e seleção, adaptadas às necessidades de cada cliente.</li>
