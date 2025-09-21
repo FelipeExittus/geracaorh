@@ -488,6 +488,18 @@ footer small {
 @media (max-width: 600px) {
 
  /* Header mobile */
+
+  .header-left img {
+    margin-top: 20px; /* ajusta para descer a logo */
+    height: auto;      /* mantém proporção */
+    max-height: 120px; /* controla tamanho */
+  }
+}
+     .header-title-container {
+    margin-left: 0;  /* remove offset do desktop */
+    text-align: center;
+  }
+}
 .header-left {
   display: flex;
   flex-direction: column;
@@ -529,8 +541,9 @@ nav a {
   }
 }
 /* Títulos específicos */
-.titulo-desktop { display: none; }
-.titulo-mobile { display: block; }
+  .titulo-desktop { display: none !important; }
+  .titulo-mobile { display: block !important; }
+}
 
 /* Botão dark mode */
 #darkModeToggle {
@@ -1190,6 +1203,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
