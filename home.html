@@ -723,15 +723,19 @@ body {
     justify-content: flex-start;
     margin-top: 15px;
   }
-  #cookie-banner {
-    width: 90%;               /* ocupa quase toda a tela */
-    padding: 1rem 1.5rem;     /* padding reduzido */
-    font-size: 0.9rem;        /* tamanho da fonte menor */
-    flex-direction: column;   /* empilha texto e botão */
-    text-align: center;       /* centraliza o texto */
-    gap: 0.5rem;              /* diminui espaço entre elementos */
-    bottom: 15px;             /* afasta menos do rodapé */
-  }
+#cookie-banner {
+  display: none; /* ou flex só se quiser que apareça sem JS, mas o script já controla */
+  position: fixed;
+  bottom: 15px;
+  width: 90%;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  background: #fff; /* ou cor desejada */
+  z-index: 9999;
+}
 
   #cookie-banner button {
     width: 60%;              /* botão ocupa toda largura */
@@ -1322,6 +1326,7 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+
 
 
 
