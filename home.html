@@ -501,8 +501,6 @@ footer small {
   display: block;
 }
 
-
-  
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
 
@@ -560,7 +558,7 @@ footer small {
 
   /* Carrossel mobile */
   .swiper {
-    margin-top: 157px; /* aumenta para ficar abaixo do nav */
+    margin-top: 250px; /* aumenta para ficar abaixo do nav */
     padding: 0;
     background-color: #EFEFEF;
   }
@@ -665,16 +663,16 @@ footer small {
 }
 
   /* Ícones gerais */
-  .social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #009AB2;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    overflow: hidden;
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #009AB2;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
   .social img {
     width: 24px;
@@ -725,6 +723,8 @@ footer small {
     justify-content: flex-start;
     margin-top: 15px;
   }
+
+  
 
 /* Container de ícones botão flutuante*/
 </style>
@@ -1022,6 +1022,57 @@ body.dark-mode .conteudo h1 {
   </footer>
 
 
+<!-- Banner de Cookies (dentro do body) -->
+<div id="cookie-banner">
+    <p>Usamos cookies para melhorar sua experiência no site. <a href="sobre.html">Saiba mais</a>.</p>
+    <button id="accept-cookies">Entendi</button>
+</div>
+
+<style>
+#cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(1, 50, 65, 0.95);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    font-family: 'Arial', sans-serif;
+    z-index: 9999;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+#cookie-banner a {
+    color: #00e0ff;
+    text-decoration: underline;
+}
+
+#cookie-banner button {
+    padding: 0.5rem 1rem;
+    background: #00e0ff;
+    border: none;
+    border-radius: 5px;
+    color: #013241;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#cookie-banner button:hover {
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+</style>
+
 <script>
 function toggleDarkMode() {
   const body = document.body;
@@ -1242,9 +1293,27 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<script>
+document.getElementById('accept-cookies').addEventListener('click', function() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookiesAccepted', 'true');
+});
+
+// Verificar se o usuário já aceitou cookies
+window.addEventListener('load', () => {
+    if(localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'none';
+    } else {
+        document.getElementById('cookie-banner').style.display = 'flex';
+    }
+});
+</script>
+
 </script>
 </body>
 </html>
+
+
 
 
 
