@@ -492,7 +492,7 @@ nav a {
   
 /* Carrossel (Swiper) */
 .swiper {
-  margin-top: -8px; /* ajuste o valor até colar perfeitamente */
+  margin-top: -0px; /* ajuste o valor até colar perfeitamente */
   padding-top: 0;
   background-color: #EFEFEF;
 }
@@ -502,18 +502,10 @@ nav a {
 }
 
 .swiper-slide {
-  background: #EFEFEF;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 280px;
-  box-sizing: border-box;
-  margin-right: 20px; /* adiciona espaço entre slides */
+  padding: 10px;       /* reduz o padding */
+  margin-right: 0;     /* remove o espaço lateral que empurra o swiper */
+  min-height: 220px;   /* reduz a altura mínima para mobile */
+  }
 }
 /* Títulos específicos */
 .titulo-desktop { display: none; }
@@ -588,42 +580,39 @@ footer {
 }
 
 .social.instagram:hover { 
- border-color: #0077B5; /* só muda a borda, mantém a imagem original */
   filter: none;
   color: unset; /* remove cor aplicada ao ícone */
 }
 
 .social.linkedin:hover { 
- border-color: #0077B5; /* só muda a borda, mantém a imagem original */
   filter: none;
   color: unset; /* remove cor aplicada ao ícone */
 }
 
 .social.youtube:hover { 
- border-color: #0077B5; /* só muda a borda, mantém a imagem original */
   filter: none;
   color: unset; /* remove cor aplicada ao ícone */
 }
 
 
-  /* Esconde menu desktop */
-  .nav-desktop { display: none; }
+/* Esconde menu desktop */
+.nav-desktop { display: none; }
 
-  /* Texto e bullets */
-  .conteudo p {
-    text-align: justify;
-    text-align-last: left;
-    text-justify: inter-word;
-    word-spacing: -0.05em;
-    letter-spacing: 0.01em;
-    margin: 0 0 1em 0;
-    line-height: 1.6;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    word-break: normal;
-    overflow-wrap: break-word;
-  }
+/* Texto e bullets */
+.conteudo p {
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  word-spacing: -0.05em;
+  letter-spacing: 0.01em;
+  margin: 0 0 1em 0;
+  line-height: 1.6;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
 
   .conteudo ul {
     list-style: disc;
@@ -649,8 +638,6 @@ footer {
   .conteudo h1 {
     text-align: center;
   }
-
-
 
   /* Container de ícones botão flutuante*/
   .social-icons {
@@ -1181,6 +1168,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
