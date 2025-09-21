@@ -484,50 +484,61 @@ nav {
   padding: 0.1rem 0;
   margin: 0;             /* remove espaço acima e abaixo */
 }
-
-  nav a {
-    font-size: 14px;
-    padding: 3px 5px;       /* reduz altura dos links */
+  
+nav a {
+  font-size: 14px;
+  padding: 3px 5px;       /* reduz altura dos links */
   } 
+  
 /* Carrossel (Swiper) */
 .swiper {
-  margin-top: 0 !important;   /* força colar no nav */
-  padding-top: 0 !important;  /* remove qualquer padding invisível */
+  margin-top: 0px; /* negativo = altura do header */
+  padding-top: 0;
+  background-color: #EFEFEF;
 }
 
 .swiper-wrapper {
-  margin: 0 !important;
-  padding: 0 !important;
+  align-items: stretch;
 }
 
 .swiper-slide {
-  margin: 0 !important;
-  padding: 0 !important;
+  background: #EFEFEF;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 280px;
+  box-sizing: border-box;
+  margin-right: 20px; /* adiciona espaço entre slides */
 }
-  /* Títulos específicos */
-  .titulo-desktop { display: none; }
-  .titulo-mobile { display: block; }
+/* Títulos específicos */
+.titulo-desktop { display: none; }
+.titulo-mobile { display: block; }
 
-  /* Botão dark mode */
-  #darkModeToggle {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: block;
-    color: #013241;
-    border: 2px solid #013241;
-    background: none;
-    border-radius: 6px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
+/* Botão dark mode */
+#darkModeToggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: block;
+  color: #013241;
+  border: 2px solid #013241;
+  background: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
 
-  /* Rodapé mobile */
-  footer {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1.5rem;
-  }
+/* Rodapé mobile */
+footer {
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+}
 
   footer p { margin: 0.3rem 0; }
 
@@ -1170,6 +1181,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
