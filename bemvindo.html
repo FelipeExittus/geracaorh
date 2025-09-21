@@ -508,10 +508,14 @@ footer small {
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
 
-  /* Zera padding do body no mobile */
-  body {
-    padding-top: 0;
+  /* Zera margin e padding de html e body */
+  html, body {
     margin: 0;
+    padding: 0;
+  }
+
+  body {
+    padding-top: 0 !important;
   }
 
   /* Títulos */
@@ -534,7 +538,7 @@ footer small {
   }
 
   .header-title-container {
-    margin-left: 0;
+    margin: 0;
     text-align: center;
   }
 
@@ -543,7 +547,7 @@ footer small {
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    margin-left: 0;
+    margin: 0;
     padding: 10px 0;
   }
 
@@ -552,7 +556,7 @@ footer small {
     display: flex;
     justify-content: center;
     gap: 0.2rem;
-    padding: 0.1rem 0;
+    padding: 0;
     margin: 0;
   }
   nav a {
@@ -562,17 +566,20 @@ footer small {
 
   /* Carrossel mobile */
   .swiper {
-    margin: 0;
-    padding: 0;
-    margin-top: 190px; /* altura do header + nav no mobile */
+    margin: 0;         /* sem borda/fresta */
+    padding: 0;        /* zera padding */
+    position: relative;
+    top: 0;             /* encosta no nav */
     background-color: #EFEFEF;
   }
   .swiper-wrapper {
+    margin: 0;
+    padding: 0;
     align-items: stretch;
   }
   .swiper-slide {
     padding: 10px;
-    margin-right: 0;
+    margin: 0;          /* zera margem */
     min-height: 220px;
   }
 
@@ -588,13 +595,14 @@ footer small {
     border-radius: 6px;
     padding: 5px 10px;
     cursor: pointer;
+    z-index: 9999;
   }
 
   /* Botão voltar ao topo */
   #scrollTopBtn {
     position: fixed;
     bottom: 25px;
-    left: 15px; /* canto esquerdo no mobile */
+    left: 15px;
     z-index: 9999;
     width: 45px;
     height: 45px;
@@ -718,6 +726,7 @@ footer small {
   }
 
 }
+
 
 /* Container de ícones botão flutuante*/
 </style>
@@ -1238,6 +1247,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
