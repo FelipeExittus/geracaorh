@@ -19,12 +19,50 @@
  <style>
 
 
+
+/* Swiper geral */
+   
 .swiper {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-  min-height: 200px;
-  background-color: transparent;
+  margin-top: 140px; /* ajusta conforme a altura do nav + header */
+  padding-top: 0;
+  position: relative;
+  width: 100%;
+}
+
+/* Swiper-wrapper e slides */
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  background: #EFEFEF;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 280px;
+  box-sizing: border-box;
+  margin-right: 20px; /* adiciona espaço entre slides */
+}
+
+.swiper-container-wrapper {
+  margin-top: 0 !important; /* força sem espaço */
+  padding-top: 0 !important;
+}
+
+.header-nav-container {
+  position: fixed;  /* fixo na tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 #slide1-img {
@@ -41,24 +79,6 @@
   color: #2b960a;
 }
 
-.swiper-wrapper {
-  align-items: stretch;
-}
-
-.swiper-slide {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 280px;
-  box-sizing: border-box;
-  margin-right: 20px; /* adiciona espaço entre slides */
-}
 
 .avatar {
   width: 60px;
@@ -165,7 +185,7 @@ nav a:hover,
 
 /* Ajuste no body para não ficar conteúdo escondido atrás do topo fixo */
 body {
-  padding-top: 200px; /* soma aproximada da altura do header + nav */
+  padding-top: 0px; /* soma aproximada da altura do header + nav */
 }
 
 /* Header */
@@ -449,8 +469,6 @@ footer small {
 .plataformas-sociais {
   margin-top: 30px; /* afasta o bloco de ícones um pouco mais para baixo */
   text-align: center; /* centraliza os ícones horizontalmente */
-  gap: 5px; /* <-- diminua esse valor para juntar os ícones */
-
 }
 
 .plataformas-sociais a img {
@@ -470,49 +488,21 @@ footer small {
   text-decoration: none; /* remove sublinhado de links */
 }
 
-/* Botão flutuante WhatsApp */
-.whatsapp-button,
-.contact-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 999;
-}
-
-.whatsapp-button img,
-#contactBtn img,
-.contact-options a img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-/* Botões de slide */
-.slide-button:hover {
-  background-color: #4F7214;
-  box-shadow: 0 6px 16px rgba(33,136,56,0.7);
-}
-/* Aqui é o início, para mobile */  
- 
-/* Estilo do botão voltar ao topo */
-
+/* Botão de voltar ao topo - Desktop */
 #scrollTopBtn {
-  position: fixed;       /* fixo na tela */
-  left: 20px;            /* distância da esquerda */
-  bottom: 40px;          /* distância de baixo */
-  z-index: 1000;         /* acima de outros elementos */
+  position: fixed;   /* fixo na tela */
+  bottom: 25px;      /* distância da parte inferior */
+  left: 25px;        /* distância da lateral esquerda */
+  z-index: 999;      /* fica acima de outros elementos */
   cursor: pointer;
-  display: none;         /* escondido por padrão */
-  width: 50px;           /* tamanho do botão */
-  height: 50px;
 }
 
 #scrollTopBtn img {
-  width: 100%;           /* imagem ocupa todo o botão */
-  height: 100%;
+  width: 50px;       /* tamanho do ícone no desktop */
+  height: 50px;
   display: block;
 }
+
 
   
 /* ===== MOBILE ===== */
@@ -565,13 +555,11 @@ footer small {
   }
 
   /* Carrossel */
-  width: 100vw;         /* largura total da tela */
-  margin: 0;            /* remove qualquer margem */
-  padding: 0;           /* remove qualquer padding */
-  background-color: #EFEFEF;
-  box-sizing: border-box; /* garante que padding/margin não aumentem a largura */
-  overflow: hidden;     /* evita scroll horizontal */
-}
+  .swiper {
+    margin-top: 0;
+    padding-top: 0;
+    background-color: #EFEFEF;
+  }
   .swiper-wrapper {
     align-items: stretch;
   }
@@ -621,12 +609,12 @@ footer small {
   }
 
   .plataformas-sociais {
-  display: flex;            /* coloca tudo em linha */
-  justify-content: center;  /* centraliza o grupo de ícones */
-  gap: 3px;                 /* espaço mínimo entre os ícones */
-  flex-wrap: nowrap;        /* impede quebra de linha */
-  margin-top: 10px;         /* ajuste conforme necessidade */
-}
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* bem juntinho */
+    margin-top: 30px;
+    flex-wrap: nowrap;
+  }
 
   .plataformas-sociais a {
     display: inline-flex;
@@ -1235,6 +1223,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
