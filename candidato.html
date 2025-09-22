@@ -1089,8 +1089,11 @@ hr {
 /* Texto do contato */
 .contato-texto {
   text-align: justify;
-  margin: 0;
+  text-justify: inter-word; /* distribui o espaçamento de forma mais uniforme */
+  word-break: break-word;    /* evita que palavras longas causem grandes espaços */
+  hyphens: auto;             /* permite hifenização automática */
   line-height: 1.5;
+  margin: 0;
 }
 
 /* Lista de links (bullets) */
