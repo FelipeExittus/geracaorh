@@ -791,7 +791,7 @@ footer .redes-sociais a img {
     <div class="dropdown">
       <a href="javascript:void(0);" class="dropdown-toggle">CARREIRA</a>
       <div class="dropdown-content">
-        <a href="candidato.html"class="ativo">Candidato</a>
+        <a href="candidato.html">Candidato</a>
         <a href="vagas.html">Vagas</a>
       </div>
     </div>
@@ -807,11 +807,8 @@ footer .redes-sociais a img {
     <div class="dropdown">
       <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
       <div class="dropdown-content">
-        <a href="cookie.html">Cookies</a>
-        <a href="lgbtqia.html">LGBT+</a>
-        <a href="privacidade.html">Política de Privacidade</a>
-        <a href="lgpd.html">Lei Geral de Proteção de Dados</a>
-      </div>
+      <a href="informacoes.html" class="ativo">Informações Gerais</a>
+
     </div>
 
     <div class="dropdown">
@@ -824,10 +821,6 @@ footer .redes-sociais a img {
   </nav>
 </div>
 
-
-
-
-
 <!-- Card de Informações Gerais -->
 <section class="card-informacoes" id="infoCard">
   <span>INFORMAÇÕES</span>
@@ -836,7 +829,7 @@ footer .redes-sociais a img {
 <style>
 .card-informacoes {
   position: relative;
-  margin: 20px auto 0 auto;
+  margin: 120px auto 50px auto; /* ↑ Aqui você controla o quanto desce */
   width: 90vw;
   max-width: 1000px;
   height: 30vh;
@@ -851,10 +844,20 @@ footer .redes-sociais a img {
   align-items: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   opacity: 0;
-  transition: opacity 1s ease;
-  margin-top: 150px;
+  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(50px);
+  
 }
 
+.contato-texto {
+  text-align: justify;
+  line-height: 1.7;
+  word-spacing: normal;
+  letter-spacing: normal;
+  font-size: 1rem;
+  color: #fff; /* padrão para modo escuro */
+  padding-top: 50px; /* desce só o texto dentro do card */
+}
 .card-informacoes.show {
   opacity: 1;
 }
@@ -868,24 +871,7 @@ footer .redes-sociais a img {
   0% { top: 0px; }
   100% { top: -5px; }
 }
-</style>
 
-<!-- Bloco Contatos - Organizado -->
-<div class="contato-container">
-  <section class="contato-item">
-    <p class="contato-texto">
-      Na Nova Geração RH, respeitamos a Lei Geral de Proteção de Dados (LGPD) e todas as normas de privacidade e segurança da informação. Coletamos, armazenamos e processamos dados de forma ética, transparente e segura, garantindo que informações pessoais e profissionais sejam utilizadas apenas para finalidades legítimas, como recrutamento, seleção e comunicação de oportunidades.
-
-      Nossa Política de Privacidade descreve como tratamos os dados, incluindo como os candidatos podem acessar, corrigir ou solicitar a exclusão das suas informações. O IPCD (Indicador de Proteção e Controle de Dados) reflete nosso compromisso com boas práticas de gestão e proteção de dados corporativos e individuais.
-
-      Aplicamos também políticas de inclusão e diversidade, garantindo igualdade de oportunidades para Pessoas com Deficiência (PCD) e membros da comunidade LGBT+, combatendo qualquer tipo de preconceito ou discriminação.
-
-      O CAM (Controle de Acesso a Materiais) garante que apenas pessoas autorizadas acessem informações sensíveis, mantendo a confidencialidade.
-    </p>
-  </section>
-</div>
-
-<style>
 .contato-item {
   max-width: 900px;
   margin: 40px auto;
@@ -915,17 +901,7 @@ footer .redes-sociais a img {
 @media (prefers-color-scheme: dark) {
   .contato-texto { color: #fff; }
 }
-</style>
 
-<!-- Card LGPD -->
-<div class="lgpd-card" id="lgpdCard">
-  <h2>Lei Geral de Proteção de Dados (LGPD)</h2>
-  <p>
-    Respeitamos a LGPD e asseguramos o tratamento ético, seguro e transparente dos dados, adotando políticas de privacidade claras e promovendo a inclusão de Pessoas com Deficiência (PCD) e da comunidade LGBT+. O IPCD demonstra nosso compromisso com as melhores práticas de gestão e proteção de informações.
-  </p>
-</div>
-
-<style>
 .lgpd-card, .lgbt-card, .cookies-card, .pcd-card {
   opacity: 0;
   transition: opacity 1s ease;
@@ -941,21 +917,10 @@ footer .redes-sociais a img {
   color: white;
 }
 
-.lgpd-card {
-  background: linear-gradient(135deg, #f72121, #3358ff);
-}
-
-.lgbt-card {
-  background: linear-gradient(135deg, #FF6B6B, #FF4081);
-}
-
-.cookies-card {
-  background: linear-gradient(135deg, #FFA500, #FFB347);
-}
-
-.pcd-card {
-  background: linear-gradient(135deg, #6A1B9A, #AB47BC);
-}
+.lgpd-card { background: linear-gradient(135deg, #f72121, #3358ff); }
+.lgbt-card { background: linear-gradient(135deg, #FF6B6B, #FF4081); }
+.cookies-card { background: linear-gradient(135deg, #FFA500, #FFB347); }
+.pcd-card { background: linear-gradient(135deg, #6A1B9A, #AB47BC); }
 
 .lgpd-card.show,
 .lgbt-card.show,
@@ -977,8 +942,36 @@ footer .redes-sociais a img {
   .lgpd-card p, .lgbt-card p, .cookies-card p, .pcd-card p {
     font-size: 0.85rem;
   }
+  
 }
+
 </style>
+
+
+
+<!-- Bloco Contatos - Organizado -->
+<div class="contato-container">
+  <section class="contato-item">
+    <p class="contato-texto">
+      Na Nova Geração RH, respeitamos a Lei Geral de Proteção de Dados (LGPD) e todas as normas de privacidade e segurança da informação. Coletamos, armazenamos e processamos dados de forma ética, transparente e segura, garantindo que informações pessoais e profissionais sejam utilizadas apenas para finalidades legítimas, como recrutamento, seleção e comunicação de oportunidades.
+
+      Nossa Política de Privacidade descreve como tratamos os dados, incluindo como os candidatos podem acessar, corrigir ou solicitar a exclusão das suas informações. O IPCD (Indicador de Proteção e Controle de Dados) reflete nosso compromisso com boas práticas de gestão e proteção de dados corporativos e individuais.
+
+      Aplicamos também políticas de inclusão e diversidade, garantindo igualdade de oportunidades para Pessoas com Deficiência (PCD) e membros da comunidade LGBT+, combatendo qualquer tipo de preconceito ou discriminação.
+
+      O CAM (Controle de Acesso a Materiais) garante que apenas pessoas autorizadas acessem informações sensíveis, mantendo a confidencialidade.
+    </p>
+  </section>
+</div>
+
+
+<!-- Card LGPD -->
+<div class="lgpd-card" id="lgpdCard">
+  <h2>Lei Geral de Proteção de Dados (LGPD)</h2>
+  <p>
+    Respeitamos a LGPD e asseguramos o tratamento ético, seguro e transparente dos dados, adotando políticas de privacidade claras e promovendo a inclusão de Pessoas com Deficiência (PCD) e da comunidade LGBT+. O IPCD demonstra nosso compromisso com as melhores práticas de gestão e proteção de informações.
+  </p>
+</div>
 
 <!-- Card LGBT -->
 <div class="lgbt-card" id="lgbtCard">
@@ -1019,7 +1012,6 @@ document.addEventListener("DOMContentLoaded", function() {
   cards.forEach(card => observer.observe(card));
 });
 </script>
-
 
 
 
