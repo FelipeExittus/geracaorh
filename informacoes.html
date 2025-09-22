@@ -829,10 +829,10 @@ footer .redes-sociais a img {
 <style>
 .card-informacoes {
   position: relative;
-  margin: 120px auto 50px auto; /* ↑ Aqui você controla o quanto desce */
+  margin: 120px auto 50px auto; 
   width: 90vw;
   max-width: 1000px;
-  height: 30vh;
+  min-height: 220px; /* altura padronizada com os outros cards */
   border-radius: 20px;
   background: linear-gradient(135deg, #009AB2, #3358ff);
   color: white;
@@ -846,9 +846,7 @@ footer .redes-sociais a img {
   opacity: 0;
   transition: opacity 1s ease, transform 1s ease;
   transform: translateY(50px);
-  margin-top: 150px; /* desce o parágrafo */
-
-  
+  margin-top: 150px;
 }
 
 .contato-texto {
@@ -857,9 +855,10 @@ footer .redes-sociais a img {
   word-spacing: normal;
   letter-spacing: normal;
   font-size: 1rem;
-  color: #fff; /* padrão para modo escuro */
-  padding-top: 50px; /* desce só o texto dentro do card */
+  color: #fff;
+  padding-top: 50px;
 }
+
 .card-informacoes.show {
   opacity: 1;
 }
@@ -880,15 +879,6 @@ footer .redes-sociais a img {
   padding: 0 20px;
 }
 
-.contato-texto {
-  text-align: justify;
-  line-height: 1.7;
-  word-spacing: normal;
-  letter-spacing: normal;
-  font-size: 1rem;
-  color: #fff;
-}
-
 @media (max-width: 768px) {
   .contato-texto {
     font-size: 0.9rem;
@@ -904,11 +894,13 @@ footer .redes-sociais a img {
   .contato-texto { color: #fff; }
 }
 
+/* Cards LGPD, LGBT, Cookies e PCD */
 .lgpd-card, .lgbt-card, .cookies-card, .pcd-card {
   opacity: 0;
   transition: opacity 1s ease;
-  width: 90%;
+  width: 90vw;       /* mesma largura do card de Informações */
   max-width: 1000px;
+  min-height: 220px; /* altura padronizada */
   margin: 20px auto;
   padding: 20px 30px;
   border-radius: 20px;
@@ -944,12 +936,8 @@ footer .redes-sociais a img {
   .lgpd-card p, .lgbt-card p, .cookies-card p, .pcd-card p {
     font-size: 0.85rem;
   }
-  
 }
-
 </style>
-
-
 
 <!-- Bloco Contatos - Organizado -->
 <div class="contato-container">
@@ -965,7 +953,6 @@ footer .redes-sociais a img {
     </p>
   </section>
 </div>
-
 
 <!-- Card LGPD -->
 <div class="lgpd-card" id="lgpdCard">
@@ -1014,6 +1001,7 @@ document.addEventListener("DOMContentLoaded", function() {
   cards.forEach(card => observer.observe(card));
 });
 </script>
+
 
 
 
