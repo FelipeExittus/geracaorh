@@ -828,84 +828,14 @@ footer .redes-sociais a img {
 
 
 
- <!-- Card em tela quase cheia -->
-<div class="card-full">
-  <span>PORTAL PARA CANDIDATOS</span>
-</div>
-
-<style>
-.card-full {
-  width: 90vw;
-  height: 30vh;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #009AB2, #3358ff);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  margin: 200px auto 20px auto; /* só isso já controla distância do topo */
-}
-
-
-.card-full::before {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: rgba(255,255,255,0.2);
-  top: -100%;
-  left: -100%;
-  transform: rotate(45deg);
-  transition: all 0.5s;
-}
-
-  .card-full:hover {
-    transform: scale(1.03);
-    box-shadow: 0 14px 35px rgba(0,0,0,0.4);
-  }
-
-  .card-full:hover::before {
-    top: 0;
-    left: 0;
-  }
-
-  .card-full span {
-    position: relative;
-    animation: floatText 2s infinite alternate;
-  }
-
-  @keyframes floatText {
-    0% { top: 0px; }
-    100% { top: -5px; }
-  }
-</style> 
-
-
-
-
-
-
-
-
-  
-  
 <!-- Card de Informações Gerais -->
 <section class="card-informacoes" id="infoCard">
-  <span>INFORMAÇÕES GERAIS</span>
+  <span>INFORMAÇÕES</span>
 </section>
 
 <style>
 .card-informacoes {
-  position: relative; /* mantém no fluxo */
-  /* top: -200px;  REMOVA ESTA LINHA */
+  position: relative;
   margin: 20px auto 0 auto;
   width: 90vw;
   max-width: 1000px;
@@ -921,17 +851,11 @@ footer .redes-sociais a img {
   align-items: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   opacity: 0;
-  transition: all 1s ease;
-  transform: translateY(-100%); /* anima de cima para baixo */
+  transition: opacity 1s ease;
+  margin-top: 150px;
 }
 
 .card-informacoes.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card-informacoes.show {
-  top: 20px; /* anima de cima para baixo até 20px abaixo do menu */
   opacity: 1;
 }
 
@@ -946,35 +870,20 @@ footer .redes-sociais a img {
 }
 </style>
 
-<script>
-window.addEventListener('load', () => {
-  const infoCard = document.getElementById('infoCard');
-  
-  setTimeout(() => {
-    infoCard.classList.add('show'); // anima do topo para baixo
-  }, 500);
-});
-</script>
-
-
-
 <!-- Bloco Contatos - Organizado -->
-
-<!-- Container central para contato -->
 <div class="contato-container">
+  <section class="contato-item">
+    <p class="contato-texto">
+      Na Nova Geração RH, respeitamos a Lei Geral de Proteção de Dados (LGPD) e todas as normas de privacidade e segurança da informação. Coletamos, armazenamos e processamos dados de forma ética, transparente e segura, garantindo que informações pessoais e profissionais sejam utilizadas apenas para finalidades legítimas, como recrutamento, seleção e comunicação de oportunidades.
 
-<!-- informações -->
-<section class="contato-item">
-  <p class="contato-texto">
-    Na Nova Geração RH, respeitamos a Lei Geral de Proteção de Dados (LGPD) e todas as normas de privacidade e segurança da informação. Coletamos, armazenamos e processamos dados de forma ética, transparente e segura, garantindo que informações pessoais e profissionais sejam utilizadas apenas para finalidades legítimas, como recrutamento, seleção e comunicação de oportunidades.
+      Nossa Política de Privacidade descreve como tratamos os dados, incluindo como os candidatos podem acessar, corrigir ou solicitar a exclusão das suas informações. O IPCD (Indicador de Proteção e Controle de Dados) reflete nosso compromisso com boas práticas de gestão e proteção de dados corporativos e individuais.
 
-    Nossa Política de Privacidade descreve como tratamos os dados, incluindo como os candidatos podem acessar, corrigir ou solicitar a exclusão das suas informações. O IPCD (Indicador de Proteção e Controle de Dados) reflete nosso compromisso com boas práticas de gestão e proteção de dados corporativos e individuais.
+      Aplicamos também políticas de inclusão e diversidade, garantindo igualdade de oportunidades para Pessoas com Deficiência (PCD) e membros da comunidade LGBT+, combatendo qualquer tipo de preconceito ou discriminação.
 
-    Aplicamos também políticas de inclusão e diversidade, garantindo igualdade de oportunidades para Pessoas com Deficiência (PCD) e membros da comunidade LGBT+, combatendo qualquer tipo de preconceito ou discriminação.
-
-    O CAM (Controle de Acesso a Materiais) garante que apenas pessoas autorizadas acessem informações sensíveis, mantendo a confidencialidade.
-  </p>
-</section>
+      O CAM (Controle de Acesso a Materiais) garante que apenas pessoas autorizadas acessem informações sensíveis, mantendo a confidencialidade.
+    </p>
+  </section>
+</div>
 
 <style>
 .contato-item {
@@ -989,10 +898,9 @@ window.addEventListener('load', () => {
   word-spacing: normal;
   letter-spacing: normal;
   font-size: 1rem;
-  color: #fff; /* padrão para modo escuro */
+  color: #fff;
 }
 
-/* Ajuste para mobile */
 @media (max-width: 768px) {
   .contato-texto {
     font-size: 0.9rem;
@@ -1000,28 +908,14 @@ window.addEventListener('load', () => {
   }
 }
 
-/* Modo claro */
 @media (prefers-color-scheme: light) {
-  .contato-texto {
-    color: #000; /* muda para preto no modo claro */
-  }
+  .contato-texto { color: #000; }
 }
 
-/* Modo escuro */
 @media (prefers-color-scheme: dark) {
-  .contato-texto {
-    color: #fff; /* branco no modo escuro */
-  }
-}
-
-@media (max-width: 768px) {
-  .contato-texto {
-    font-size: 0.9rem;    /* ajuste para telas menores */
-    line-height: 1.6;
-  }
+  .contato-texto { color: #fff; }
 }
 </style>
-
 
 <!-- Card LGPD -->
 <div class="lgpd-card" id="lgpdCard">
@@ -1032,55 +926,59 @@ window.addEventListener('load', () => {
 </div>
 
 <style>
-.lgpd-card {
+.lgpd-card, .lgbt-card, .cookies-card, .pcd-card {
   opacity: 0;
-  transform: translateX(-100%);
+  transition: opacity 1s ease;
   width: 90%;
   max-width: 1000px;
   margin: 20px auto;
   padding: 20px 30px;
-  background: linear-gradient(135deg, #f72121, #3358ff);
-  color: white;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  transition: all 1s ease;
   text-align: justify;
   word-spacing: normal;
   letter-spacing: normal;
+  color: white;
 }
 
-/* Classe para ativar animação */
-.lgpd-card.show {
+.lgpd-card {
+  background: linear-gradient(135deg, #f72121, #3358ff);
+}
+
+.lgbt-card {
+  background: linear-gradient(135deg, #FF6B6B, #FF4081);
+}
+
+.cookies-card {
+  background: linear-gradient(135deg, #FFA500, #FFB347);
+}
+
+.pcd-card {
+  background: linear-gradient(135deg, #6A1B9A, #AB47BC);
+}
+
+.lgpd-card.show,
+.lgbt-card.show,
+.cookies-card.show,
+.pcd-card.show {
   opacity: 1;
-  transform: translateX(0);
 }
 
-/* Mobile: ajustes */
+/* Mobile */
 @media (max-width: 768px) {
-  .lgpd-card {
+  .lgpd-card, .lgbt-card, .cookies-card, .pcd-card {
     padding: 15px 20px;
     font-size: 0.9rem;
   }
-  .lgpd-card h2 {
+  .lgpd-card h2, .lgbt-card h2, .cookies-card h2, .pcd-card h2 {
     font-size: 1.2rem;
     text-align: center;
   }
-  .lgpd-card p {
+  .lgpd-card p, .lgbt-card p, .cookies-card p, .pcd-card p {
     font-size: 0.85rem;
   }
 }
 </style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const lgpdCard = document.getElementById("lgpdCard");
-
-  // Aparece 1s após carregar a página
-  setTimeout(() => {
-    lgpdCard.classList.add("show");
-  }, 1000);
-});
-</script>
 
 <!-- Card LGBT -->
 <div class="lgbt-card" id="lgbtCard">
@@ -1090,56 +988,6 @@ document.addEventListener("DOMContentLoaded", function() {
   </p>
 </div>
 
-<style>
-.lgbt-card {
-  opacity: 0;
-  transform: translateX(100%); /* Vem da direita para a esquerda */
-  width: 90%;
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 20px 30px;
-  background: linear-gradient(135deg, #FF6B6B, #FF4081);
-  color: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  transition: all 1s ease;
-  text-align: justify;
-  word-spacing: normal;
-  letter-spacing: normal;
-}
-
-.lgbt-card.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Mobile: ajustes */
-@media (max-width: 768px) {
-  .lgbt-card {
-    padding: 15px 20px;
-    font-size: 0.9rem;
-  }
-  .lgbt-card h2 {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  .lgbt-card p {
-    font-size: 0.85rem;
-  }
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const lgbtCard = document.getElementById("lgbtCard");
-
-  // Aparece 2s após carregar a página (após LGPD)
-  setTimeout(() => {
-    lgbtCard.classList.add("show");
-  }, 2000);
-});
-</script>
-
 <!-- Card Política de Cookies -->
 <div class="cookies-card" id="cookiesCard">
   <h2>Política de Cookies</h2>
@@ -1147,56 +995,6 @@ document.addEventListener("DOMContentLoaded", function() {
     Nossa Política de Cookies garante transparência sobre o uso de dados coletados através do navegador. Explicamos como cookies e tecnologias similares são utilizados para melhorar a experiência do usuário, personalizar conteúdos e analisar desempenho do site.
   </p>
 </div>
-
-<style>
-.cookies-card {
-  opacity: 0;
-  transform: translateY(100%); /* Vem de baixo para cima */
-  width: 90%;
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 20px 30px;
-  background: linear-gradient(135deg, #FFA500, #FFB347);
-  color: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  transition: all 1s ease;
-  text-align: justify;
-  word-spacing: normal;
-  letter-spacing: normal;
-}
-
-.cookies-card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Mobile: ajustes */
-@media (max-width: 768px) {
-  .cookies-card {
-    padding: 15px 20px;
-    font-size: 0.9rem;
-  }
-  .cookies-card h2 {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  .cookies-card p {
-    font-size: 0.85rem;
-  }
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const cookiesCard = document.getElementById("cookiesCard");
-
-  // Aparece 3s após carregar a página (após LGPD e LGBT)
-  setTimeout(() => {
-    cookiesCard.classList.add("show");
-  }, 3000);
-});
-</script>
 
 <!-- Card PCD -->
 <div class="pcd-card" id="pcdCard">
@@ -1206,55 +1004,22 @@ document.addEventListener("DOMContentLoaded", function() {
   </p>
 </div>
 
-<style>
-.pcd-card {
-  opacity: 0;
-  transform: translateY(-100%); /* Vem de cima para baixo */
-  width: 90%;
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 20px 30px;
-  background: linear-gradient(135deg, #6A1B9A, #AB47BC);
-  color: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  transition: all 1s ease;
-  text-align: justify;
-  word-spacing: normal;
-  letter-spacing: normal;
-}
-
-.pcd-card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Mobile: ajustes */
-@media (max-width: 768px) {
-  .pcd-card {
-    padding: 15px 20px;
-    font-size: 0.9rem;
-  }
-  .pcd-card h2 {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  .pcd-card p {
-    font-size: 0.85rem;
-  }
-}
-</style>
-
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const pcdCard = document.getElementById("pcdCard");
+  const cards = document.querySelectorAll(".card-informacoes, .lgpd-card, .lgbt-card, .cookies-card, .pcd-card");
 
-  // Aparece 4s após carregar a página (sequência LGPD → LGBT → Cookies → PCD)
-  setTimeout(() => {
-    pcdCard.classList.add("show");
-  }, 4000);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
 });
 </script>
+
 
 
 
