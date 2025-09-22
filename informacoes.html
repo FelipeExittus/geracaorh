@@ -823,26 +823,7 @@ footer .redes-sociais a img {
 
 
 
-<style>
-.header-nav-container {
-  position: fixed; /* fixa o menu no topo */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999; /* acima de tudo */
-  background: #000; /* ou transparente com opacidade */
-}
 
-/* Só o resto do header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  color: white;
-}
-
-<style>
 
   
 <!-- Card de Informações Gerais -->
@@ -852,9 +833,9 @@ header {
 
 <style>
 .card-informacoes {
-  position: relative; /* faz parte do fluxo da página */
-  top: -200px; /* inicia fora da tela (acima do ponto final) */
-  margin: 20px auto 0 auto; /* margem acima de 20px para não colar no menu */
+  position: relative; /* mantém no fluxo */
+  /* top: -200px;  REMOVA ESTA LINHA */
+  margin: 20px auto 0 auto;
   width: 90vw;
   max-width: 1000px;
   height: 30vh;
@@ -870,7 +851,12 @@ header {
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   opacity: 0;
   transition: all 1s ease;
-  margin-top: 150px;
+  transform: translateY(-100%); /* anima de cima para baixo */
+}
+
+.card-informacoes.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card-informacoes.show {
