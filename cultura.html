@@ -586,27 +586,20 @@ footer small {
 @media (max-width: 600px) {
 
   /* Sobre Nós */
-  .sobre-nos {
-  text-align: justify;
-    text-align-last: left;
-    word-spacing: -0.05em;
-    letter-spacing: 0.01em;
-    margin: 0 0 1em 0;
-    line-height: 1.6;
-    hyphens: auto;
-    overflow-wrap: break-word;
-}
+  .sobre-nos ul li {
+    text-align: justify;          /* justifica o texto */
+    text-justify: inter-word;     /* distribui os espaços uniformemente */
+    hyphens: auto;                /* permite quebra de palavras */
+    word-spacing: -0.05em;        /* reduz ainda mais o espaço entre palavras */
+    letter-spacing: -0.02em;      /* diminui levemente espaço entre letras */
+    line-height: 1.1;             /* altura mínima entre linhas */
+    margin: 0 0 0.2rem 0;         /* remove margens extras */
+    padding: 0;                   /* remove padding */
+    overflow-wrap: break-word;    /* força quebra de palavra se necessário */
+    line-height: 1.8; /* aumenta o espaço entre itens da lista */
+
   }
 
- /* Texto e bullets ultra-compactos no mobile */
- .sobre-nos p,
- .sobre-nos ul li {
-  text-align: justify;
-  word-spacing: -0.1em;
-  letter-spacing: 0.01em;
-  margin: 0 0 0.5em 0;
-  line-height: 1.5;
-}
 
   }
 
@@ -622,7 +615,7 @@ footer small {
   }
 
   .sobre-nos p {
-    text-align: center;
+    margin-bottom: 1rem;
   }
 
   /* Cards */
