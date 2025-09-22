@@ -402,23 +402,37 @@ body.dark-mode nav {
 }
 
 /* Conteúdo */
-.sobre-nos ul {
-  list-style-type: disc;       /* bullets normais */
-  padding-left: 0;             /* remove padding extra */
-  margin-left: 0;              /* remove margem extra */
-}
+.sobre-nos {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: justify;
+  hyphens: auto;
+  word-spacing: normal;
+  letter-spacing: normal;
 
 .sobre-nos ul li {
-  border-bottom: 2px solid #009AB2; /* linha azul embaixo de cada item */
-  padding-bottom: 8px;               /* espaço entre texto e linha */
-  margin-bottom: 8px;                /* espaço entre itens */
+  border-bottom: 2px solid #009AB2; /* linha azul embaixo */
+  padding-bottom: 8px; /* espaço entre o texto e a linha */
+  margin-bottom: 8px; /* espaço entre a linha e o próximo item */
   text-align: justify;
-  color: #009AB2;                    /* texto azul */
-  list-style-position: inside;       /* bullet dentro da área do texto */
+
+}
 }
 
-.sobre-nos ul li::marker {
-  color: #009AB2;                    /* bullet azul */
+.sobre-nos  h1 {
+  text-align: center;
+  color: #009AB2;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(100,124,1,0.3);
+}
+
+.sobre-nos p {
+  margin-bottom: 1rem;
 }
 
 /* Botão fale conosco */
@@ -598,20 +612,19 @@ footer small {
 
  /* Texto e bullets ultra-compactos no mobile */
  .sobre-nos p,
-.sobre-nos ul li {
+  .sobre-nos ul li {
     text-align: justify;          /* justifica o texto */
     text-justify: inter-word;     /* distribui os espaços uniformemente */
     hyphens: auto;                /* permite quebra de palavras */
     word-spacing: -0.05em;        /* reduz ainda mais o espaço entre palavras */
     letter-spacing: -0.02em;      /* diminui levemente espaço entre letras */
-    line-height: 1.8;             /* altura entre itens da lista */
-    margin: 0 0 0.5em 0;    
-    padding: 0;                    /* remove padding */
-    overflow-wrap: break-word;     /* força quebra de palavra se necessário */
-    border: none;                  /* remove linha azul */
-    text-decoration: none;         /* remove sublinhado, se houver link */
-    list-style-position: inside;   /* coloca o bullet junto do texto */
-}
+    line-height: 1.1;             /* altura mínima entre linhas */
+    margin: 0 0 0.2rem 0;         /* remove margens extras */
+    padding: 0;                   /* remove padding */
+    overflow-wrap: break-word;    /* força quebra de palavra se necessário */
+    line-height: 1.8; /* aumenta o espaço entre itens da lista */
+
+  }
 
   .sobre-nos h1 {
     text-align: center;
@@ -916,7 +929,6 @@ footer small {
     <div class="dropdown">
       <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
       <div class="dropdown-content">
-        <a href="index.html" >Início</a>
         <a href="home.html" >Bem vindos</a>
         <a href="cultura.html"class="ativo">Cultura</a>
       </div>
@@ -1002,8 +1014,6 @@ footer small {
   </div> 
 </section>
 
-<div style="width: 100%; height: 2px; background-color: #009AB2; margin: 1px 0 0 0;"></div>
-
 <!-- Seção Sobre Nós -->
 <section class="sobre-nos">
   <div class="container-texto">
@@ -1014,16 +1024,43 @@ footer small {
       Na <strong>Nova Geração RH</strong>, acreditamos que pessoas são o centro de tudo. Nossa cultura é construída sobre pilares sólidos: <strong>transparência, ética, humanização e inovação</strong>. Cada ação que tomamos reflete nosso compromisso com a construção de relações justas e produtivas entre empresas e profissionais.
     </p>
 
+    <ul>
+      <li>Transparência: Comunicamos de forma clara e honesta, criando confiança e credibilidade.</li>
+      <li>Humanização: Cada processo é pensado para valorizar pessoas, respeitando suas histórias e talentos.</li>
+      <li>Engajamento: Incentivamos a participação ativa de todos, promovendo colaboração e networking de qualidade.</li>
+      <li>Inovação e criatividade: Aplicamos tecnologias modernas, métodos ágeis e soluções criativas que acompanham as tendências do século XXI.</li>
+      <li>Aprendizado contínuo: Compartilhamos conhecimento, promovendo desenvolvimento pessoal e profissional.</li>
+      <li>Justiça e ética: Buscamos sempre relações equilibradas e decisões guiadas pelos valores que defendemos.</li>
+    </ul>
+    <hr>
+
     <p><strong>Missão:</strong> Conectar talentos e oportunidades, gerando valor real para profissionais e empresas. Facilitamos processos de recrutamento e desenvolvimento humano com <strong>tecnologia, empatia e excelência</strong>, transformando trajetórias profissionais.</p>
-    <h1 style="text-align: center; color: #009AB2; font-size: 1.8rem;">
 
     <p><strong>Visão:</strong> Ser referência nacional em soluções de RH, reconhecida por <strong>ética, inovação e humanização</strong>. Queremos moldar um mercado mais transparente, moderno e eficiente, onde talentos sejam valorizados e resultados sejam sustentáveis.</p>
-    <h1 style="text-align: center; color: #009AB2; font-size: 1.8rem;">
 
-    <p><strong>Valores:</strong>Ética e Integridade: todas as nossas ações seguem princípios claros, sem comprometer a confiança de ninguém. Transparência: informamos com clareza, sem intermediários, garantindo honestidade e clareza em cada etapa. Humanização: colocamos pessoas no centro de decisões, respeitando diferenças e promovendo empatia. Inovação: buscamos soluções criativas e tecnologias modernas para gerar resultados efetivos. Engajamento: incentivamos a participação ativa de colaboradores, clientes e comunidade. Aprendizado contínuo: compartilhamos conhecimento para fomentar crescimento sustentável. Compromisso social: contribuímos para o desenvolvimento das pessoas e organizações de forma ética e justa.</p>
+    <p><strong>Valores:</strong></p>
+    <ul>
+    <li>Ética e Integridade: todas as nossas ações seguem princípios claros, sem comprometer a confiança de ninguém.</li>
+    <li>Transparência: informamos com clareza, sem intermediários, garantindo honestidade e clareza em cada etapa.</li>
+    <li>Humanização: colocamos pessoas no centro de decisões, respeitando diferenças e promovendo empatia.</li>
+    <li>Inovação: buscamos soluções criativas e tecnologias modernas para gerar resultados efetivos.</li>
+    <li>Engajamento: incentivamos a participação ativa de colaboradores, clientes e comunidade.</li>
+    <li>Aprendizado contínuo: compartilhamos conhecimento para fomentar crescimento sustentável.</li>
+    <li>Compromisso social: contribuímos para o desenvolvimento das pessoas e organizações de forma ética e justa.</li>
+   </ul>
+   <hr>
 
 
     <p><strong>Nosso Propósito:</strong> Construir pontes que conectam talentos a oportunidades, promovendo crescimento profissional, inovação e relações justas. Atuamos para que cada empresa e cada profissional alcancem seu máximo potencial, sempre pautados por ética, humanização e modernidade.</p>
+
+    <ul>
+      <li>Oferecemos soluções personalizadas de recrutamento e seleção, adaptadas às necessidades de cada cliente.</li>
+      <li>Valorizamos o aprendizado contínuo, treinamentos, mentorias e recursos digitais que agregam conhecimento.</li>
+      <li>Criamos experiências significativas para candidatos e empresas, promovendo confiança e engajamento.</li>
+      <li>Incorporamos tendências modernas do mercado, como ATS, inteligência artificial e múltiplos canais de comunicação.</li>
+      <li>Fomentamos networking e comunidades interativas, onde o conhecimento é compartilhado de forma justa e aberta.</li>
+    </ul>
+    <hr>
 
     <p>
       A <strong>Nova Geração RH</strong> não é apenas uma consultoria de recursos humanos. Somos parceiros estratégicos para empresas e pessoas, oferecendo soluções modernas, humanas e eficazes. Cada decisão, cada processo e cada contato reflete nossa cultura de <strong>transparência, ética e inovação</strong>.
