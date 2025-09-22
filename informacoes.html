@@ -832,7 +832,7 @@ footer .redes-sociais a img {
   margin: 120px auto 50px auto; 
   width: 90vw;
   max-width: 1000px;
-  min-height: 220px; /* altura padronizada com os outros cards */
+  height: 30vh;
   border-radius: 20px;
   background: linear-gradient(135deg, #009AB2, #3358ff);
   color: white;
@@ -898,9 +898,8 @@ footer .redes-sociais a img {
 .lgpd-card, .lgbt-card, .cookies-card, .pcd-card {
   opacity: 0;
   transition: opacity 1s ease;
-  width: 90vw;       /* mesma largura do card de Informações */
+  width: 90vw;       /* largura igual ao card de Informações */
   max-width: 1000px;
-  min-height: 220px; /* altura padronizada */
   margin: 20px auto;
   padding: 20px 30px;
   border-radius: 20px;
@@ -1001,6 +1000,7 @@ document.addEventListener("DOMContentLoaded", function() {
   cards.forEach(card => observer.observe(card));
 });
 </script>
+
 
 
 
