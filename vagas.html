@@ -983,6 +983,21 @@ footer .redes-sociais a img {
     pointer-events: auto;              /* permite clicar nos botões normalmente */
   }
 }
+  /* Mobile: remove efeitos de toque nos cards */
+@media (max-width: 768px) {
+  .vaga {
+    -webkit-tap-highlight-color: transparent; /* remove tarja azul */
+    user-select: none;                         /* não permite seleção de texto */
+    touch-action: manipulation;                /* melhora o toque */
+  }
+
+  /* Botões continuam clicáveis */
+  .vaga .botoes-contato,
+  .vaga .fale-conosco-btn {
+    pointer-events: auto;
+    -webkit-tap-highlight-color: initial; /* efeito normal nos botões */
+  }
+}
 
 .vaga {
   width: 90vw;
