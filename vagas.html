@@ -1260,6 +1260,21 @@ footer .redes-sociais a img {
   margin: 200px auto 20px auto; /* só isso já controla distância do topo */
 }
 
+  /* Remove hover e transform no mobile */
+@media (max-width: 768px) {
+  .vaga:hover,
+  .vaga-card:hover {
+    transform: none !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important;
+    background-color: #EFEFEF !important;
+  }
+
+  /* Remove qualquer transição também, se quiser */
+  .vaga,
+  .vaga-card {
+    transition: none !important;
+  }
+}
 
 .card-full::before {
   content: "";
