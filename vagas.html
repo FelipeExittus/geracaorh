@@ -981,10 +981,17 @@ footer .redes-sociais a img {
 }
   /* Mobile: remove efeitos de toque nos cards */
 @media (max-width: 768px) {
-  .vaga {
-    -webkit-tap-highlight-color: transparent; /* remove tarja azul */
-    user-select: none;                         /* não permite seleção de texto */
-    touch-action: manipulation;                /* melhora o toque */
+  .vaga, .vaga-card {
+    transform: none !important;       
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important; 
+    background-color: #EFEFEF !important; 
+
+    /* manter bloqueio de interação */
+    pointer-events: none;              
+    user-select: none;
+
+    /* permitir animações normais */
+    transition: all 0.3s ease-in-out; /* coloque o tempo/duração desejado */
   }
 
   /* Botões continuam clicáveis */
