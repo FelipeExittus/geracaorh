@@ -1014,7 +1014,11 @@ footer .redes-sociais a img {
   user-select: auto;
   -webkit-tap-highlight-color: inherit;
 }
-
+.vaga-card.selecionado {
+  background: linear-gradient(135deg, #3358ff, #009AB2); /* cor diferente */
+  box-shadow: 0 14px 35px rgba(0,0,0,0.6);
+  transform: scale(1.02);
+}
 
 .vaga {
   width: 90vw;
@@ -1351,6 +1355,20 @@ footer .redes-sociais a img {
     100% { top: -5px; }
   }
 </style>
+  
+<script>
+  // Pega todos os cards
+  const cards = document.querySelectorAll('.vaga-card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Remove seleção de outros cards, se quiser só um selecionado
+      cards.forEach(c => c.classList.remove('selecionado'));
+      // Adiciona seleção ao card clicado
+      card.classList.add('selecionado');
+    });
+  });
+</script>
 
 
 <script>
