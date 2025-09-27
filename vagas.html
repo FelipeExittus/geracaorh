@@ -982,23 +982,24 @@ footer .redes-sociais a img {
   /* Mobile: remove efeitos de toque nos cards */
 @media (max-width: 768px) {
   .vaga, .vaga-card {
-    transform: none !important;       
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important; 
-    background-color: #EFEFEF !important; 
+    /* mantém bloqueio de interação */
+    pointer-events: none;     /* bloqueia clique */
+    user-select: none;        /* bloqueia seleção */
 
-    /* manter bloqueio de interação */
-    pointer-events: none;              
-    user-select: none;
+    /* bloqueia highlight azul de toque */
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 
-    /* permitir animações normais */
-    transition: all 0.3s ease-in-out; /* coloque o tempo/duração desejado */
+    /* mantém as animações */
+    transition: all 0.3s ease-in-out; /* igual ao desktop */
   }
 
-  /* Botões continuam clicáveis */
+  /* botões continuam clicáveis */
   .vaga .botoes-contato,
   .vaga .fale-conosco-btn {
     pointer-events: auto;
-    -webkit-tap-highlight-color: initial; /* efeito normal nos botões */
+    user-select: auto;
+    -webkit-tap-highlight-color: inherit;
   }
 }
 
