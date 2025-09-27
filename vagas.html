@@ -873,33 +873,13 @@ footer .redes-sociais a img {
   }
 }
 
-.vaga, .vaga-card {
-  /* bloqueia clique */
-  pointer-events: none;
-  
-  /* impede seleção */
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  
-  /* bloqueia highlight azul */
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-
-  /* mantém animações */
-  transition: all 0.3s ease-in-out;
-}
-
-/* botões continuam clicáveis */
-.vaga .botoes-contato,
-.vaga .fale-conosco-btn {
-  pointer-events: auto;
-  user-select: auto;
-  -webkit-tap-highlight-color: inherit;
+.vaga, .vaga-card,
+.vaga a {
+  -webkit-tap-highlight-color: transparent; /* remove tarja azul no toque */
+  outline: none; /* remove contorno de foco */
 }
 
 
-  
 /* ===== Container do mural ===== */
 .mural-vagas {
   width: 100%;         /* ocupar toda a largura disponível */
