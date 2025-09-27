@@ -914,7 +914,12 @@ footer .redes-sociais a img {
 }
 
 /* Cards LGPD, LGBT, Cookies e PCD */
-.lgpd-card, .lgbt-card, .cookies-card, .pcd-card {
+/* Base para todos os cards */
+.lgpd-card, .lgbt-card, .cookies-card, .pcd-card,
+.marco-civil-card, .iso-card, .lbi-card, .di-card,
+.pacto-global-card, .wcag-card, .codigo-etica-card,
+.cookies-tracking-card {
+  
   opacity: 0;
   transition: opacity 1s ease;
   width: 90vw;       /* largura igual ao card de Informações */
@@ -934,6 +939,16 @@ footer .redes-sociais a img {
 .cookies-card { background: linear-gradient(135deg, #FFA500, #FFB347); }
 .pcd-card { background: linear-gradient(135deg, #6A1B9A, #AB47BC); }
 
+  /* Novos cards */
+.marco-civil-card { background: linear-gradient(135deg, #1E90FF, #00BFFF); }
+.iso-card { background: linear-gradient(135deg, #4CAF50, #8BC34A); }
+.lbi-card { background: linear-gradient(135deg, #FF9800, #FFC107); }
+.di-card { background: linear-gradient(135deg, #9C27B0, #E91E63); }
+.pacto-global-card { background: linear-gradient(135deg, #3F51B5, #2196F3); }
+.wcag-card { background: linear-gradient(135deg, #00BCD4, #009688); }
+.codigo-etica-card { background: linear-gradient(135deg, #795548, #A1887F); }
+.cookies-tracking-card { background: linear-gradient(135deg, #FF5722, #FF9800); }
+
 .lgpd-card.show,
 .lgbt-card.show,
 .cookies-card.show,
@@ -943,19 +958,30 @@ footer .redes-sociais a img {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .lgpd-card, .lgbt-card, .cookies-card, .pcd-card {
+  .lgpd-card, .lgbt-card, .cookies-card, .pcd-card,
+  .marco-civil-card, .iso-card, .lbi-card, .di-card,
+  .pacto-global-card, .wcag-card, .codigo-etica-card,
+  .cookies-tracking-card {
     padding: 15px 20px;
     font-size: 0.9rem;
   }
-  .lgpd-card h2, .lgbt-card h2, .cookies-card h2, .pcd-card h2 {
+
+  .lgpd-card h2, .lgbt-card h2, .cookies-card h2, .pcd-card h2,
+  .marco-civil-card h2, .iso-card h2, .lbi-card h2, .di-card h2,
+  .pacto-global-card h2, .wcag-card h2, .codigo-etica-card h2,
+  .cookies-tracking-card h2 {
     font-size: 1.2rem;
     text-align: center;
   }
-  .lgpd-card p, .lgbt-card p, .cookies-card p, .pcd-card p {
+
+  .lgpd-card p, .lgbt-card p, .cookies-card p, .pcd-card p,
+  .marco-civil-card p, .iso-card p, .lbi-card p, .di-card p,
+  .pacto-global-card p, .wcag-card p, .codigo-etica-card p,
+  .cookies-tracking-card p {
     font-size: 0.85rem;
   }
 }
-</style>
+
 
 <!-- Bloco Contatos - Organizado -->
 <div class="contato-container">
@@ -1003,6 +1029,71 @@ footer .redes-sociais a img {
     Garantimos igualdade de oportunidades para Pessoas com Deficiência, promovendo inclusão e acessibilidade em todas as etapas de recrutamento e seleção. Combate a qualquer forma de preconceito ou discriminação é prioridade, respeitando a diversidade e direitos individuais.
   </p>
 </div>
+
+  <!-- Card Marco Civil da Internet -->
+<div class="info-card marco-civil-card" id="marcoCivilCard">
+  <h2>Marco Civil da Internet (Lei nº 12.965/2014)</h2>
+  <p>
+    Estabelece direitos e deveres para usuários e provedores de serviços online, garantindo proteção à privacidade, liberdade de expressão e responsabilidade no ambiente digital.
+  </p>
+</div>
+
+<!-- Card ISO/IEC 27001 -->
+<div class="info-card iso-card" id="isoCard">
+  <h2>Política de Privacidade ISO/IEC 27001</h2>
+  <p>
+    Adotamos padrões internacionais de segurança da informação, assegurando confidencialidade, integridade e disponibilidade dos dados de colaboradores, candidatos e usuários.
+  </p>
+</div>
+
+<!-- Card Lei Brasileira de Inclusão -->
+<div class="info-card lbi-card" id="lbiCard">
+  <h2>Lei Brasileira de Inclusão (Lei nº 13.146/2015)</h2>
+  <p>
+    Garantimos direitos, acessibilidade e oportunidades de trabalho para Pessoas com Deficiência, promovendo inclusão e igualdade em todas as áreas da organização.
+  </p>
+</div>
+
+<!-- Card Diversidade e Inclusão -->
+<div class="info-card di-card" id="diCard">
+  <h2>Políticas Internas de Diversidade e Inclusão (D&I)</h2>
+  <p>
+    Nossos códigos de conduta promovem igualdade de gênero, raça, orientação sexual e combatem qualquer forma de preconceito, reforçando um ambiente ético e inclusivo.
+  </p>
+</div>
+
+<!-- Card Pacto Global da ONU -->
+<div class="info-card pacto-global-card" id="pactoGlobalCard">
+  <h2>Princípios do Pacto Global da ONU</h2>
+  <p>
+    Reforçamos responsabilidade social, respeito aos direitos humanos e práticas trabalhistas justas, seguindo padrões internacionais de ética e sustentabilidade.
+  </p>
+</div>
+
+<!-- Card WCAG 2.1 -->
+<div class="info-card wcag-card" id="wcagCard">
+  <h2>Diretrizes de Acessibilidade para Conteúdo Web (WCAG 2.1)</h2>
+  <p>
+    Garantimos que nosso site e plataformas digitais sejam acessíveis a todos, incluindo pessoas com deficiência, promovendo inclusão e usabilidade.
+  </p>
+</div>
+
+<!-- Card Código de Ética -->
+<div class="info-card codigo-etica-card" id="codigoEticaCard">
+  <h2>Código de Ética e Conduta Corporativa</h2>
+  <p>
+    Orientamos sobre respeito, integridade e tratamento justo de colaboradores e candidatos, mantendo um ambiente de trabalho ético e transparente.
+  </p>
+</div>
+
+<!-- Card Política de Cookies e Tracking -->
+<div class="info-card cookies-tracking-card" id="cookiesTrackingCard">
+  <h2>Política de Cookies e Tracking</h2>
+  <p>
+    Garantimos transparência sobre coleta de dados e tecnologias de tracking, permitindo consentimento informado e aprimorando a experiência do usuário.
+  </p>
+</div>
+
 
   
 <script>
