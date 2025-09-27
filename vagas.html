@@ -969,17 +969,19 @@ footer .redes-sociais a img {
 }
   
 @media (max-width: 768px) {
-  .vaga, .vaga-card {
-    pointer-events: none;              /* evita interação de hover/tap */
-    user-select: none;                 /* impede seleção de texto */
-  }
 
-  .vaga .botoes-contato,
-  .vaga .fale-conosco-btn {
-    pointer-events: auto;              /* permite clicar nos botões normalmente */
-  }
+.vaga, .vaga-card {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out; /* animação */
 }
-  /* Mobile: remove efeitos de toque nos cards */
+
+.vaga:hover, .vaga-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+  
 @media (max-width: 768px) {
   .vaga, .vaga-card {
     /* mantém bloqueio de interação */
