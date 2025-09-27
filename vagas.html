@@ -968,32 +968,32 @@ footer .redes-sociais a img {
   }
 }
   
-@media (max-width: 768px) {
-  .vaga, .vaga-card {
-    /* bloquear seleção/tarja azul */
-    pointer-events: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
-
-    /* manter animações iguais ao desktop */
-    transition: all 0.3s ease-in-out;
-  }
-
-  /* se quiser animar sempre no mobile, pode forçar assim */
-  .vaga, .vaga-card {
-    transform: scale(1.02);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  }
-
-  /* botões continuam clicáveis */
-  .vaga .botoes-contato,
-  .vaga .fale-conosco-btn {
-    pointer-events: auto;
-    user-select: auto;
-    -webkit-tap-highlight-color: inherit;
-  }
+.vaga, .vaga-card {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+  user-select: none;                 /* não seleciona texto */
+  -webkit-tap-highlight-color: transparent; /* tira a tarja azul */
 }
+
+/* hover desktop */
+.vaga:hover, .vaga-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* estado clicado (mobile e desktop) */
+.vaga:active, .vaga-card:active {
+  background-color: #f0f0f0; /* cor quando clicado */
+  transform: scale(0.98); /* opcional, efeito de "apertar" */
+}
+
+/* botões continuam clicáveis dentro do card */
+.vaga .botoes-contato,
+.vaga .fale-conosco-btn {
+  pointer-events: auto;
+}
+
 
 .vaga {
   width: 90vw;
