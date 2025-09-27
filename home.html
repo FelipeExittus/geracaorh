@@ -537,10 +537,19 @@ body {
   }
 
   .swiper {
-    margin-top: 0;      /* carrossel logo abaixo do título */
+    margin-top: 0 !important;   /* zera margin */
+    padding-top: 0 !important;  /* zera padding */
+  }
+
+  .swiper-wrapper {
+    align-items: flex-start; /* faz os slides iniciarem do topo */
+  }
+
+  .swiper-slide {
+    min-height: 180px;  /* reduz altura mínima das slides no mobile */
+    padding: 10px;      /* reduz padding interno */
   }
 }
-
 
 /* Títulos */
 .titulo-desktop {
@@ -1374,6 +1383,7 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+
 
 
 
