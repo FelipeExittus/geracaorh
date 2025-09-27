@@ -968,24 +968,28 @@ footer .redes-sociais a img {
   }
 }
   
+/* Estilo base do card */
 .vaga, .vaga-card {
-  background-color: #fff;
+  background-color: #fff; /* cor normal */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: all 0.3s ease-in-out;
-  user-select: none;                 /* não seleciona texto */
-  -webkit-tap-highlight-color: transparent; /* tira a tarja azul */
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+  /* impede tarja azul e seleção de texto */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* hover desktop */
+/* Hover no desktop (zoom) */
 .vaga:hover, .vaga-card:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* estado clicado (mobile e desktop) */
+/* Clique/tap (cor mais forte) */
 .vaga:active, .vaga-card:active {
-  background-color: #f0f0f0; /* cor quando clicado */
-  transform: scale(0.98); /* opcional, efeito de "apertar" */
+  background-color: #f5f5f5; /* cor um pouco mais forte ao tocar */
+  transform: scale(0.98);    /* opcional: sensação de “apertar” */
 }
 
 /* botões continuam clicáveis dentro do card */
