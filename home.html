@@ -526,19 +526,20 @@ body {
 
 @media (max-width: 600px) {
 
-  /* Título Google Reviews */
+  body {
+    padding-top: 140px; /* ajusta conforme header/nav mobile */
+  }
+
   .google-reviews {
-    margin-top: 80px;       /* espaço do topo para não encostar no nav */
-    margin-bottom: 15px;    /* espaço entre título e carrossel */
+    margin-top: 0;      /* título já empurrado pelo padding do body */
+    margin-bottom: 15px;
     font-size: 1.5rem;
   }
 
-  /* Swiper / Carrossel */
   .swiper {
-    margin-top: 0;          /* remove qualquer espaço extra */
-    position: relative;
-    width: 100%;
+    margin-top: 0;      /* carrossel logo abaixo do título */
   }
+}
 
 
 /* Títulos */
@@ -1373,6 +1374,7 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+
 
 
 
