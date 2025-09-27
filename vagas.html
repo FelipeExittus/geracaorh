@@ -967,58 +967,6 @@ footer .redes-sociais a img {
     gap: 8px;
   }
 }
-  
-/* ======= cards: animação + sem tarja azul + seleção persistente ======= */
-.vaga, .vaga-card {
-  /* cor base e sombra (use as que você já usa) */
-  background-color: #EFEFEF;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  border-radius: 12px;
-
-  /* animações (garanta que não hajam regras anteriores com transition: none !important) */
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-
-  /* evita seleção e tarja azul */
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation; /* melhora comportamento de toque/scroll */
-  cursor: pointer;
-}
-
-/* hover desktop - mantém zoom */
-.vaga:hover, .vaga-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-}
-
-/* efeito de pressão instantâneo (enquanto pressiona) */
-.vaga:active, .vaga-card:active,
-.vaga.touch-down, .vaga-card.touch-down {
-  transform: scale(0.98);
-  /* sem mudar a cor aqui se você preferir usar .selected para persistir */
-}
-
-/* classe que deixa o card destacado depois do toque (persistente) */
-.vaga.selected, .vaga-card.selected {
-  background-color: #dff4ff; /* cor mais forte / destaque — ajuste para sua paleta */
-  box-shadow: 0 22px 50px rgba(0,0,0,0.45);
-  transform: scale(1.03);
-}
-
-/* botões dentro continuam clicáveis */
-.vaga .botoes-contato,
-.vaga .fale-conosco-btn {
-  pointer-events: auto;
-  user-select: auto;
-  -webkit-tap-highlight-color: inherit;
-}
-.vaga-card.selecionado {
-  background: linear-gradient(135deg, #3358ff, #009AB2); /* cor diferente */
-  box-shadow: 0 14px 35px rgba(0,0,0,0.6);
-  transform: scale(1.02);
-}
 
 .vaga {
   width: 90vw;
@@ -1307,21 +1255,6 @@ footer .redes-sociais a img {
   margin: 200px auto 20px auto; /* só isso já controla distância do topo */
 }
 
-  /* Remove hover e transform no mobile */
-@media (max-width: 768px) {
-  .vaga:hover,
-  .vaga-card:hover {
-    transform: none !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important;
-    background-color: #EFEFEF !important;
-  }
-
-  /* Remove qualquer transição também, se quiser */
-  .vaga,
-  .vaga-card {
-    transition: none !important;
-  }
-}
 
 .card-full::before {
   content: "";
@@ -1355,20 +1288,6 @@ footer .redes-sociais a img {
     100% { top: -5px; }
   }
 </style>
-  
-<script>
-  // Pega todos os cards
-  const cards = document.querySelectorAll('.vaga-card');
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      // Remove seleção de outros cards, se quiser só um selecionado
-      cards.forEach(c => c.classList.remove('selecionado'));
-      // Adiciona seleção ao card clicado
-      card.classList.add('selecionado');
-    });
-  });
-</script>
 
 
 <script>
@@ -1624,7 +1543,7 @@ function filtrarVagas() {
   }
 }
 </script>
-  <script>
+<script>
   // Seleciona todos os cards
   const vagas = document.querySelectorAll('.vaga');
 
