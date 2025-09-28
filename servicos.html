@@ -547,6 +547,26 @@ body.dark-mode .diferencial-item {
   .plataformas-sociais a {
     margin: 0 10px; /* reduz o espaço entre os ícones */
 }
+  #cookie-banner {
+  display: none; /* ou flex só se quiser que apareça sem JS, mas o script já controla */
+  position: fixed;
+  bottom: 15px;
+  width: 90%;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  background: #fff; /* ou cor desejada */
+  z-index: 9999;
+}
+
+#cookie-banner button {
+  width: 60%;              /* botão ocupa toda largura */
+  padding: 0.5rem 0;        /* ajuste vertical */
+  font-size: 0.9rem;        /* fonte menor */
+}
+}  
 
 @media (max-width: 600px) {
 .plataformas-sociais a img {
