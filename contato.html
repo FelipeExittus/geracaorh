@@ -618,9 +618,29 @@ body.dark-mode .mapa-section p {
 
 @media (max-width: 600px) {
   .plataformas-sociais a img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
+  margin: -5px; /* espaçamento mobile */
   }
+   #cookie-banner {
+  display: none; /* ou flex só se quiser que apareça sem JS, mas o script já controla */
+  position: fixed;
+  bottom: 15px;
+  width: 90%;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  background: #fff; /* ou cor desejada */
+  z-index: 9999;
+}
+
+#cookie-banner button {
+  width: 60%;              /* botão ocupa toda largura */
+  padding: 0.5rem 0;        /* ajuste vertical */
+  font-size: 0.9rem;        /* fonte menor */
+}
 }
 
 /* Mensagem de sucesso */
@@ -712,7 +732,7 @@ body.dark-mode .mapa-section p {
       <div class="info-icon">📧</div>
       <div class="info-content">
         <h3>E-mail</h3>
-        <p><a href="mailto:adm@agenciaexittus.com">adm@agenciaexittus.com</a></p>
+        <p><a href="mailto:felipefigueiraandrade@gmail.com">felipefigueiraandrade@gmail.com</a></p>
       </div>
     </div>
 
@@ -767,7 +787,12 @@ body.dark-mode .mapa-section p {
       Mensagem enviada com sucesso! Entraremos em contato em breve.
     </div>
 
-    <form id="contactForm" action="#" method="POST">
+    <form id="contactForm" action="https://formspree.io/f/xovkeqpg" method="POST">
+      <!-- Campos ocultos para melhor organização dos emails -->
+      <input type="hidden" name="_subject" value="Novo contato do site Nova Geração RH">
+      <input type="hidden" name="_next" value="obrigado.html">
+      <input type="hidden" name="_captcha" value="false">
+      
       <div class="form-row">
         <div class="form-group">
           <label for="nome">Nome Completo *</label>
@@ -836,7 +861,7 @@ body.dark-mode .mapa-section p {
 <footer>
     <p><strong>CNPJ:</strong> 46.599.025/0001-54</p>
     <p><strong>Telefone:</strong> (51) 99338-1495 e (51) 99697-6579</p>
-    <p><strong>E-mail:</strong> adm@agenciaexittus.com</p>
+    <p><strong>E-mail:</strong> felipefigueiraandrade@gmail.com</p>
     <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
 
     <div class="plataformas-sociais">
@@ -904,6 +929,7 @@ body.dark-mode .mapa-section p {
 @keyframes fadeIn {
     to { opacity: 1; }
 }
+
 </style>
 
 <!-- Botão flutuante de contatos -->
@@ -1001,25 +1027,29 @@ floatb.addEventListener('click', () => {
 
 // Formulário de contato
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  // Aqui você pode adicionar a lógica para enviar o formulário
-  // Por exemplo, usando fetch para enviar para um servidor
-  
-  // Simulação de envio bem-sucedido
+  const form = this;
+  const submitBtn = form.querySelector('.submit-btn');
   const successMessage = document.getElementById('successMessage');
-  successMessage.style.display = 'block';
   
-  // Limpar formulário
-  this.reset();
+  // Desabilitar botão durante envio
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando...';
   
-  // Esconder mensagem após 5 segundos
+  // Se usando Formspree ou similar, não preventDefault
+  // O formulário será enviado normalmente
+  
+  // Para mostrar mensagem após envio bem-sucedido
+  // (isso funcionará com redirecionamento do Formspree)
   setTimeout(() => {
-    successMessage.style.display = 'none';
-  }, 5000);
-  
-  // Scroll para o topo da mensagem de sucesso
-  successMessage.scrollIntoView({ behavior: 'smooth' });
+    successMessage.style.display = 'block';
+    form.reset();
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Enviar Mensagem';
+    
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 5000);
+  }, 1000);
 });
 
 // Máscara para telefone
