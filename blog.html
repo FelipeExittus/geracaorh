@@ -628,17 +628,12 @@ footer small {
     padding: 3px 5px;
   }
 
+ 
   #darkModeToggle {
     position: absolute;
     top: 10px;
     left: 10px;
     display: block;
-    color: #013241;
-    border: 2px solid #013241;
-    background: none;
-    border-radius: 6px;
-    padding: 5px 10px;
-    cursor: pointer;
   }
 
   .hero-blog {
@@ -676,7 +671,7 @@ footer small {
   height: 30px;
   margin: -5px; /* espaçamento mobile */
   }
-
+}
 @media (max-width: 600px) {
   p, li, h2, h3, h4, h5, h6 {
     text-align: justify;
@@ -699,7 +694,7 @@ footer small {
     width: 45px;
     height: 45px;
   }
-  
+  }
 </style>
 </head>
 <body>
@@ -1171,6 +1166,7 @@ footer small {
 
 
 <script>
+// Modo escuro
 function toggleDarkMode() {
   const body = document.body;
   const button = document.getElementById("darkModeToggle");
@@ -1181,14 +1177,33 @@ function toggleDarkMode() {
 
   if (isDark) {
     button.textContent = "☀️";
-    button.style.color = "#009AB2";
-    button.style.borderColor = "#009AB2";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
   } else {
     button.textContent = "🌙";
     button.style.color = "#013241";
     button.style.borderColor = "#013241";
   }
 }
+
+// Carregar tema salvo
+window.onload = () => {
+  const theme = localStorage.getItem("theme");
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  if (theme === "dark") {
+    body.classList.add("dark-mode");
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+};
+
 
 window.onload = () => {
   const theme = localStorage.getItem("theme");
