@@ -677,14 +677,21 @@ footer small {
   margin: -5px; /* espaçamento mobile */
   }
 
-    p, li, h1, h2, h3, h4, h5, h6 {
-    text-align: justify;   /* texto justificado */
-    letter-spacing: -1px;  /* aproxima as letras */
-    line-height: 1.3;      /* altura da linha compacta */
+@media (max-width: 600px) {
+  p, li, h2, h3, h4, h5, h6 {
+    text-align: justify;
+    letter-spacing: -1px;
+    line-height: 1.3;
     margin: 0;
     padding: 0;
   }
-}
+
+  /* Mantém o título Blog de Carreiras normal */
+  h1.blog-title {
+    text-align: left;
+    letter-spacing: normal;
+    line-height: normal;
+  }
 
   #scrollTopBtn {
     bottom: 25px;
