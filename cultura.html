@@ -869,6 +869,7 @@ footer small {
 <a href="#" id="scrollTopBtn" title="Voltar ao topo"></a>
 
 <script>
+// Modo escuro
 function toggleDarkMode() {
   const body = document.body;
   const button = document.getElementById("darkModeToggle");
@@ -888,6 +889,7 @@ function toggleDarkMode() {
   }
 }
 
+// Carregar tema salvo
 window.onload = () => {
   const theme = localStorage.getItem("theme");
   const body = document.body;
@@ -896,8 +898,8 @@ window.onload = () => {
   if (theme === "dark") {
     body.classList.add("dark-mode");
     button.textContent = "☀️";
-    button.style.color = "#009AB2";
-    button.style.borderColor = "#009AB2";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
   } else {
     button.textContent = "🌙";
     button.style.color = "#013241";
@@ -905,15 +907,24 @@ window.onload = () => {
   }
 };
 
-  function showCategory(category) {
-  document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-  
-  event.target.classList.add('active');
-  document.getElementById(category).classList.add('active');
-  
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+// Dropdown menu
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  if (dropdownToggle && dropdownContent) {
+    dropdownToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      dropdownContent.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!dropdownToggle.contains(e.target) && !dropdownContent.contains(e.target)) {
+        dropdownContent.classList.remove("show");
+      }
+    });
+  }
+});
 
 const floatb = document.getElementById('floatb');
 const floatbOptions = document.getElementById('floatbOptions');
