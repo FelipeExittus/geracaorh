@@ -1,210 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <link rel="icon" type="image/png" href="lgoogle.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Cultura – Nova Geração RH</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="lgoogle.png">
-
-  <!-- CSS Swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Conheça a cultura da Nova Geração RH: valores, missão e visão que conectam profissionais e empresas com empatia, estratégia e tecnologia." />
-  <meta name="keywords" content="Nova Geração RH, Cultura Organizacional, Missão, Visão, Valores, Recrutamento, Seleção, Carreira, Talentos, Guaíba, Porto Alegre" />
-  <meta name="author" content="Nova Geração RH" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Cultura – Nova Geração RH" />
-  <meta property="og:description" content="Conheça a cultura da Nova Geração RH: missão, visão e valores que orientam nosso trabalho e conectam profissionais e empresas." />
-  <meta property="og:image" content="slide1.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://agenciaexittus.github.io/agenciaexittus/cultura" />
-
-  <!-- Twitter Cards (opcional) -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cultura – Nova Geração RH">
-  <meta name="twitter:description" content="Conheça a cultura da Nova Geração RH: missão, visão e valores que orientam nosso trabalho e conectam profissionais e empresas.">
-  <meta name="twitter:image" content="slide1.png">
-
+  <title>Nossa Cultura - Nova Geração RH</title>
+  <meta name="description" content="Conheça nossa cultura organizacional baseada em transparência, humanização, inovação e ética." />
   <style>
-
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas */
-  grid-template-rows: repeat(2, auto);   /* 2 linhas */
-  gap: 20px;                             /* espaço entre os cards */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  margin-top: 120px; /* ajuste conforme a altura do seu header + nav */
-}
-   
- .cards-missao-visao {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-.cards-missao-visao > * {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* CARD */
-.card {
-  background-color: #f0f0f0; /* cinza claro */
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
-  cursor: default;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: justify; /* 🔹 tudo dentro do card justificado */
-
-}
-.card p {
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.2;          /* 🔹 altura mínima aceitável entre linhas */
-  text-align: justify;       /* 🔹 mantém o texto justificado */
-  text-justify: inter-word;  /* 🔹 distribui espaços de forma mais uniforme */
-  hyphens: auto;             /* 🔹 quebra palavras automaticamente */
-  word-spacing: 0;           /* 🔹 sem espaço extra entre palavras */
-  letter-spacing: normal;    /* 🔹 espaçamento normal entre letras */
-  margin-bottom: 0.5rem;      /* 🔹 margens mínimas entre parágrafos */
-}
-
-.card h2 {
-  color: #009AB2;
-  margin-bottom: 12px;
-  font-size: 1.5rem;
-}
-
-.card p {
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* Hover moderno */
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-  background-color: #e6f7fb;
-}
-
-.card:hover h2 {
-  color: #007C91;
-}
-
-/* Animação AOS */
-[data-aos] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-[data-aos].aos-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* RESPONSIVO */
-
-
-.swiper {
-  margin-top: 140px; /* ajusta conforme a altura do nav + header */
-  padding-top: 0;
-  position: relative;
-  width: 100%;
-}
-
-/* Swiper-wrapper e slides */
-.swiper-wrapper {
-  display: flex;
-  align-items: stretch;
-}
-
-.swiper-slide {
-  background: #EFEFEF;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 280px;
-  box-sizing: border-box;
-  margin-right: 20px; /* adiciona espaço entre slides */
-}
-
-.swiper-container-wrapper {
-  margin-top: 0 !important; /* força sem espaço */
-  padding-top: 0 !important;
-}
-
-.header-nav-container {
-  position: fixed;  /* fixo na tela */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: #EFEFEF;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-#slide1-img {
-  width: 100%;    /* ocupa toda a largura do container */
-  height: auto;   /* mantém proporção do GIF */
-  display: block; /* evita espaçamento embaixo */
-  margin: 0 auto; /* centraliza se não for 100% */
-}
-
-
-.swiper-button-prev,
-.swiper-button-next {
-  display: none !important;
-  color: #2b960a;
-}
-
-
-.avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.stars {
-  color: #fbc02d;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.comment {
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-.author {
-  font-weight: bold;
-  color: #333;
-}
-
-.swiper-pagination-bullet-active {
-  background: #333;
-}
-
 /* Body */
 body {
   margin: 0;
@@ -212,7 +14,7 @@ body {
   background-color: #ffffff;
   color: #333;
   transition: background-color 0.3s, color 0.3s;
-  padding-top: 170px; /* header + nav */
+  padding-top: 170px;
 }
 
 body.dark-mode {
@@ -220,9 +22,8 @@ body.dark-mode {
   color: #ffffff;
 }
 
-/* Container que engloba header + nav */
 .header-nav-container {
-  position: fixed;  /* fixo na tela */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -231,61 +32,6 @@ body.dark-mode {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-header {
-  background-color: #EFEFEF;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-}
-
-nav {
-  background-color: #EFEFEF !important; /* fundo fixo para claro e escuro */
-  border-top: 2px solid #009AB2;
-  border-bottom: 2px solid #009AB2;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0.5rem 0;
-  position: relative;
-}
-
-/* LINKS DO MENU */
-nav a,
-.dropdown > a {
-  text-decoration: none;
-  color: #009AB2;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-nav a:hover,
-.dropdown:hover > a {
-  background-color: #EFEFEF;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  color: #009AB2;
-}
-
-/* Dropdown */
-.dropdown-content {
-  background-color: #EFEFEF !important;
-}
-
-.dropdown-content a {
-  background-color: #EFEFEF !important;
-  color: #009AB2;
-}
-
-/* Ajuste no body para não ficar conteúdo escondido atrás do topo fixo */
-body {
-  padding-top: 0px; /* soma aproximada da altura do header + nav */
-}
-
-/* Header */
 header {
   background-color: #EFEFEF;
   height: 100px;
@@ -297,7 +43,7 @@ header {
 .header-left {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* MANTÉM logo esquerda, título centro, botão direita */
+  justify-content: space-between;
   gap: 20px;
   width: 100%;
   color: #EFEFEF;
@@ -317,8 +63,8 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 100px; /* VOCÊ CONTROLA: valores positivos movem para direita */
-  margin-right: auto;  /* deixa o resto do espaço à direita */
+  margin-left: 100px;
+  margin-right: auto;
   text-align: center;
 }
 
@@ -328,8 +74,8 @@ header {
   color: #013241;
   font-weight: bold;
   line-height: 1.7;
-  margin: 0; /* REMOVE qualquer margem */
-  text-align: center; /* FORÇA centralização */
+  margin: 0;
+  text-align: center;
 }
 
 .titulo-mobile {
@@ -338,22 +84,18 @@ header {
 
 #darkModeToggle {
   background: none;
-  border: 2px solid #ffffff;
+  border: 2px solid #013241;
   border-radius: 6px;
   padding: 6px 12px;
   cursor: pointer;
-  color: white;
+  color: #013241;
   font-weight: bold;
   transition: all 0.3s;
   font-size: 0.9rem;
 }
 
-#darkModeToggle:hover {
-  background-color: rgba(255,255,255,0.1);
-}
-
-/* Nav e dropdown */
 nav {
+  background-color: #EFEFEF !important;
   border-top: 2px solid #009AB2;
   border-bottom: 2px solid #009AB2;
   display: flex;
@@ -361,7 +103,6 @@ nav {
   justify-content: center;
   gap: 1rem;
   padding: 0.5rem 0;
-  background-color: #EFEFEF;
   position: relative;
 }
 
@@ -380,14 +121,18 @@ nav a,
 nav a:hover,
 .dropdown:hover > a {
   color: #013241;              /* muda a cor do texto */
-  font-weight: 700;              /* fica mais “negrito” */
+  font-weight: 700;            /* fica mais “negrito” */
   background-color: #EFEFEF;   /* muda fundo */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra moderna */
-  transform: scale(1.05);        /* dá um leve zoom */
+  transform: scale(1.05);      /* dá um leve zoom */
 }
 
 nav a.ativo {
   color: #000000;
+}
+
+body.dark-mode nav a.ativo {
+  color: #ffffff;
 }
 
 .dropdown {
@@ -406,6 +151,10 @@ nav a.ativo {
   left: 0;
 }
 
+body.dark-mode .dropdown-content {
+  background-color: #2a2a2a;
+}
+
 .dropdown-content a {
   display: block;
   padding: 10px;
@@ -415,83 +164,271 @@ nav a.ativo {
   background-color: #EFEFEF;
 }
 
+body.dark-mode .dropdown-content a {
+  background-color: #2a2a2a;
+}
+
 .dropdown-content a:hover {
-  background-color: #EFEFEF;
+  background-color: rgba(0, 154, 178, 0.1);
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-body.dark-mode nav {
-  background-color: #000004;
-}
-
-/* Conteúdo */
-.sobre-nos {
-  padding: 2rem;
-  max-width: 900px;
-  margin: 2rem auto;
-  text-align: justify;
-  hyphens: auto;
-  word-spacing: normal;
-  letter-spacing: normal;
-
-.sobre-nos ul li {
-  border-bottom: 2px solid #009AB2; /* linha azul embaixo */
-  padding-bottom: 8px; /* espaço entre o texto e a linha */
-  margin-bottom: 8px; /* espaço entre a linha e o próximo item */
-  text-align: justify;
-
-}
-}
-
-.sobre-nos  h1 {
-  text-align: center;
-  color: #009AB2;
-  margin-bottom: 1.5rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(100,124,1,0.3);
-}
-
-.sobre-nos p {
-  margin-bottom: 1rem;
-}
-
-/* Botão fale conosco */
-.fale-conosco-btn {
-  display: inline-block;
-  background-color: #009AB2;
+/* Hero Section */
+.hero-cultura {
+  background: linear-gradient(135deg, #009AB2 0%, #013241 100%);
   color: white;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  font-family: Arial, sans-serif;
-  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.fale-conosco-btn:hover {
-  background-color: #007C91; /* tom mais escuro no hover */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  transform: translateY(-2px);
+.hero-cultura::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+  opacity: 0.3;
 }
-.btn-container {
-  text-align: center; /* centraliza o botão */
-  margin: 20px 0;     /* opcional: espaço acima e abaixo */
+
+.hero-cultura h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+  animation: fadeInDown 1s ease;
 }
-#scrollTopBtn {
-  width: 45px; /* botão cima*/
-  height: 45px;
-  bottom: 15px;
-  right: 15px;
+
+.hero-cultura p {
+  font-size: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease 0.3s both;
 }
-   
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cards Container */
+.cards-container {
+  max-width: 1400px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #009AB2;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #009AB2, #013241);
+  border-radius: 2px;
+}
+
+body.dark-mode .section-title {
+  color: #009AB2;
+}
+
+/* Cards Grid - 4 colunas */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #009AB2, #013241);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,154,178,0.2);
+}
+
+body.dark-mode .card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #333;
+}
+
+.card h2 {
+  color: #013241;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+body.dark-mode .card h2 {
+  color: #009AB2;
+}
+
+.card-icon {
+  font-size: 2rem;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+
+.card p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+body.dark-mode .card p {
+  color: #ccc;
+}
+
+/* Missão, Visão, Valores - 4 cards em linha */
+.cards-mvv {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.card-mvv {
+  background: linear-gradient(135deg, #009AB2 0%, #013241 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,154,178,0.3);
+  transition: all 0.4s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-mvv::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  transition: all 0.6s ease;
+}
+
+.card-mvv:hover::before {
+  top: -60%;
+  right: -60%;
+}
+
+.card-mvv:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0,154,178,0.4);
+}
+
+.card-mvv h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-mvv p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* Seção de texto descritivo */
+.cultura-texto {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 50px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .cultura-texto {
+  background: #1a1a1a;
+}
+
+.cultura-texto p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin-bottom: 25px;
+  text-align: justify;
+  color: #333;
+}
+
+body.dark-mode .cultura-texto p {
+  color: #ccc;
+}
+
+.cultura-texto strong {
+  color: #009AB2;
+}
+
 /* Footer */
 footer {
   background-color: #EFEFEF;
@@ -503,6 +440,7 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  margin-top: 80px;
 }
 
 body.dark-mode footer {
@@ -518,798 +456,30 @@ footer small {
   margin-top: 1rem;
   color: #666;
 }
-   /* Container de ícones */
-.social-icons {
-  display: flex;
-  gap: 15px;
-  justify-content: center; /* centraliza no desktop */
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-/* Ícones */
-.social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.social img {
-  width: 24px;
-  height: 24px;
-  transition: all 0.3s ease;
-  filter: grayscale(100%);
-}
-
-.social {
-  border: none;
-  background: none;
-  padding: 0;
-  margin: 0;
-  display: inline-block; /* mantém alinhamento */
-}
-
-.social:hover {
-  border: none;
-  background: none;
-  filter: none; /* remove qualquer efeito do hover */
-}
-
-/* Botão flutuante WhatsApp */
-.whatsapp-button,
-.contact-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 999;
-}
-
-.whatsapp-button img,
-#contactBtn img,
-.contact-options a img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 8px;
-}
 
 .plataformas-sociais {
-  margin-top: 30px; /* afasta o bloco de ícones um pouco mais para baixo */
-  text-align: center; /* centraliza os ícones horizontalmente */
+  margin-top: 30px;
+  text-align: center;
 }
 
 .plataformas-sociais a img {
-  width: 50px;      /* tamanho do ícone */
-  height: 50px;     /* mantém proporção quadrada */
-  display: block;   
-  filter: none !important; /* remove qualquer efeito de preto e branco */
+  width: 50px;
+  height: 50px;
+  display: block;
+  filter: none !important;
 }
+
 .plataformas-sociais a {
-  display: inline-block; 
-  margin: 0 15px;        
+  display: inline-block;
+  margin: 0 15px;
   background: none;
   border: none;
   box-shadow: none;
-  filter: none !important; 
-  opacity: 1 !important;   
-  text-decoration: none; /* remove sublinhado de links */
+  filter: none !important;
+  opacity: 1 !important;
+  text-decoration: none;
 }
 
-/* Botão de voltar ao topo - Desktop */
-#scrollTopBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: rgb(253, 253, 253);
-  background-image: url('cima.png');
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-#scrollTopBtn:hover {
-  background-color: rgb(0, 20, 204);    /* mesma cor de hover das redes sociais */
-  transform: scale(1.1);     /* efeito de aumentar levemente */
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 600px) {
-
-  /* Sobre Nós */
-  .sobre-nos {
-    padding: 2rem;
-    max-width: 900px;
-    margin: 2rem auto;
-    text-align: justify;
-    hyphens: auto;
-    word-spacing: normal;
-    letter-spacing: normal;
-  }
-.sobre-nos ul {
-  padding-left: 1rem; /* controla a distância do bullet em relação à borda */
-  margin: 0;           /* remove margens externas da lista */
-  list-style-position: outside; /* padrão: bullet fora do texto */
-}
- /* Texto e bullets ultra-compactos no mobile */
- .sobre-nos p,
-  .sobre-nos ul li {
-  text-align: justify;
-  hyphens: auto;
-  word-spacing: -0.02em;
-  letter-spacing: 0;
-  line-height: 1.3;
-  margin: 0 0 0.4rem 0;
-  padding-left: 0.3rem; /* reduz a distância entre bullet e texto */
-  overflow-wrap: break-word;
-  list-style-type: disc; /* garante o bullet */
-}
-
-  .sobre-nos h1 {
-    text-align: center;
-    color: #009AB2;
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(100,124,1,0.3);
-  }
-
-  .sobre-nos p {
-    margin-bottom: 1rem;
-  }
-  .cards-missao-visao {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-  .cards-missao-visao > * {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-  /* Cards */
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr; /* 1 card por linha */
-    grid-template-rows: auto;   
-    gap: 10px;                  
-    padding: 10px;              
-    margin-top: 150px; /* ajusta distância do nav */
-  }
-
-  .card {
-    padding: 15px;             
-    border-radius: 10px;       
-    text-align: justify;
-  }
-
-  .card h2 {
-    font-size: 1.2rem;         
-    margin-bottom: 8px;
-  }
-
-  .card p {
-    font-size: 0.9rem;         
-    line-height: 1.3;          
-    margin-bottom: 0.4rem;     
-  }
-
-  /* Zera padding do body no mobile */
-  body {
-    padding-top: 0;
-    margin: 0;
-  }
-
-  /* Títulos */
-  .titulo-desktop {
-    display: none !important;
-  }
-  .titulo-mobile {
-    display: block !important;
-    font-size: 1.8rem;
-    text-align: center;
-  }
-
-  /* Header mobile */
-  .header-left img {
-    display: block;
-    margin: 30px auto 20px auto;
-    max-width: 220px;
-    width: 100%;
-    height: auto;
-  }
-
-  .header-title-container {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .header-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    margin-left: 0;
-    padding: 10px 0;
-  }
-
-  /* Nav mobile */
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 0.2rem;
-    padding: 0.1rem 0;
-    margin: 0;
-  }
-  nav a {
-    font-size: 14px;
-    padding: 3px 5px;
-  }
-
-  /* Carrossel mobile */
-  .swiper {
-    margin-top: 157px; /* abaixo do nav */
-    padding: 0;
-    background-color: #EFEFEF;
-  }
-  .swiper-wrapper {
-    align-items: stretch;
-  }
-  .swiper-slide {
-    padding: 10px;
-    margin-right: 0;
-    min-height: 220px;
-  }
-
-  /* Botão dark mode mobile */
-  #darkModeToggle {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: block;
-    color: #013241;
-    border: 2px solid #013241;
-    background: none;
-    border-radius: 6px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-
-  /* Botão voltar ao topo */
-  #scrollTopBtn {
-    position: fixed;
-    bottom: 25px;
-    left: 15px;
-    z-index: 9999;
-    width: 45px;
-    height: 45px;
-  }
-  #scrollTopBtn img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  /* Rodapé mobile */
-  footer {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1.5rem;
-  }
-  footer p {
-    margin: 0.3rem 0;
-  }
-  footer small {
-    display: block;
-    margin-top: 1rem;
-    color: #666;
-  }
-
-  /* Redes sociais no rodapé */
-  footer .redes-sociais {
-    display: flex;
-    justify-content: center;
-    gap: 2px;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-  footer .redes-sociais a,
-  footer .redes-sociais a img {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Redes sociais principais */
-  .plataformas-sociais {
-    display: flex;
-    justify-content: center;
-    gap: 2px;
-    margin-top: 30px;
-    flex-wrap: nowrap;
-  }
-  .plataformas-sociais a,
-  .plataformas-sociais a img {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  .plataformas-sociais a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    box-shadow: none;
-    opacity: 1 !important;
-    text-decoration: none;
-  }
-  .plataformas-sociais a img {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    filter: none !important;
-  }
-
-  /* Ícones gerais */
-  .social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #009AB2;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    overflow: hidden;
-  }
-  .social img {
-    width: 24px;
-    height: 24px;
-    filter: grayscale(100%);
-    transition: all 0.3s ease;
-  }
-
-  /* Esconde menu desktop */
-  .nav-desktop {
-    display: none;
-  }
-
-  /* Conteúdo mobile */
-  .conteudo p {
-    text-align: justify;
-    text-align-last: left;
-    word-spacing: -0.05em;
-    letter-spacing: 0.01em;
-    margin: 0 0 1em 0;
-    line-height: 1.6;
-    hyphens: auto;
-    overflow-wrap: break-word;
-  }
-  .conteudo ul {
-    list-style: disc;
-    margin-left: 30px;
-    margin-bottom: 1em;
-  }
-  .conteudo ul li {
-    text-align: justify;
-    word-spacing: -0.1em;
-    letter-spacing: 0.01em;
-    margin: 0 0 0.5em 0;
-    line-height: 1.5;
-  }
-  .conteudo ul li::marker {
-    color: #009AB2;
-  }
-  .conteudo h1 {
-    text-align: center;
-  }
-
-  /* Botões flutuantes (ex: WhatsApp) */
-  .social-icons {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-    margin-top: 15px;
-  }
-
-  #cookie-banner {
-    display: none;
-    position: fixed;
-    bottom: 15px;
-    width: 90%;
-    padding: 1rem 1.5rem;
-    font-size: 0.9rem;
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-    background: #fff;
-    z-index: 9999;
-  }
-
-  #cookie-banner button {
-    width: 60%;
-    padding: 0.5rem 0;
-    font-size: 0.9rem;
-  }
-}
-/* Container de ícones botão flutuante*/
-</style>
-</head>
-<body>
-
-
-<!-- Menu de navegação e Banner são fixos no scroll -->
-<div class="header-nav-container">
-<header>
-  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
-  <div class="header-left">
-    <img src="lg.png" alt="Logo Agência Exittus" />
-    <div class="header-title-container">
-      <h1 class="titulo-desktop">Conectando Talentos</h1>
-    </div>
-  </div>
-</header>
-
-
-    <nav>
-    <div class="dropdown">
-      <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
-      <div class="dropdown-content">
-        <a href="index.html" >Início</a>
-        <a href="home.html">Bem vindos</a>
-        <a href="cultura.html"class="ativo">Cultura</a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <a href="javascript:void(0);" class="dropdown-toggle">CARREIRA</a>
-      <div class="dropdown-content">
-        <a href="candidato.html">Candidato</a>
-        <a href="vagas.html">Vagas</a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <a href="javascript:void(0);" class="dropdown-toggle">ATENDIMENTO</a>
-      <div class="dropdown-content">
-        <a href="servicos.html">Serviços</a>
-        <a href="contato.html">Contato</a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
-      <div class="dropdown-content">
-        <a href="informacoes.html">Informações</a>
-        <a href="lgbtqia.html">LGBT+</a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
-      <div class="dropdown-content">
-        <a href="blog.html">Blog</a>
-        <a href="contato.html">livre</a>
-        
-      </div>
-    </div>
-  </nav>
-</div>
-
-
-
-
-
-<!-- Linha azul -->
-<div style="width: 100%; height: 2px; background-color: #009AB2; margin: 1px 0 0 0;"></div>
-
-<section class="cultura">
-  <h1>Nossa Cultura e Valores</h1>
-
-  <div class="cards">
-    <div class="card" data-aos="fade-up" data-aos-delay="0">
-      <h2>Transparência</h2>
-      <p>Comunicamos de forma clara e honesta, criando confiança e credibilidade.</p>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="100">
-      <h2>Humanização</h2>
-      <p>Cada processo valoriza pessoas, respeitando suas histórias e talentos.</p>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="200">
-      <h2>Inovação</h2>
-      <p>Aplicamos tecnologias modernas, métodos ágeis e soluções criativas.</p>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="300">
-      <h2>Engajamento</h2>
-      <p>Incentivamos participação ativa e colaboração entre todos.</p>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="400">
-      <h2>Aprendizado contínuo</h2>
-      <p>Compartilhamos conhecimento para desenvolvimento pessoal e profissional.</p>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="500">
-      <h2>Justiça e ética</h2>
-      <p>Buscamos sempre relações equilibradas e decisões guiadas pelos valores.</p>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="600">
-      <h2>Colaboração</h2>
-      <p>Trabalhamos juntos para atingir objetivos comuns e fortalecer relações.</p>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="700">
-      <h2>Responsabilidade</h2>
-      <p>Assumimos compromisso com nossas ações e resultados, sempre com ética.</p>
-    </div>
-  </div> 
-</section>
-
-<!-- Seção Sobre Nós -->
-<section class="sobre-nos">
-  <div class="container-texto">
-<h1 style="text-align: center; color: #009AB2; font-size: 1.8rem;">
-  Nossa Cultura
-</h1>
-
-  <p>Na <strong>Nova Geração RH</strong>, pessoas estão no centro de tudo. Nossa cultura se baseia em <strong>transparência, ética, humanização e inovação</strong>. Cada ação reflete nosso compromisso com relações justas e produtivas entre empresas e profissionais.</p>
-
-  <p>Comunicamos de forma clara, valorizamos histórias e talentos, incentivamos participação ativa e aplicamos soluções criativas e tecnológicas. Compartilhamos conhecimento continuamente e buscamos sempre decisões equilibradas e éticas.</p>
-
-  <p>Nossa missão é conectar talentos a oportunidades, facilitando recrutamento e desenvolvimento humano com tecnologia, empatia e excelência. Queremos ser referência nacional em soluções de RH, moldando um mercado mais transparente, moderno e eficiente.</p>
-
-  <p>Atuamos com ética, transparência, humanização, inovação, engajamento e compromisso social. Nosso propósito é construir pontes que conectem pessoas a oportunidades, promovendo crescimento profissional e relações justas.</p>
-
-  <p>Oferecemos soluções personalizadas de recrutamento, treinamentos, mentorias e recursos digitais, incorporando tendências modernas como ATS e inteligência artificial. Criamos experiências significativas, fomentamos networking e comunidades interativas, sendo parceiros estratégicos que refletem nossa cultura de ética, transparência e inovação.</p>
-</section>
-
-<!-- Seção Cards Missão, Visão, Valores e Cultura -->
-<section class="cards-missao-visao">
-  <div class="cards">
-    <div class="card" data-aos="fade-up" data-aos-delay="0">
-      <h2>Missão</h2>
-      <p>Conectar talentos a oportunidades, promovendo desenvolvimento humano com excelência e tecnologia.</p>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="100">
-      <h2>Visão</h2>
-      <p>Ser referência nacional em soluções de RH, com ética, inovação e humanização.</p>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="200">
-      <h2>Valores</h2>
-      <p>Ética, transparência, humanização, inovação, engajamento e compromisso social.</p>
-    </div>
-    <div class="card" data-aos="fade-up" data-aos-delay="300">
-      <h2>Cultura</h2>
-      <p>Pessoas no centro, incentivando participação ativa, aprendizado contínuo e colaboração.</p>
-    </div>
-  </div>
-</section>
-
-
-
-<style>
-
-
-/* Modo claro e escuro */
-body:not(.dark-mode) .sobre-nos p,
-body:not(.dark-mode) .sobre-nos ul li,
-body:not(.dark-mode) .sobre-nos h1,
-body:not(.dark-mode) .conteudo p,
-body:not(.dark-mode) .conteudo ul li,
-body:not(.dark-mode) .conteudo h1 {
-    color: #000;
-}
-
-body.dark-mode .sobre-nos p,
-body.dark-mode .sobre-nos ul li,
-body.dark-mode .sobre-nos h1,
-body.dark-mode .conteudo p,
-body.dark-mode .conteudo ul li,
-body.dark-mode .conteudo h1 {
-    color: #fff;
-}
-
-/* Linha hr azul */
-.sobre-nos hr {
-    border: none;
-    border-top: 2px solid #009AB2;
-    margin: 20px 0;
-}
-
-ul {
-  list-style-type: disc; /* garante que é bullet normal */
-  padding-left: 20px;    /* distancia da margem esquerda */
-  margin-left: 20px;     /* margem da lista */
-  color: #009AB2;        /* cor do texto da lista, se quiser azul */
-}
-
-ul li {
-  color: #009AB2;               /* texto dos itens azul */
-  list-style-position: inside;  /* bullet dentro da área do texto */
-}
-
-ul li::marker {
-  color: #009AB2; /* cor do bullet */
-}
-
-</style>
-
-  <div class="btn-container">
-    <a href="contato.html" class="fale-conosco-btn">Fale Conosco</a>
-</div>
-
-<div style="text-align: center; margin-top: 1rem;">
-  <a href="https://www.hitwebcounter.com" target="_blank">
-    <img src="https://hitwebcounter.com/counter/counter.php?page=20853828&style=0002&nbdigits=5&type=page&initCount=0"
-      title="Counter Widget" alt="Visit counter For Websites" border="0" />
-  </a>
-</div>
-  
- <footer>
-    <p><strong>CNPJ:</strong> 46.599.025/0001-54</p>
-    <p><strong>Telefone:</strong> (51) 99338-1495 e (51) 99697-6579 </p>
-    <p><strong>E-mail:</strong> adm@agenciaexittus.com</p>
-    <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
-
- <!-- Ícones de redes sociais -->
-<div class="plataformas-sociais">
-  <a href="https://www.facebook.com" target="_blank" class="social facebook">
-    <img src="facebook1.png" alt="Facebook">
-  </a>
-  <a href="https://www.instagram.com" target="_blank" class="social instagram">
-    <img src="instagram1.png" alt="Instagram">
-  </a>
-  <a href="https://www.linkedin.com" target="_blank" class="social linkedin">
-    <img src="linkedin1.png" alt="LinkedIn">
-  </a>
-  <a href="https://www.youtube.com" target="_blank" class="social youtube">
-    <img src="youtube1.png" alt="YouTube">
-  </a>
-</div>
-
-  </footer>
-
-
-<!-- Banner de Cookies (dentro do body) -->
-<div id="cookie-banner">
-    <p>Usamos cookies para melhorar sua experiência no site. <a href="sobre.html">Saiba mais</a>.</p>
-    <button id="accept-cookies">Entendi</button>
-</div>
-
-<style>
-#cookie-banner {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(1, 50, 65, 0.95);
-    color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    font-family: 'Arial', sans-serif;
-    z-index: 9999;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-
-#cookie-banner a {
-    color: #00e0ff;
-    text-decoration: underline;
-}
-
-#cookie-banner button {
-    padding: 0.5rem 1rem;
-    background: #00e0ff;
-    border: none;
-    border-radius: 5px;
-    color: #013241;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-#cookie-banner button:hover {
-    transform: translateY(-2px);
-}
-
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-</style>
-
-<script>
-function toggleDarkMode() {
-  const body = document.body;
-  const button = document.getElementById("darkModeToggle");
-
-  body.classList.toggle("dark-mode");
-  const isDark = body.classList.contains("dark-mode");
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-
-  // Alterar texto e cor do botão
-  if (isDark) {
-    button.textContent = "☀️";
-    button.style.color = "#013241"; // cor para modo escuro
-    button.style.borderColor = "#013241";
-  } else {
-    button.textContent = "🌙";
-    button.style.color = "#013241"; // cor para modo claro
-    button.style.borderColor = "#013241";
-  }
-}
-
-window.onload = () => {
-  const theme = localStorage.getItem("theme");
-  const body = document.body;
-  const button = document.getElementById("darkModeToggle");
-
-  if (theme === "dark") {
-    body.classList.add("dark-mode");
-    button.textContent = "☀️";
-    button.style.color = "#013241";
-    button.style.borderColor = "#013241";
-  } else {
-    button.textContent = "🌙";
-    button.style.color = "#013241";
-    button.style.borderColor = "#013241";
-  }
-};
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const dropdownToggle = document.querySelector(".dropdown-toggle");
-    const dropdownContent = document.querySelector(".dropdown-content");
-
-    if (dropdownToggle && dropdownContent) {
-      dropdownToggle.addEventListener("click", function (event) {
-        event.preventDefault();
-        dropdownContent.classList.toggle("show");
-      });
-
-      // Fecha o menu se clicar fora
-      document.addEventListener("click", function (e) {
-        if (!dropdownToggle.contains(e.target) && !dropdownContent.contains(e.target)) {
-          dropdownContent.classList.remove("show");
-        }
-      });
-    }
-  });
-  </script>
-<!-- Botão flutuante principal com ícone -->
-<div class="floatb-container">
-  <button class="floatb" id="floatb">
-    <img src="user.png" alt="Principal" width="30">
-  </button>
-
-  <!-- Botões escondidos inicialmente -->
-  <div class="floatb-options" id="floatbOptions">
-    <a href="https://wa.me/SEU_NUMERO1" target="_blank" class="floatb-btn">
-      <img src="whatsapp.png" alt="WhatsApp 1" width="24"> 
-    </a>
-    <a href="https://wa.me/SEU_NUMERO2" target="_blank" class="floatb-btn">
-      <img src="whatsapp2.png" alt="WhatsApp 2" width="24"> 
-    </a>
-    <a href="tel:+5511999999999" class="floatb-btn">
-      <img src="ligação.png" alt="Ligar" width="24"> 
-    </a>
-    <a href="https://t.me/SEU_USUARIO" target="_blank" class="floatb-btn">
-      <img src="telegrama.png" alt="Telegram" width="24"> 
-    </a>
-  </div>
-</div>
-
-<style>
 .floatb-container {
   position: fixed;
   bottom: 20px;
@@ -1317,7 +487,6 @@ window.onload = () => {
   z-index: 9999;
 }
 
-/* Botão principal */
 .floatb {
   background-color: #009AB2;
   border-radius: 50%;
@@ -1328,23 +497,9 @@ window.onload = () => {
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  outline: none;            /* remove o contorno de foco */
-  border: none;             /* remove qualquer borda */
-}
-
-/* Remove foco azul ao clicar ou tabular */
-.floatb:focus {
   outline: none !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important; /* mantém sombra normal */
-  
+  border: none;
 }
-.floatb:hover {
-  background-color: #007b8a;
-}
-.floatb {
-  outline: none !important;
-}
-
 
 .floatb:hover {
   background-color: #007b8a;
@@ -1374,8 +529,8 @@ window.onload = () => {
   margin-bottom: 10px;
   border-radius: 50%;
   display: flex;
-  align-items: center;      /* centraliza verticalmente */
-  justify-content: center;  /* centraliza horizontalmente */
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
@@ -1383,97 +538,410 @@ window.onload = () => {
 .floatb-btn:hover {
   background-color: #007b8a;
 }
+
 .floatb img {
-  width: 40px !important;  /* força largura */
-  height: 40px !important; /* força altura */
+  width: 40px !important;
+  height: 40px !important;
 }
 
 .floatb-btn img {
   display: block;
 }
-</style>
 
-<!-- Botão de voltar ao topo com ícone PNG -->
-<a href="#" id="scrollTopBtn" title="Voltar ao topo">
-  <img src="cima.png" alt="Voltar ao topo" />
-</a>
+
+/* RESPONSIVO */
+@media (max-width: 1200px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .cards-mvv {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 0;
+    margin: 0;
+  }
+
+  .titulo-desktop {
+    display: none !important;
+  }
+
+  .titulo-mobile {
+    display: block !important;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .header-left img {
+    display: block;
+    margin: 30px auto 20px auto;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+  }
+
+  .header-title-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.1rem 0;
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 3px 5px;
+  }
+
+  #darkModeToggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+  }
+
+  .hero-cultura {
+    padding: 50px 20px;
+    margin-top: 160px;
+  }
+
+  .hero-cultura h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-cultura p {
+    font-size: 1.1rem;
+  }
+
+  .cards-grid,
+  .cards-mvv {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card,
+  .card-mvv {
+    padding: 25px;
+  }
+
+  .cultura-texto {
+    padding: 30px 20px;
+    margin: 40px 20px;
+  }
+
+  .cultura-texto p {
+    font-size: 1rem;
+  }
+
+  .plataformas-sociais a img {
+    width: 30px;
+    height: 30px;
+    margin: -5px;
+  }
+
+  #scrollTopBtn {
+    bottom: 25px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header-nav-container">
+<header>
+  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+  <div class="header-left">
+    <img src="lg.png" alt="Logo Nova Geração RH" />
+    <div class="header-title-container">
+      <h1 class="titulo-desktop">Conectando Talentos</h1>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
+    <div class="dropdown-content">
+      <a href="index.html">Início</a>
+      <a href="home.html">Bem vindos</a>
+      <a href="cultura.html" class="ativo">Cultura</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">CARREIRA</a>
+    <div class="dropdown-content">
+      <a href="candidato.html">Candidato</a>
+      <a href="vagas.html">Vagas</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">ATENDIMENTO</a>
+    <div class="dropdown-content">
+      <a href="servicos.html">Serviços</a>
+      <a href="contato.html">Contato</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
+    <div class="dropdown-content">
+      <a href="informacoes.html">Informações</a>
+      <a href="lgbtqia.html">LGBT+</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
+    <div class="dropdown-content">
+      <a href="blog.html">Blog</a>
+      <a href="contato.html">Contato</a>
+    </div>
+  </div>
+</nav>
+</div>
+
+<section class="hero-cultura">
+  <h1>Nossa Cultura e Valores</h1>
+  <p>Construímos uma cultura organizacional baseada em pessoas, transparência, ética e inovação. Conheça os pilares que nos guiam.</p>
+</section>
+
+<div class="cards-container">
+  <h2 class="section-title">Nossos Valores Fundamentais</h2>
+  
+  <div class="cards-grid">
+    <div class="card">
+      <h2><span class="card-icon">💎</span> Transparência</h2>
+      <p>Comunicamos de forma clara e honesta em todas as nossas relações, criando confiança e credibilidade junto a candidatos e empresas parceiras.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">❤️</span> Humanização</h2>
+      <p>Cada processo valoriza pessoas, respeitando suas histórias, talentos e potenciais. Colocamos o ser humano no centro de tudo que fazemos.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">🚀</span> Inovação</h2>
+      <p>Aplicamos tecnologias modernas, métodos ágeis e soluções criativas para transformar o mercado de recrutamento e seleção.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">🤝</span> Engajamento</h2>
+      <p>Incentivamos participação ativa e colaboração entre todos os envolvidos, criando uma comunidade forte e conectada.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">📚</span> Aprendizado Contínuo</h2>
+      <p>Compartilhamos conhecimento constantemente para promover desenvolvimento pessoal e profissional de todos os nossos stakeholders.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">⚖️</span> Justiça e Ética</h2>
+      <p>Buscamos sempre relações equilibradas e decisões guiadas por princípios éticos sólidos, promovendo um ambiente justo e respeitoso.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">🌟</span> Colaboração</h2>
+      <p>Trabalhamos juntos para atingir objetivos comuns, fortalecendo relações e construindo parcerias duradouras e produtivas.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">🎯</span> Responsabilidade</h2>
+      <p>Assumimos compromisso com nossas ações e resultados, sempre com ética, integridade e foco no impacto positivo que geramos.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Missão, Visão, Valores e Cultura</h2>
+  
+  <div class="cards-mvv">
+    <div class="card-mvv">
+      <h2>🎯 Missão</h2>
+      <p>Conectar talentos a oportunidades, facilitando o recrutamento e promovendo desenvolvimento humano com tecnologia, empatia e excelência.</p>
+    </div>
+
+    <div class="card-mvv">
+      <h2>🔭 Visão</h2>
+      <p>Ser referência nacional em soluções de RH, moldando um mercado mais transparente, moderno e eficiente para todos.</p>
+    </div>
+
+    <div class="card-mvv">
+      <h2>💡 Valores</h2>
+      <p>Ética, transparência, humanização, inovação, engajamento e compromisso social guiam todas as nossas decisões e ações.</p>
+    </div>
+
+    <div class="card-mvv">
+      <h2>🌱 Cultura</h2>
+      <p>Pessoas no centro, incentivando participação ativa, aprendizado contínuo, colaboração e crescimento conjunto.</p>
+    </div>
+  </div>
+
+  <div class="cultura-texto">
+    <p>Na <strong>Nova Geração RH</strong>, pessoas estão no centro de tudo. Nossa cultura se baseia em <strong>transparência, ética, humanização e inovação</strong>. Cada ação reflete nosso compromisso com relações justas e produtivas entre empresas e profissionais.</p>
+
+    <p>Comunicamos de forma clara, valorizamos histórias e talentos, incentivamos participação ativa e aplicamos soluções criativas e tecnológicas. Compartilhamos conhecimento continuamente e buscamos sempre decisões equilibradas e éticas.</p>
+
+    <p>Nossa missão é conectar talentos a oportunidades, facilitando recrutamento e desenvolvimento humano com tecnologia, empatia e excelência. Queremos ser referência nacional em soluções de RH, moldando um mercado mais transparente, moderno e eficiente.</p>
+
+    <p>Atuamos com <strong>ética, transparência, humanização, inovação, engajamento e compromisso social</strong>. Nosso propósito é construir pontes que conectem pessoas a oportunidades, promovendo crescimento profissional e relações justas.</p>
+
+    <p>Oferecemos soluções personalizadas de recrutamento, treinamentos, mentorias e recursos digitais, incorporando tendências modernas como ATS e inteligência artificial. Criamos experiências significativas, fomentamos networking e comunidades interativas, sendo parceiros estratégicos que refletem nossa cultura de ética, transparência e inovação.</p>
+  </div>
+</div>
+
+<footer>
+  <p><strong>CNPJ:</strong> 46.599.025/0001-54</p>
+  <p><strong>Telefone:</strong> (51) 99338-1495 e (51) 99697-6579</p>
+  <p><strong>E-mail:</strong> adm@agenciaexittus.com</p>
+  <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
+
+  <div class="plataformas-sociais">
+    <a href="https://www.facebook.com" target="_blank" class="social facebook">
+      <img src="facebook1.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com" target="_blank" class="social instagram">
+      <img src="instagram1.png" alt="Instagram">
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" class="social linkedin">
+      <img src="linkedin1.png" alt="LinkedIn">
+    </a>
+    <a href="https://www.youtube.com" target="_blank" class="social youtube">
+      <img src="youtube1.png" alt="YouTube">
+    </a>
+  </div>
+</footer>
+
+<div class="floatb-container">
+  <button class="floatb" id="floatb">
+    <img src="user.png" alt="Principal" width="30">
+  </button>
+
+  <div class="floatb-options" id="floatbOptions">
+    <a href="https://wa.me/5551993381495" target="_blank" class="floatb-btn">
+      <img src="whatsapp.png" alt="WhatsApp 1" width="24">
+    </a>
+    <a href="https://wa.me/5551996976579" target="_blank" class="floatb-btn">
+      <img src="whatsapp2.png" alt="WhatsApp 2" width="24">
+    </a>
+    <a href="tel:+5551993381495" class="floatb-btn">
+      <img src="ligação.png" alt="Ligar" width="24">
+    </a>
+    <a href="https://t.me/novageracaorh" target="_blank" class="floatb-btn">
+      <img src="telegrama.png" alt="Telegram" width="24">
+    </a>
+  </div>
+</div>
+
+<a href="#" id="scrollTopBtn" title="Voltar ao topo"></a>
 
 <script>
+function toggleDarkMode() {
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  body.classList.toggle("dark-mode");
+  const isDark = body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  if (isDark) {
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+}
+
+window.onload = () => {
+  const theme = localStorage.getItem("theme");
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  if (theme === "dark") {
+    body.classList.add("dark-mode");
+    button.textContent = "☀️";
+    button.style.color = "#009AB2";
+    button.style.borderColor = "#009AB2";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+};
+
+  function showCategory(category) {
+  document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+  
+  event.target.classList.add('active');
+  document.getElementById(category).classList.add('active');
+  
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 const floatb = document.getElementById('floatb');
 const floatbOptions = document.getElementById('floatbOptions');
 let timeout;
 
 floatb.addEventListener('click', () => {
-  // Mostra os botões
   floatbOptions.classList.add('show');
-
-  // Limpa qualquer timeout anterior
   clearTimeout(timeout);
-
-  // Recolhe os botões após 3 segundos
   timeout = setTimeout(() => {
     floatbOptions.classList.remove('show');
   }, 3000);
 });
-</script>
 
-<script>
-    const contactBtn = document.getElementById('contactBtn');
-    const contactFloat = document.querySelector('.contact-float');
-    contactBtn.addEventListener('click', () => contactFloat.classList.toggle('active'));
-  </script>
 
-<script>
-// Mostrar botão quando a página rolar para baixo
-window.onscroll = function() { scrollFunction(); };
-
-function scrollFunction() {
-  const btn = document.getElementById("scrollTopBtn");
-  if (!btn) return;
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    btn.style.display = "block";
-  } else {
-    btn.style.display = "none";
-  }
-}
-
-// Subir ao topo ao clicar
-document.addEventListener("DOMContentLoaded", function() {
-  const btn = document.getElementById("scrollTopBtn");
-  if (!btn) return;
-  btn.addEventListener("click", function(e){
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-});
-</script>
-
-<script>
-document.getElementById('accept-cookies').addEventListener('click', function() {
-    document.getElementById('cookie-banner').style.display = 'none';
-    localStorage.setItem('cookiesAccepted', 'true');
-});
-
-// Verificar se o usuário já aceitou cookies
-window.addEventListener('load', () => {
-    if(localStorage.getItem('cookiesAccepted')) {
-        document.getElementById('cookie-banner').style.display = 'none';
-    } else {
-        document.getElementById('cookie-banner').style.display = 'flex';
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdowns = document.querySelectorAll(".dropdown");
+  
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+    const content = dropdown.querySelector(".dropdown-content");
+    
+    if (toggle && content) {
+      toggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        content.classList.toggle("show");
+      });
     }
+  });
+
+  document.addEventListener("click", function (e) {
+    dropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector(".dropdown-toggle");
+      const content = dropdown.querySelector(".dropdown-content");
+      if (toggle && content && !dropdown.contains(e.target)) {
+        content.classList.remove("show");
+      }
+    });
+  });
 });
 </script>
 
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true,
-  });
-</script>
-
-</script>
 </body>
 </html>
 
