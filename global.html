@@ -135,6 +135,10 @@
             .subtitle { font-size: 0.85em; margin-bottom: 6px; }
             .btn { padding: 7px 20px; font-size: 0.85em; }
             .footer { font-size: 0.7em; padding: 6px 8px; }
+            .header { padding: 8px 15px 6px; }
+            #globe-container {
+                padding: 0 10px;
+            }
         }
        
         @media(max-width:480px) {
@@ -142,6 +146,10 @@
             .subtitle { font-size: 0.8em; }
             .btn { padding: 6px 18px; font-size: 0.8em; }
             .buttons-container { gap: 8px; }
+            .header { padding: 6px 10px 4px; }
+            #globe-container {
+                padding: 0 5px;
+            }
         }
     </style>
 </head>
@@ -179,7 +187,15 @@
                 0.1, 
                 1000
             );
-            camera.position.z = 15;
+            
+            // Ajusta zoom baseado no tamanho da tela
+            if (window.innerWidth <= 480) {
+                camera.position.z = 18; // Mobile pequeno
+            } else if (window.innerWidth <= 768) {
+                camera.position.z = 16; // Tablet
+            } else {
+                camera.position.z = 15; // Desktop
+            }
 
             renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
             renderer.setSize(container.clientWidth, container.clientHeight);
@@ -674,7 +690,21 @@
 
         function onWheel(e) {
             camera.position.z += e.deltaY * 0.01;
-            camera.position.z = Math.max(8, Math.min(25, camera.position.z));
+            
+            // Limites de zoom ajustados por dispositivo
+            let minZoom, maxZoom;
+            if (window.innerWidth <= 480) {
+                minZoom = 12;
+                maxZoom = 28;
+            } else if (window.innerWidth <= 768) {
+                minZoom = 10;
+                maxZoom = 26;
+            } else {
+                minZoom = 8;
+                maxZoom = 25;
+            }
+            
+            camera.position.z = Math.max(minZoom, Math.min(maxZoom, camera.position.z));
         }
 
         function onWindowResize() {
@@ -682,6 +712,15 @@
             camera.aspect = container.clientWidth / container.clientHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(container.clientWidth, container.clientHeight);
+            
+            // Reajusta zoom ao redimensionar
+            if (window.innerWidth <= 480) {
+                camera.position.z = 18;
+            } else if (window.innerWidth <= 768) {
+                camera.position.z = 16;
+            } else {
+                camera.position.z = 15;
+            }
         }
 
         function animate() {
@@ -707,8 +746,6 @@
     </script>
 </body>
 </html>
-
-
 
 
 
