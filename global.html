@@ -94,7 +94,7 @@
             width: 100%;
             height: 78vh;
             position: relative;
-            margin-top: 0px;
+            margin-top: 10px;
         }
 
         #instructions {
@@ -107,16 +107,11 @@
 
         .footer {
             text-align: center;
-            
+            padding: 8px 10px;
             color: rgba(255,255,255,0.7);
-            font-size: 0.8em;
-            margin: 0;
-             padding: 5px 0; /* diminui o espaçamento interno */
-           height: auto; /* deixa ele ajustar conforme o conteúdo */
-
-  font-size: 14px; /* texto mais discreto */
-}
-        
+            font-size: 0.75em;
+            line-height: 1.2;
+        }
 
         @keyframes fadeInDown {
             from {
@@ -141,27 +136,107 @@
         }
 
         /* Mobile Responsivo */
-       @media(max-width:768px){ #globe-container{height:40vh;margin-top:25px;} .header{padding:30px 15px 15px;} }
-       
-       @media(max-width:480px){ #globe-container{height:40vh;} h1{font-size:1.6em;} }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 1em;
+            }
+
+            #globe-container {
+                height: 48vh;
+                margin-top: 25px;
+            }
+
+            .header {
+                padding: 30px 15px 15px;
+            }
+
+            #instructions {
+                font-size: 0.85em;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+            }
+
+            #globe-container {
+                height: 45vh;
+            }
+        }
+
+        /* Landscape mobile */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .header {
+                padding: 20px 15px 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                font-size: 1em;
+                margin-bottom: 15px;
+            }
+
+            .btn {
+                padding: 10px 25px;
+                font-size: 0.9em;
+            }
+
+            .buttons-container {
+                gap: 15px;
+            }
+
+            #globe-container {
+                height: 42vh;
+            }
+
+            #instructions {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Networking Global</h1>
         <p class="subtitle">Conectando talentos ao redor do mundo</p>
-      <div class="buttons-container">
-    <a href="javascript:history.back()" class="btn btn-home">← Voltar</a>
-    <a href="home.html" class="btn btn-enter">Página Inicial</a>
-</div>
+        <div class="buttons-container">
+            <a href="#" class="btn btn-home" onclick="goBack(event)">← Voltar</a>
+            <a href="#" class="btn btn-enter" onclick="goToHome(event)">Página Inicial</a>
+        </div>
     </div>
 
     <div id="globe-container"></div>
 
-
-    <div class="footer">
-        © 2027 Networking Global
+    <div id="instructions">
+        Arraste para rotacionar • Scroll para zoom • Toque e arraste no mobile
     </div>
+
+   <div class="footer">
+    © 2027 Networking Global
+    <br>
+    Conectando talentos ao redor do mundo
+    <br>
+    Transformando o RH global
+</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
@@ -735,7 +810,6 @@
     </script>
 </body>
 </html>
-
 
 
 
