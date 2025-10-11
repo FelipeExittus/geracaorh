@@ -66,13 +66,14 @@
     .btn-enter { background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); }
     .btn-enter:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(255,107,107,0.5); }
 
-    #globe-container {
-        flex: 1; /* ocupa todo o espaço disponível restante */
-        width: 90%;
-        max-width: 500px;
-        margin: 0 auto;
-        position: relative;
-    }
+#globe-container {
+    width: 60vw;          /* ocupa 60% da largura da tela */
+    max-width: 400px;     /* limite máximo para desktop */
+    aspect-ratio: 1 / 1;  /* mantém o globo redondo */
+    margin: 20px auto;    /* centraliza horizontal e dá margem vertical */
+    position: relative;
+}
+
 
     .footer {
         text-align: center;
@@ -88,8 +89,8 @@
         .subtitle { font-size: 1em; }
         .btn { padding: 10px 25px; font-size: 0.95em; }
     #globe-container {
-        width: 70vw;       /* 70% da largura da tela */
-        max-width: 300px;  /* limite máximo */
+        width: 70vw;       /* ocupa mais da tela menor */
+        max-width: 300px;
         aspect-ratio: 1 / 1;
         margin: 15px auto;
     }
@@ -98,9 +99,9 @@
     @media (max-width: 480px) {
         h1 { font-size: 1.5em; }
         .subtitle { font-size: 0.95em; }
-   #globe-container {
-        width: 80vw;       /* ocupa mais da tela pequena */
-        max-width: 220px;  /* limite máximo para celular */
+    #globe-container {
+        width: 80vw;       /* ocupa quase toda a largura do celular */
+        max-width: 220px;
         aspect-ratio: 1 / 1;
         margin: 10px auto;
     }
@@ -703,6 +704,7 @@
     </script>
 </body>
 </html>
+
 
 
 
