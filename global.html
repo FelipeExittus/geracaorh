@@ -143,15 +143,18 @@
             /* Mobile Responsivo */
 @media (max-width: 768px) {
 .footer {
-    box-sizing: border-box;   /* garante que height inclua padding e border */
-    display: flex;             /* permite centralizar verticalmente */
-    align-items: center;       /* centraliza verticalmente */
-    justify-content: center;   /* centraliza horizontalmente */
-    height: 18px;              /* altura desejada */
-    padding: 0 5px;            /* padding mínimo */
-    font-size: 0.65em;         /* texto menor */
-    margin: 0;                 /* remove margens internas do footer */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;       /* altura exata */
+    padding: 0 10px;    /* padding mínimo */
+    font-size: 0.65em;  /* texto menor */
+    margin: 0;          /* remove margens internas */
+    color: rgba(255,255,255,0.7);
+    text-align: center;
 }
+
             .subtitle {
                 font-size: 1.1em;
             }
@@ -222,6 +225,19 @@
             #instructions {
                 display: none;
             }
+            .footer {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;       /* altura exata */
+    padding: 0 10px;    /* padding mínimo */
+    font-size: 0.65em;  /* texto menor */
+    margin: 0;          /* remove margens internas */
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+}
+
         }
     </style>
 </head>
@@ -817,6 +833,7 @@
     </script>
 </body>
 </html>
+
 
 
 
