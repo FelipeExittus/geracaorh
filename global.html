@@ -16,8 +16,14 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             overflow: hidden;
             height: 100vh;
+            width: 100vw;
             display: flex;
             flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
 
         .header {
@@ -95,20 +101,20 @@
         #globe-container {
             flex: 1;
             width: 100%;
-            max-width: 100%;
+            max-width: 100vw;
             position: relative;
             min-height: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 0 15px;
+            overflow: hidden;
         }
 
         #globe-container canvas {
+            display: block;
             max-width: 100%;
             max-height: 100%;
-            width: auto !important;
-            height: auto !important;
+            object-fit: contain;
         }
 
         .footer {
@@ -143,28 +149,20 @@
         }
 
         @media(max-width:768px) {
-            h1 { font-size: 1.4em; }
-            .subtitle { font-size: 0.8em; margin-bottom: 5px; }
-            .btn { padding: 6px 18px; font-size: 0.8em; }
-            .footer { font-size: 0.7em; padding: 6px 8px; }
-            .header { padding: 8px 15px 5px; }
-            #globe-container {
-                padding: 5px 20px;
-                max-height: 60vh;
-            }
+            h1 { font-size: 1.3em; margin-bottom: 3px; }
+            .subtitle { font-size: 0.75em; margin-bottom: 4px; }
+            .btn { padding: 5px 15px; font-size: 0.75em; }
+            .footer { font-size: 0.65em; padding: 5px 8px; }
+            .header { padding: 6px 10px 4px; }
         }
        
         @media(max-width:480px) {
-            h1 { font-size: 1.2em; }
-            .subtitle { font-size: 0.75em; margin-bottom: 4px; }
-            .btn { padding: 5px 15px; font-size: 0.75em; }
-            .buttons-container { gap: 6px; }
-            .header { padding: 6px 10px 4px; }
-            .footer { font-size: 0.65em; padding: 5px 8px; line-height: 1.3; }
-            #globe-container {
-                padding: 5px 15px;
-                max-height: 55vh;
-            }
+            h1 { font-size: 1.1em; margin-bottom: 2px; }
+            .subtitle { font-size: 0.7em; margin-bottom: 3px; }
+            .btn { padding: 4px 12px; font-size: 0.7em; }
+            .buttons-container { gap: 5px; }
+            .header { padding: 5px 8px 3px; }
+            .footer { font-size: 0.6em; padding: 4px 6px; line-height: 1.2; }
         }
     </style>
 </head>
@@ -196,30 +194,30 @@
             
             scene = new THREE.Scene();
 
+            // Calcula dimensões seguras
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+            const size = Math.min(containerWidth * 0.95, containerHeight * 0.95);
+
             camera = new THREE.PerspectiveCamera(
                 45, 
-                container.clientWidth / container.clientHeight, 
+                size / size, 
                 0.1, 
                 1000
             );
             
             // Ajusta zoom baseado no tamanho da tela
             if (window.innerWidth <= 480) {
-                camera.position.z = 20; // Mobile pequeno - mais afastado
+                camera.position.z = 22; // Mobile pequeno - bem afastado
             } else if (window.innerWidth <= 768) {
-                camera.position.z = 17; // Tablet
+                camera.position.z = 18; // Tablet
             } else {
                 camera.position.z = 15; // Desktop
             }
 
             renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            
-            // Limita o tamanho do renderer no mobile
-            const width = Math.min(container.clientWidth, window.innerWidth - 30);
-            const height = Math.min(container.clientHeight, window.innerHeight * 0.6);
-            
-            renderer.setSize(width, height);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(size, size);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
             container.appendChild(renderer.domElement);
 
             createRealisticGlobe();
@@ -730,19 +728,20 @@
         function onWindowResize() {
             const container = document.getElementById('globe-container');
             
-            // Limita o tamanho do canvas no mobile
-            const width = Math.min(container.clientWidth, window.innerWidth - 30);
-            const height = Math.min(container.clientHeight, window.innerHeight * 0.6);
+            // Recalcula dimensões seguras
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+            const size = Math.min(containerWidth * 0.95, containerHeight * 0.95);
             
-            camera.aspect = width / height;
+            camera.aspect = 1;
             camera.updateProjectionMatrix();
-            renderer.setSize(width, height);
+            renderer.setSize(size, size);
             
             // Reajusta zoom ao redimensionar
             if (window.innerWidth <= 480) {
-                camera.position.z = 20;
+                camera.position.z = 22;
             } else if (window.innerWidth <= 768) {
-                camera.position.z = 17;
+                camera.position.z = 18;
             } else {
                 camera.position.z = 15;
             }
@@ -771,6 +770,7 @@
     </script>
 </body>
 </html>
+
 
 
 
