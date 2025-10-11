@@ -1,198 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Networking Global - RH Conectado</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            overflow-x: hidden;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .header {
-            text-align: center;
-            padding: 15px 20px 10px;
-            z-index: 10;
-        }
-
-        h1 {
-            font-size: 2em;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 6px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .subtitle {
-            font-size: 1em;
-            color: rgba(255,255,255,0.95);
-            margin-bottom: 12px;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .buttons-container {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.4s both;
-            margin-bottom: 5px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 30px;
-            font-size: 0.95em;
-            font-weight: 600;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-home {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: 2px solid white;
-        }
-
-        .btn-home:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
-            background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
-        }
-
-        .btn-enter {
-            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
-        }
-
-        .btn-enter:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(255, 107, 107, 0.5);
-        }
-
-        .btn:active {
-            transform: translateY(-1px);
-        }
-
-       
-    #globe-container {
-    width: 90%;          /* deixa uma pequena margem lateral */
-    max-width: 600px;    /* limita o tamanho máximo em telas grandes */
-    height: 60vh;        /* ocupa 60% da altura da tela */
-    max-height: 500px;   /* limita a altura máxima */
-    margin: 20px auto;   /* centraliza horizontalmente e dá margem superior/inferior */
-    position: relative;
-}
-
-
-        #instructions {
-            text-align: center;
-            padding: 10px;
-            color: white;
-            opacity: 0.8;
-            font-size: 0.85em;
-        }
-
-        .footer {
-            text-align: center;
-            color: white;
-            font-size: 12px;
-            padding: 8px 15px; /* altura mínima confortável */
-            background: rgba(0,0,0,0.1); /* opcional, para destacar o footer */
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Mobile Responsivo */
-        @media (max-width: 768px) {
-            h1 { font-size: 2em; }
-            .subtitle { font-size: 1.1em; }
-            .btn { padding: 12px 30px; font-size: 1em; }
-            .header { padding: 30px 15px 15px; }
-            #instructions { font-size: 0.85em; padding: 15px; }
-
-            @media (max-width: 768px) {
-    #globe-container {
-        width: 95%;
-        height: 45vh;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Networking Global - RH Conectado</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
-}
 
-@media (max-width: 480px) {
-    #globe-container {
-        width: 95%;
-        height: 35vh;
+    .header {
+        text-align: center;
+        padding: 15px 20px 10px;
+        z-index: 10;
     }
-}
-        }
 
-        @media (max-width: 480px) {
-            h1 { font-size: 1.6em; }
-            .subtitle { font-size: 1em; }
-            #globe-container { height: 45vh; }
-        }
-
-        @media (max-height: 600px) and (orientation: landscape) {
-            .header { padding: 20px 15px 10px; }
-            h1 { font-size: 1.8em; margin-bottom: 10px; }
-            .subtitle { font-size: 1em; margin-bottom: 15px; }
-            .btn { padding: 10px 25px; font-size: 0.9em; }
-            .buttons-container { gap: 15px; }
-
-            
-          @media (max-width: 768px) {
-    #globe-container {
-        width: 95%;
-        height: 45vh;
+    h1 {
+        font-size: 2em;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 6px;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        animation: fadeInDown 1s ease-out;
     }
-}
 
-@media (max-width: 480px) {
-    #globe-container {
-        width: 95%;
-        height: 35vh;
+    .subtitle {
+        font-size: 1em;
+        color: rgba(255,255,255,0.95);
+        margin-bottom: 12px;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        animation: fadeInUp 1s ease-out 0.2s both;
     }
-}
 
+    .buttons-container {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
 
+    .btn {
+        padding: 10px 30px;
+        font-size: 0.95em;
+        font-weight: 600;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+    }
 
-            
-            #instructions { display: none; }
-        }
-    </style>
+    .btn-home { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: 2px solid white; }
+    .btn-home:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(102,126,234,0.5); background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%); }
+    .btn-enter { background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); }
+    .btn-enter:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(255,107,107,0.5); }
+    .btn:active { transform: translateY(-1px); }
+
+    #globe-container {
+        width: 90%;
+        max-width: 500px;
+        height: 50vh;
+        max-height: 400px;
+        margin: 20px auto;
+        position: relative;
+    }
+
+    .footer {
+        text-align: center;
+        font-size: 12px;
+        color: white;
+        padding: 6px 10px;
+        background: rgba(0,0,0,0.1);
+        margin-top: auto; /* força o footer para o final */
+    }
+
+    @keyframes fadeInDown { from {opacity:0; transform:translateY(-30px);} to {opacity:1; transform:translateY(0);} }
+    @keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        h1 { font-size: 1.8em; }
+        .subtitle { font-size: 1em; }
+        .btn { padding: 10px 25px; font-size: 0.95em; }
+        #globe-container { width: 95%; height: 40vh; max-height: 300px; }
+    }
+
+    @media (max-width: 480px) {
+        h1 { font-size: 1.5em; }
+        .subtitle { font-size: 0.95em; }
+        #globe-container { width: 95%; height: 30vh; max-height: 250px; }
+    }
+</style>
 </head>
 <body>
     <div class="header">
         <h1>Networking Global</h1>
         <p class="subtitle">Conectando talentos ao redor do mundo</p>
         <div class="buttons-container">
-            <a href="#" class="btn btn-home" onclick="goBack(event)">← Voltar</a>
-            <a href="#" class="btn btn-enter" onclick="goToHome(event)">Página Inicial</a>
+            <a href="#" class="btn btn-home">← Voltar</a>
+            <a href="#" class="btn btn-enter">Página Inicial</a>
         </div>
     </div>
 
@@ -205,6 +119,7 @@
     </div>
 </body>
 </html>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -779,6 +694,7 @@
     </script>
 </body>
 </html>
+
 
 
 
