@@ -83,15 +83,20 @@
         h1 { font-size: 1.8em; }
         .subtitle { font-size: 1em; }
         .btn { padding: 10px 25px; font-size: 0.95em; }
-          #globe-container { width: 70%;   max-width: 300px;
+       #globe-container {
+        width: 70%;       /* ocupa boa parte da largura */
+        max-width: 300px; /* limita tamanho máximo */
     }
+}
 
     @media (max-width: 480px) {
         h1 { font-size: 1.5em; }
         .subtitle { font-size: 0.95em; }
-        #globe-container { width: 70%;   max-width: 300px;
-}
+      #globe-container {
+        width: 90%;       /* ocupa quase toda a largura */
+        max-width: 250px; /* limite máximo de largura */
     }
+}
 
 </style>
 </head>
@@ -690,6 +695,7 @@
     </script>
 </body>
 </html>
+
 
 
 
