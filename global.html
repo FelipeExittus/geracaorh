@@ -16,14 +16,12 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             overflow-x: hidden;
             min-height: 100vh;
-
-            display: flex;
-            flex-direction: column;
         }
 
         .header {
             text-align: center;
             padding: 15px 20px 10px;
+            position: relative;
             z-index: 10;
         }
 
@@ -93,47 +91,72 @@
         }
 
         #globe-container {
-            flex: 1; /* ocupa o espaço disponível */
             width: 100%;
+            height: 78vh;
+            position: relative;
             margin-top: 0px;
         }
 
+        #instructions {
+            text-align: center;
+            padding: 10px;
+            color: white;
+            opacity: 0.8;
+            font-size: 0.85em;
+        }
+
+        .footer {
+            text-align: center;
+            
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8em;
+            margin: 0;
+             padding: 5px 0; /* diminui o espaçamento interno */
+           height: auto; /* deixa ele ajustar conforme o conteúdo */
+
+  font-size: 14px; /* texto mais discreto */
+}
+        
+
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Mobile Responsivo */
-        @media(max-width:768px){
-            #globe-container { height: 48vh; margin-top: 25px; }
-            .header { padding: 25px 15px 15px; }
-        }
-
-        @media(max-width:480px){
-            #globe-container { height: 45vh; }
-            h1 { font-size: 1.6em; }
-            .buttons-container { flex-direction: column; gap: 10px; }
-        }
+       @media(max-width:768px){ #globe-container{height:48vh;margin-top:25px;} .header{padding:30px 15px 15px;} }
+       
+       @media(max-width:480px){ #globe-container{height:45vh;} h1{font-size:1.6em;} }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Networking Global</h1>
         <p class="subtitle">Conectando talentos ao redor do mundo</p>
-        <div class="buttons-container">
-            <a href="javascript:history.back()" class="btn btn-home">← Voltar</a>
-            <a href="home.html" class="btn btn-enter">Página Inicial</a>
-        </div>
+      <div class="buttons-container">
+    <a href="javascript:history.back()" class="btn btn-home">← Voltar</a>
+    <a href="home.html" class="btn btn-enter">Página Inicial</a>
+</div>
     </div>
 
     <div id="globe-container"></div>
-</body>
-</html>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -708,6 +731,7 @@
     </script>
 </body>
 </html>
+
 
 
 
