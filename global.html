@@ -83,18 +83,22 @@
         h1 { font-size: 1.8em; }
         .subtitle { font-size: 1em; }
         .btn { padding: 10px 25px; font-size: 0.95em; }
-       #globe-container {
-        width: 40%;       /* ocupa quase toda a largura */
-        max-width: 100px; /* limite máximo de largura */
+    #globe-container {
+        width: 70vw;       /* 70% da largura da tela */
+        max-width: 300px;  /* limite máximo */
+        aspect-ratio: 1 / 1;
+        margin: 15px auto;
     }
 }
 
     @media (max-width: 480px) {
         h1 { font-size: 1.5em; }
         .subtitle { font-size: 0.95em; }
-      #globe-container {
-        width: 40%;       /* ocupa quase toda a largura */
-        max-width: 100px; /* limite máximo de largura */
+   #globe-container {
+        width: 80vw;       /* ocupa mais da tela pequena */
+        max-width: 220px;  /* limite máximo para celular */
+        aspect-ratio: 1 / 1;
+        margin: 10px auto;
     }
 }
 
@@ -695,6 +699,7 @@
     </script>
 </body>
 </html>
+
 
 
 
