@@ -91,12 +91,16 @@
             transform: translateY(-1px);
         }
 
-        #globe-container {
-            width: 100%;
-            flex: 1; /* faz o container do globo ocupar espaço disponível */
-            position: relative;
-            margin-top: 10px;
-        }
+       
+    #globe-container {
+    width: 90%;          /* deixa uma pequena margem lateral */
+    max-width: 600px;    /* limita o tamanho máximo em telas grandes */
+    height: 60vh;        /* ocupa 60% da altura da tela */
+    max-height: 500px;   /* limita a altura máxima */
+    margin: 20px auto;   /* centraliza horizontalmente e dá margem superior/inferior */
+    position: relative;
+}
+
 
         #instructions {
             text-align: center;
@@ -129,9 +133,22 @@
             h1 { font-size: 2em; }
             .subtitle { font-size: 1.1em; }
             .btn { padding: 12px 30px; font-size: 1em; }
-            #globe-container { height: 48vh; margin-top: 25px; }
             .header { padding: 30px 15px 15px; }
             #instructions { font-size: 0.85em; padding: 15px; }
+
+            @media (max-width: 768px) {
+    #globe-container {
+        width: 95%;
+        height: 45vh;
+    }
+}
+
+@media (max-width: 480px) {
+    #globe-container {
+        width: 95%;
+        height: 35vh;
+    }
+}
         }
 
         @media (max-width: 480px) {
@@ -146,7 +163,25 @@
             .subtitle { font-size: 1em; margin-bottom: 15px; }
             .btn { padding: 10px 25px; font-size: 0.9em; }
             .buttons-container { gap: 15px; }
-            #globe-container { height: 42vh; }
+
+            
+          @media (max-width: 768px) {
+    #globe-container {
+        width: 95%;
+        height: 45vh;
+    }
+}
+
+@media (max-width: 480px) {
+    #globe-container {
+        width: 95%;
+        height: 35vh;
+    }
+}
+
+
+
+            
             #instructions { display: none; }
         }
     </style>
@@ -744,6 +779,7 @@
     </script>
 </body>
 </html>
+
 
 
 
