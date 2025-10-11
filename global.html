@@ -142,15 +142,15 @@
             }
             /* Mobile Responsivo */
 @media (max-width: 768px) {
-    /* ...seu CSS existente... */
-
-    .footer {
-        padding: 2px 2px;   /* menos espaço interno */
-        font-size: 0.6em;   /* texto menor */
-        line-height: 1;     /* altura da linha menor */
-        height: 10px;  /* define altura exata da caixa */
-
-    }
+.footer {
+    box-sizing: border-box;   /* garante que height inclua padding e border */
+    display: flex;             /* permite centralizar verticalmente */
+    align-items: center;       /* centraliza verticalmente */
+    justify-content: center;   /* centraliza horizontalmente */
+    height: 18px;              /* altura desejada */
+    padding: 0 5px;            /* padding mínimo */
+    font-size: 0.65em;         /* texto menor */
+    margin: 0;                 /* remove margens internas do footer */
 }
             .subtitle {
                 font-size: 1.1em;
@@ -817,6 +817,7 @@
     </script>
 </body>
 </html>
+
 
 
 
