@@ -94,7 +94,7 @@
             width: 100%;
             height: 78vh;
             position: relative;
-            margin-top: 0px;
+            margin-top: 10px;
         }
 
         #instructions {
@@ -107,16 +107,11 @@
 
         .footer {
             text-align: center;
-            
+            padding: 8px 10px;
             color: rgba(255,255,255,0.7);
-            font-size: 0.8em;
-            margin: 0;
-             padding: 5px 0; /* diminui o espaçamento interno */
-           height: auto; /* deixa ele ajustar conforme o conteúdo */
-
-  font-size: 14px; /* texto mais discreto */
-}
-        
+            font-size: 0.75em;
+            line-height: 1.2;
+        }
 
         @keyframes fadeInDown {
             from {
@@ -169,33 +164,6 @@
                 padding: 15px;
             }
         }
-
-/* Ajuste principal para mobile */
-@media (max-width: 768px) {
-  #globe-container {
-    height: 36vh !important; /* reduz bastante a altura */
-    margin-top: 5px !important;
-  }
-
-  .footer {
-    margin-top: 0 !important;
-    padding: 4px 0 !important;
-    font-size: 11px !important;
-    opacity: 0.7;
-  }
-}
-
-/* Ajuste extra para celulares menores */
-@media (max-width: 480px) {
-  #globe-container {
-    height: 32vh !important; /* ainda menor */
-  }
-
-  .footer {
-    padding: 3px 0 !important;
-    font-size: 10px !important;
-  }
-}
 
         @media (max-width: 480px) {
             h1 {
@@ -250,17 +218,20 @@
     <div class="header">
         <h1>Networking Global</h1>
         <p class="subtitle">Conectando talentos ao redor do mundo</p>
-      <div class="buttons-container">
-    <a href="javascript:history.back()" class="btn btn-home">← Voltar</a>
-    <a href="home.html" class="btn btn-enter">Página Inicial</a>
-</div>
+        <div class="buttons-container">
+            <a href="#" class="btn btn-home" onclick="goBack(event)">← Voltar</a>
+            <a href="#" class="btn btn-enter" onclick="goToHome(event)">Página Inicial</a>
+        </div>
     </div>
 
     <div id="globe-container"></div>
 
+    <div id="instructions">
+        Arraste para rotacionar • Scroll para zoom • Toque e arraste no mobile
+    </div>
 
     <div class="footer">
-        © 2027 Networking Global - Revolucionando o RH mundial
+        © 2024 Networking Global - Revolucionando o RH mundial
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -835,8 +806,6 @@
     </script>
 </body>
 </html>
-
-
 
 
 
