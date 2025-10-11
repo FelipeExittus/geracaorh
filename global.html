@@ -105,13 +105,15 @@
             font-size: 0.85em;
         }
 
-        .footer {
-            text-align: center;
-            padding: 8px 10px;
-            color: rgba(255,255,255,0.7);
-            font-size: 0.75em;
-            line-height: 1.2;
-        }
+.footer {
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;       /* tamanho do texto */
+    height: 30px;           /* altura fixa da caixa do footer */
+    line-height: 20px;      /* centraliza verticalmente o texto */
+    padding: 5px 0;         /* espaço interno opcional */
+    overflow: hidden;       /* evita que o conteúdo quebre a caixa */
+}
 
         @keyframes fadeInDown {
             from {
@@ -807,6 +809,7 @@
     </script>
 </body>
 </html>
+
 
 
 
