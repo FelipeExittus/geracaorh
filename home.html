@@ -481,18 +481,20 @@ body.dark-mode .feature-card p {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Footer */
-footer {
-  background-color: #EFEFEF;
-  padding: 2rem;
-  text-align: center;
-  border-top: 2px solid #007b8a;
-  font-size: 0.95rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background-color 0.3s, color 0.3s;
+
+
+body.dark-mode footer {
+  background-color: #000004;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+footer small {
+  display: block;
+  margin-top: 1rem;
+  color: #666;
 }
 
 body.dark-mode footer {
@@ -518,16 +520,6 @@ body.dark-mode footer small {
   color: #999;
 }
 
-.plataformas-sociais {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.plataformas-sociais a img {
-  width: 40px;
-  height: 40px;
-}
 
 /* Floating Button */
 .floatb-container {
@@ -696,7 +688,7 @@ body.dark-mode footer small {
     font-size: 1.1rem; 
   }
   /* Exibir título e subtítulo também no mobile */
-  
+
 @media (max-width: 768px) {
   .hero-content {
     text-align: center;
@@ -733,6 +725,7 @@ body.dark-mode footer small {
     width: 30px; 
     height: 30px; 
   }
+}
 }
   </style>
 </head>
@@ -869,27 +862,6 @@ body.dark-mode footer small {
   </div>
 </section>
 
-<footer>
-  <p><strong>CNPJ:</strong> 46.599.025/0001-54</p>
-  <p><strong>Telefone:</strong> (51) 99338-1495 e (51) 99697-6579</p>
-  <p><strong>E-mail:</strong> adm@agenciaexittus.com</p>
-  <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
-
-  <div class="plataformas-sociais">
-    <a href="https://www.facebook.com" target="_blank">
-      <img src="facebook1.png" alt="Facebook">
-    </a>
-    <a href="https://www.instagram.com" target="_blank">
-      <img src="instagram1.png" alt="Instagram">
-    </a>
-    <a href="https://www.linkedin.com" target="_blank">
-      <img src="linkedin1.png" alt="LinkedIn">
-    </a>
-    <a href="https://www.youtube.com" target="_blank">
-      <img src="youtube1.png" alt="YouTube">
-    </a>
-  </div>
-</footer>
 
 <div class="floatb-container">
   <button class="floatb" id="floatb">
@@ -996,6 +968,8 @@ function animateStats() {
   });
 }
 </script>
+
+
 
 
 
