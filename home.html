@@ -9,26 +9,11 @@
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .menu a {
-  color: blue;
-  text-decoration: none;
-  transition: color 0.3s;
-}
 
-.menu a:hover {
-  color: darkblue;
-}
-
-/* Link ativo — fica preto em qualquer dispositivo */
-.menu a.ativo {
-  color: black !important;
-  font-weight: bold;
-  cursor: default;
-}
 
 /* Garante o mesmo comportamento no mobile */
 @media (max-width: 768px) {
-  .menu a.ativo {
+  nav a.ativo {
     color: black !important;
   }
 }
@@ -186,7 +171,9 @@ body.dark-mode .dropdown:hover > a {
 }
 
 nav a.ativo {
-  color: #009AB2;
+  color: black !important;
+  font-weight: bold;
+  cursor: default;
 }
 
 body.dark-mode nav a.ativo {
@@ -771,6 +758,7 @@ body.dark-mode footer small {
   <div class="dropdown">
     <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
     <div class="dropdown-content">
+      <a href="global.html">Página Global</a>
       <a href="index.html">Início</a>
       <a href="home.html" class="ativo">Bem-vindos</a>
       <a href="cultura.html">Cultura</a>
@@ -798,6 +786,7 @@ body.dark-mode footer small {
       <div class="dropdown-content">
         <a href="cookie.html">Cookies</a>
         <a href="lgbtqia.html">LGBT+</a>
+        <a href="pcd.html">PCD</a>
         <a href="privacidade.html">Política de Privacidade</a>
         <a href="lgpd.html" class="ativo">Lei Geral de Proteção de Dados</a>
       </div>
@@ -995,6 +984,7 @@ function animateStats() {
   });
 }
 </script>
+
 
 
 
