@@ -701,7 +701,7 @@ body.dark-mode footer small {
   .hero-content {
     text-align: center;
     padding: 40px 15px;
-    padding-top: 240px; /* empurra o conteúdo pra baixo no mobile */
+    padding-top: 210px; /* empurra o conteúdo pra baixo no mobile */
 
   }
 
@@ -810,6 +810,9 @@ body.dark-mode footer small {
         <span class="stat-number" id="candidatos">0</span>
         <span class="stat-label">Profissionais</span>
       </div>
+        <div class="stat-item">
+        <span class="stat-number" id="Estados">0</span>
+        <span class="stat-label">Estados</span>
       </div>
     </div>
   </div>
@@ -970,6 +973,7 @@ function animateStats() {
     conexoes: 216000000,       // População do Brasil
     empresas: 20000000,        // Número de empresas no Brasil
     candidatos: 110000000,     // Profissionais ativos no Brasil
+    Estados: 27                // Número de estados
   };
 
 
@@ -992,6 +996,7 @@ function animateStats() {
   });
 }
 </script>
+
 
 
 
