@@ -9,6 +9,31 @@
   <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    .menu a {
+  color: blue;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: darkblue;
+}
+
+/* Link ativo — fica preto em qualquer dispositivo */
+.menu a.ativo {
+  color: black !important;
+  font-weight: bold;
+  cursor: default;
+}
+
+/* Garante o mesmo comportamento no mobile */
+@media (max-width: 768px) {
+  .menu a.ativo {
+    color: black !important;
+  }
+}
+
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -970,6 +995,7 @@ function animateStats() {
   });
 }
 </script>
+
 
 
 
