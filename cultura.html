@@ -4,8 +4,31 @@
   <link rel="icon" type="image/png" href="lgoogle.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nossa Cultura - Nova Geração RH</title>
-  <meta name="description" content="Conheça nossa cultura organizacional baseada em transparência, humanização, inovação e ética." />
+
+  <!-- SEO básico -->
+  <title>Nossa Cultura - Nova Geração RH | Transparência e Inovação no RH</title>
+  <meta name="description" content="Descubra a cultura da Nova Geração RH: transparência, humanização, ética e inovação para transformar o futuro do trabalho.">
+  <meta name="keywords" content="cultura organizacional, RH, transparência, inovação, humanização, ética, Nova Geração RH, gestão de pessoas">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.seusite.com.br/nossa-cultura">
+
+  <!-- Open Graph para redes sociais -->
+  <meta property="og:title" content="Nossa Cultura - Nova Geração RH">
+  <meta property="og:description" content="Conheça nossa cultura baseada em transparência, ética, inovação e humanização no RH.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.seusite.com.br/nossa-cultura">
+  <meta property="og:image" content="https://www.seusite.com.br/imagens/cultura-rh.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nossa Cultura - Nova Geração RH">
+  <meta name="twitter:description" content="Transparência, inovação e humanização no RH. Descubra nossa cultura!">
+  <meta name="twitter:image" content="https://www.seusite.com.br/imagens/cultura-rh.png">
+
+  <!-- Favorece SEO local (opcional, se sua empresa tiver endereço físico) -->
+  <meta name="geo.placename" content="Cidade, Estado, Brasil">
+  <meta name="geo.region" content="BR-XX">
+
   <style>
 /* Body */
 body {
@@ -14,8 +37,17 @@ body {
   background-color: #ffffff;
   color: #333;
   transition: background-color 0.3s, color 0.3s;
-  padding-top: 170px;
+  padding-top: 170px; /* header + nav */
 }
+
+
+/* Garante o mesmo comportamento no mobile */
+@media (max-width: 768px) {
+  nav a.ativo {
+    color: black !important;
+  }
+}
+
 
 body.dark-mode {
   background-color: #000004;
@@ -30,6 +62,10 @@ body.dark-mode {
   z-index: 1000;
   background-color: #EFEFEF;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .header-nav-container {
+  background-color: #000004;
 }
 
 header {
@@ -78,21 +114,37 @@ header {
   text-align: center;
 }
 
+body.dark-mode .titulo-desktop {
+  color: #000000;
+}
+
 .titulo-mobile {
   display: none;
 }
 
 #darkModeToggle {
   background: none;
-  border: 2px solid #013241;
+  border: 2px solid #ffffff;
   border-radius: 6px;
   padding: 6px 12px;
   cursor: pointer;
-  color: #013241;
+  color: white;
   font-weight: bold;
   transition: all 0.3s;
   font-size: 0.9rem;
 }
+
+body.dark-mode #darkModeToggle {
+  border-color: #009AB2;
+  color: #009AB2;
+}
+
+#darkModeToggle:hover {
+background-color: rgba(255,255,255,0.1);
+}
+
+/* Nav e dropdown */
+
 
 nav {
   background-color: #EFEFEF !important;
@@ -104,6 +156,10 @@ nav {
   gap: 1rem;
   padding: 0.5rem 0;
   position: relative;
+}
+
+body.dark-mode nav {
+  background-color: #000004;
 }
 
 nav a,
@@ -120,19 +176,30 @@ nav a,
 /* Efeito ao passar o mouse */
 nav a:hover,
 .dropdown:hover > a {
-  color: #013241;              /* muda a cor do texto */
-  font-weight: 700;            /* fica mais “negrito” */
-  background-color: #EFEFEF;   /* muda fundo */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra moderna */
-  transform: scale(1.05);      /* dá um leve zoom */
+  color: #013241;               /* cor do texto */
+  font-weight: 700;             /* mais negrito */
+  background-color: #EFEFEF !important; /* fundo fixo, sem azul */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);       /* leve zoom */
+}
+
+/* Hover no modo escuro */
+body.dark-mode nav a:hover,
+body.dark-mode .dropdown:hover > a {
+  background-color: #EFEFEF !important; /* fundo fixo, sem azul */
+  color: #013241;           /* texto azul-claro */
+  font-weight: 700;
+  transform: scale(1.05);
 }
 
 nav a.ativo {
-  color: #000000;
+  color: black !important;
+  font-weight: bold;
+  cursor: default;
 }
 
 body.dark-mode nav a.ativo {
-  color: #ffffff;
+  color: #009AB2;
 }
 
 .dropdown {
@@ -152,7 +219,7 @@ body.dark-mode nav a.ativo {
 }
 
 body.dark-mode .dropdown-content {
-  background-color: #2a2a2a;
+  background-color: #EFEFEF;
 }
 
 .dropdown-content a {
@@ -165,10 +232,12 @@ body.dark-mode .dropdown-content {
 }
 
 body.dark-mode .dropdown-content a {
-  background-color: #2a2a2a;
+  background-color: #EFEFEF;
 }
-
 .dropdown-content a:hover {
+  background-color: rgba(0, 154, 178, 0.1);
+}
+body.dark-mode .dropdown-content a:hover {
   background-color: rgba(0, 154, 178, 0.1);
 }
 
@@ -565,19 +634,6 @@ footer small {
     padding-top: 0;
     margin: 0;
   }
-  p {
-    letter-spacing: -1px;
-    line-height: 1.1;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -1px; /* leve redução, evita distorção */
-    line-height: 1.1;       /* compacta um pouco as linhas */
-  }
-
-  .cultura-texto p {
-  word-spacing: -1px; /* diminui o espaço entre palavras */
-}
 
   .titulo-desktop {
     display: none !important;
@@ -696,8 +752,9 @@ footer small {
   <div class="dropdown">
     <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
     <div class="dropdown-content">
+      <a href="global.html">Página Global</a>
       <a href="index.html">Início</a>
-      <a href="home.html">Bem vindos</a>
+      <a href="home.html">Bem-vindos</a>
       <a href="cultura.html" class="ativo">Cultura</a>
     </div>
   </div>
@@ -718,13 +775,17 @@ footer small {
     </div>
   </div>
 
-  <div class="dropdown">
-    <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
-    <div class="dropdown-content">
-      <a href="informacoes.html">Informações</a>
-      <a href="lgbtqia.html">LGBT+</a>
+ <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
+      <div class="dropdown-content">
+        <a href="informacoes.html">Inforações Gerais</a>
+        <a href="cookie.html">Cookies</a>
+        <a href="lgbtqia.html">LGBT+</a>
+        <a href="pcd.html">PCD</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="lgpd.html">Lei Geral de Proteção de Dados</a>
+      </div>
     </div>
-  </div>
 
   <div class="dropdown">
     <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
@@ -790,22 +851,22 @@ footer small {
   
   <div class="cards-mvv">
     <div class="card-mvv">
-      <h2>Missão</h2>
+      <h2>🎯 Missão</h2>
       <p>Conectar talentos a oportunidades, facilitando o recrutamento e promovendo desenvolvimento humano com tecnologia, empatia e excelência.</p>
     </div>
 
     <div class="card-mvv">
-      <h2>Visão</h2>
+      <h2>🔭 Visão</h2>
       <p>Ser referência nacional em soluções de RH, moldando um mercado mais transparente, moderno e eficiente para todos.</p>
     </div>
 
     <div class="card-mvv">
-      <h2>Valores</h2>
+      <h2>💡 Valores</h2>
       <p>Ética, transparência, humanização, inovação, engajamento e compromisso social guiam todas as nossas decisões e ações.</p>
     </div>
 
     <div class="card-mvv">
-      <h2>Cultura</h2>
+      <h2>🌱 Cultura</h2>
       <p>Pessoas no centro, incentivando participação ativa, aprendizado contínuo, colaboração e crescimento conjunto.</p>
     </div>
   </div>
@@ -938,6 +999,24 @@ floatb.addEventListener('click', () => {
   }, 3000);
 });
 
+window.onscroll = function() {
+  const btn = document.getElementById("scrollTopBtn");
+  if (!btn) return;
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.getElementById("scrollTopBtn");
+  if (!btn) return;
+  btn.addEventListener("click", function(e){
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const dropdowns = document.querySelectorAll(".dropdown");
