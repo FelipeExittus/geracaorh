@@ -629,6 +629,15 @@ footer small {
   }
 }
 
+    /* Ajuste global de espaçamento para textos e cards em mobile */
+@media (max-width: 768px) {
+  p, span, li, div, a, label {
+    word-spacing: -1px;   /* reduz o espaço entre palavras */
+    line-height: 1.3;      /* reduz espaçamento entre linhas */
+    letter-spacing: 0;     /* ajusta espaçamento entre letras se necessário */
+  }
+}
+    
 @media (max-width: 600px) {
   body {
     padding-top: 0;
