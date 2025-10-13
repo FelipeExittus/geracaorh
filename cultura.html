@@ -633,9 +633,10 @@ footer small {
   .card p,
   .card-mvv p,
   .cultura-texto p {
-    text-align: justify;   /* ou start */
-    word-spacing: -5px;    /* sem espaço extra */
-    line-height: 1.2;   /* mais compacto */
+    text-align: justify;
+    text-justify: inter-word; /* distribui espaço apenas entre palavras, não depois de pontuação */
+    word-spacing: 0;          /* remove espaçamento extra */
+    line-height: 1.2;
   }
 }
     
