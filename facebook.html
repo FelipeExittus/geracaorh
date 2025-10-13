@@ -1162,7 +1162,7 @@ counters.forEach(counter => {
   const updateCount = () => {
     const target = +counter.getAttribute('data-target');
     const count = +counter.innerText.replace('%', '');
-    const speed = 10; // menor = mais rápido
+    const speed = 100; // menor = mais rápido
     const increment = target / speed;
     counter.innerText = target + (counter.classList.contains('demo-percentage') ? '%' : '');
 
@@ -1192,7 +1192,7 @@ function animateProgressBars() {
 
 // Observer para animar elementos quando entram na tela
 const observerOptions = {
-  threshold: 0.2,
+  threshold: 0,
   rootMargin: '0px 0px -50px 0px'
 };
 
