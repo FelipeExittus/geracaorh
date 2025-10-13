@@ -629,15 +629,32 @@ footer small {
   }
 }
 
-    /* Ajuste global de espaçamento para textos e cards em mobile */
+/* Ajuste de espaçamento global apenas para mobile */
 @media (max-width: 768px) {
-  /* Aplica para praticamente todos os elementos que contenham texto */
-  p, span, li, div, a, label {
-    word-spacing: -1px; /* ou -1px se quiser mais compacto */
-    line-height: 1.2 !important; /* reduz espaçamento entre linhas */
-    letter-spacing: normal; /* ajusta se necessário */
-    margin: 0; /* remove margens automáticas */
-    padding: 0; /* remove padding interno */
+  /* Aplica para todos os textos, incluindo dentro de cards */
+  p, span, li, a, h1, h2, h3, h4, h5, h6 {
+    word-spacing: -1px !important; /* força a aplicação */
+    line-height: 1.2 !important;   /* reduz espaço entre linhas */
+    letter-spacing: normal !important;
+    margin: 0 !important;           /* remove margens extras */
+    padding: 0 !important;          /* remove paddings extras */
+  }
+
+  /* Textos específicos dentro de cards */
+  .card p,
+  .card h2,
+  .card-mvv p,
+  .card-mvv h2,
+  .cultura-texto p {
+    word-spacing: -1px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Ajusta padding dos cards para reduzir espaço geral */
+  .card,
+  .card-mvv,
+  .cultura-texto {
+    padding: 15px !important;
   }
 }
     
