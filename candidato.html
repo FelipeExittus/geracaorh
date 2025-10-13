@@ -173,6 +173,12 @@ body.dark-mode nav a.ativo {
   }
 }
 
+    @media (max-width: 600px) {
+  /* Mantém o card abaixo do nav no mobile */
+  .card-full {
+    margin-top: 250px !important; /* aumenta a distância abaixo do nav */
+  }
+}
 .dropdown {
   position: relative;
   display: inline-block;
@@ -750,11 +756,12 @@ footer small {
 </header>
 
 <nav>
-  <div class="dropdown">
+<div class="dropdown">
     <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
     <div class="dropdown-content">
+      <a href="global.html">Página Global</a>
       <a href="index.html">Início</a>
-      <a href="home.html">Bem vindos</a>
+      <a href="home.html" >Bem-vindos</a>
       <a href="cultura.html">Cultura</a>
     </div>
   </div>
@@ -775,16 +782,16 @@ footer small {
     </div>
   </div>
 
-  <div class="dropdown">
-    <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
-    <div class="dropdown-content">
-      <a href="cookie.html">Cookies</a>
-      <a href="lgbtqia.html">LGBT+</a>
-      <a href="pcd.html">PCD</a>
-      <a href="privacidade.html">Política de Privacidade</a>
-      <a href="lgpd.html">LGPD</a>
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
+      <div class="dropdown-content">
+        <a href="cookies.html" class="ativo">Cookies</a>
+        <a href="lgbt.html">LGBT+</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="lgpd.html">Lei Geral de Proteção de Dados</a>
+        <a href="pcd.html">Pessoas com Deficiência</a>
+      </div>
     </div>
-  </div>
 
   <div class="dropdown">
     <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
