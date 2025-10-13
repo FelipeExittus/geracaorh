@@ -634,11 +634,13 @@ footer small {
   .card-mvv p,
   .cultura-texto p {
     text-align: justify;
-    text-justify: inter-word; /* distribui espaço apenas entre palavras, não depois de pontuação */
-    word-spacing: 0;          /* remove espaçamento extra */
+    text-justify: inter-word;
+    hyphens: auto;  /* ativa hifenização automática */
+    word-spacing: 0;
     line-height: 1.2;
   }
 }
+
     
 @media (max-width: 600px) {
   body {
