@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <link rel="icon" type="image/png" href="lgoogle.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portal para Candidatos - Nova Geração RH</title>
-  <meta name="description" content="Seu portal completo para buscar oportunidades, enviar currículo e receber dicas valiosas para conquistar sua vaga dos sonhos." />
-  <style>
+
+  <title>Portal para Candidatos - Nova Geração RH | Oportunidades e Currículos</title>
+  <meta name="description" content="Seu portal completo para buscar vagas, enviar currículo, receber dicas de carreira e conquistar a vaga dos seus sonhos." />
+  <meta name="keywords" content="vagas de emprego, portal de candidatos, enviar currículo, dicas de carreira, oportunidades de trabalho, Nova Geração RH" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph para redes sociais -->
+  <meta property="og:title" content="Portal para Candidatos - Nova Geração RH | Oportunidades e Currículos" />
+  <meta property="og:description" content="Seu portal completo para buscar vagas, enviar currículo, receber dicas de carreira e conquistar a vaga dos seus sonhos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="URL_DA_IMAGEM_DE_PREVIEW.jpg" />
+  <meta property="og:url" content="https://www.seusite.com/candidatos" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portal para Candidatos - Nova Geração RH | Oportunidades e Currículos" />
+  <meta name="twitter:description" content="Seu portal completo para buscar vagas, enviar currículo, receber dicas de carreira e conquistar a vaga dos seus sonhos." />
+  <meta name="twitter:image" content="URL_DA_IMAGEM_DE_PREVIEW.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="lgoogle.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.seusite.com/candidatos" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="estilos.css" />  <style>
 /* Base do layout original */
 body {
   margin: 0;
@@ -165,6 +188,18 @@ nav a.ativo {
 
 body.dark-mode nav a.ativo {
   color: #009AB2;
+}
+    
+@media (max-width: 768px) {
+  .card p,
+  .card-mvv p,
+  .cultura-texto p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;  /* ativa hifenização automática */
+    word-spacing: 0;
+    line-height: 1.2;
+  }
 }
 
 @media (max-width: 768px) {
@@ -782,24 +817,27 @@ footer small {
     </div>
   </div>
 
-    <div class="dropdown">
+<div class="dropdown">
       <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
       <div class="dropdown-content">
+        <a href="informacoes.html">Inforações Gerais</a>
         <a href="cookies.html">Cookies</a>
         <a href="lgbt.html">LGBT+</a>
         <a href="privacidade.html">Política de Privacidade</a>
         <a href="lgpd.html">Lei Geral de Proteção de Dados</a>
-        <a href="pcd.html">Pessoas com Deficiência</a>
+        <a href="pcd.html">Pessoas com deficiência</a>
       </div>
     </div>
 
-  <div class="dropdown">
-    <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
-    <div class="dropdown-content">
-      <a href="servicos.html">Serviços</a>
-      <a href="blog.html">Blog</a>
+ <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
+      <div class="dropdown-content">
+        <a href="blog.html">Blog</a>
+        <a href="facebook.html">Comunidade Facebook</a>
+        <a href="whatsapp.html">Comunidade WhatsApp</a>
+      </div>
     </div>
-  </div>
+
 </nav>
 </div>
 
