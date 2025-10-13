@@ -189,19 +189,17 @@ nav a.ativo {
 body.dark-mode nav a.ativo {
   color: #009AB2;
 }
-    
 @media (max-width: 768px) {
-  .card p,
-  .card-mvv p,
-  .cultura-texto p {
+.card p,
+.card-mvv p,
+.cultura-texto p {
     text-align: justify;
     text-justify: inter-word;
-    hyphens: auto;  /* ativa hifenização automática */
-    word-spacing: -4px;
-    line-height: 1.2;
-  }
+    hyphens: auto;
+    word-spacing: normal;  /* ou remover totalmente */
+    line-height: 1.5;      /* deixa mais agradável */
 }
-
+    
 @media (max-width: 768px) {
   nav a.ativo {
     color: black !important;
