@@ -1240,11 +1240,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+  // Seleciona todos os toggles
+const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+dropdownToggles.forEach(toggle => {
+  toggle.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    // Fecha todos os dropdowns
+    document.querySelectorAll('.dropdown-content').forEach(dc => {
+      if (dc !== this.nextElementSibling) {
+        dc.classList.remove('show');
+      }
+    });
+
+    // Alterna o dropdown clicado
+    this.nextElementSibling.classList.toggle('show');
+  });
+});
+
 
 
 </script>
 
 </body>
 </html>
+
 
 
