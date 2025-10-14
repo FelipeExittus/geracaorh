@@ -1214,10 +1214,6 @@ window.onload = () => {
 }
 </style>
 
-<!-- Botão de voltar ao topo com ícone PNG -->
-<a href="#" id="scrollTopBtn" title="Voltar ao topo">
-  <img src="cima.png" alt="Voltar ao topo" />
-</a>
 
 <script>
 const floatb = document.getElementById('floatb');
@@ -1243,47 +1239,10 @@ floatb.addEventListener('click', () => {
     const contactFloat = document.querySelector('.contact-float');
     contactBtn.addEventListener('click', () => contactFloat.classList.toggle('active'));
   </script>
-
-<script>
-// Mostrar botão quando a página rolar para baixo
-window.onscroll = function() { scrollFunction(); };
-
-function scrollFunction() {
-  const btn = document.getElementById("scrollTopBtn");
-  if (!btn) return;
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    btn.style.display = "block";
-  } else {
-    btn.style.display = "none";
-  }
-}
-
-// Subir ao topo ao clicar
-document.addEventListener("DOMContentLoaded", function() {
-  const btn = document.getElementById("scrollTopBtn");
-  if (!btn) return;
-  btn.addEventListener("click", function(e){
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  
 });
 </script>
 
-<script>
-document.getElementById('accept-cookies').addEventListener('click', function() {
-    document.getElementById('cookie-banner').style.display = 'none';
-    localStorage.setItem('cookiesAccepted', 'true');
-});
-
-// Verificar se o usuário já aceitou cookies
-window.addEventListener('load', () => {
-    if(localStorage.getItem('cookiesAccepted')) {
-        document.getElementById('cookie-banner').style.display = 'none';
-    } else {
-        document.getElementById('cookie-banner').style.display = 'flex';
-    }
-});
-</script>
 </script>
 </body>
 </html>
