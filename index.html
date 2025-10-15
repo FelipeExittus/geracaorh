@@ -118,6 +118,10 @@ body {
             <a href="home.html" class="cta-button">Página Inicial</a>
             <a href="contato.html" class="cta-button">Entre em Contato</a>
         </div>
+        <!-- Contador de visitas abaixo dos menus -->
+<div id="contador" style="text-align:center; margin-top:25px; font-family:Arial; font-size:16px;">
+  Visitantes: <span id="visitas">0</span>
+</div>
     </div>
 
     <div class="wave-decoration"></div>
@@ -139,7 +143,19 @@ function createParticles() {
 }
 document.addEventListener('DOMContentLoaded',()=>{ createParticles(); });
 </script>
+    <script>
+  // Verifica se já existe contador salvo
+  let visitas = localStorage.getItem('contadorVisitas');
+  if (!visitas) {
+    visitas = 1;
+  } else {
+    visitas = parseInt(visitas) + 1;
+  }
+  localStorage.setItem('contadorVisitas', visitas);
+  document.getElementById('visitas').textContent = visitas;
+</script>
 </body>
 </html>
+
 
 
