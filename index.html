@@ -1,159 +1,1246 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Página Inicial - Nova Geração RH</title>
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-html, body { height:100%; overflow:hidden; font-family:Arial,sans-serif; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agência Exittus - Recrutamento e Seleção</title>
+  <meta name="description" content="Conectamos profissionais e empresas com empatia, estratégia e tecnologia." />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-    background: linear-gradient(135deg, #009AB2 0%, #013241 100%);
+    :root {
+      --primary: #4F7214;
+      --accent: #647C01;
+      --bg-light: #ffffff;
+      --text-light: #1a1a1a;
+      --bg-dark: #0a0a0a;
+      --text-dark: #f0f0f0;
+      --overlay-light: rgba(255, 255, 255, 0.95);
+      --overlay-dark: rgba(10, 10, 10, 0.95);
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      overflow-x: hidden;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    body.chat-open .theme-toggle {
+      display: none !important;
+    }
+
+    body.scrolling .theme-toggle {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    body.dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-slideshow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    .hero-slide:nth-child(1) {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .hero-slide:nth-child(2) {
+      background: linear-gradient(135deg, #4F7214 0%, #647C01 100%);
+    }
+
+    .hero-slide:nth-child(3) {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+      max-width: 900px;
+    }
+
+    .logo-container {
+      margin-bottom: 2rem;
+      animation: fadeInDown 1s ease-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-placeholder {
+      width: 180px;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .logo-placeholder img {
+      width: auto;
+      height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease-out 0.3s both;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out 0.6s both;
+      font-weight: 300;
+      opacity: 0.95;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1rem;
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      z-index: 1000;
+    }
+
+    .menu-toggle {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      padding: 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .menu-line {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-content {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 350px;
+      height: 100vh;
+      background: var(--overlay-light);
+      backdrop-filter: blur(20px);
+      padding: 3rem 2rem;
+      transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: 5px 0 30px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+    }
+
+    body.dark-mode .menu-content {
+      background: var(--overlay-dark);
+    }
+
+    .menu-content.active {
+      left: 0;
+    }
+
+    .menu-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .menu-section h3 {
+      color: var(--accent);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .menu-link {
+      display: block;
+      padding: 0.8rem 1rem;
+      color: var(--text-light);
+      text-decoration: none;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    body.dark-mode .menu-link {
+      color: var(--text-dark);
+    }
+
+    .menu-link:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateX(10px);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-arrow {
+      width: 30px;
+      height: 50px;
+      border: 3px solid white;
+      border-radius: 25px;
+      position: relative;
+    }
+
+    .scroll-arrow::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      animation: scrollDot 2s infinite;
+    }
+
+    .content-section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 3rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .feature-card {
+      background: var(--bg-light);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    body.dark-mode .feature-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+
+    body.dark-mode .feature-title {
+      color: var(--text-dark);
+    }
+
+    .feature-text {
+      line-height: 1.7;
+      opacity: 0.8;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      padding: 6rem 2rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    .cta-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1.2rem 3rem;
+      background: white;
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      background: var(--bg-light);
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark-mode footer {
+      background: var(--bg-dark);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-info {
+      margin-bottom: 0.5rem;
+      opacity: 0.8;
+    }
+
+    /* CHATBOT SIMPLES E CORRETO */
+    .chatbot-button {
+      position: fixed;
+      bottom: 2rem;
+      right: 1rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 4px 20px rgba(79, 114, 20, 0.4);
+      transition: all 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+      z-index: 100;
+    }
+
+    .chatbot-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(79, 114, 20, 0.6);
+    }
+
+    .chatbot-button.active {
+      animation: none;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .chatbot-window {
+      display: none;
+      position: fixed;
+      bottom: 2.0rem;
+      right: 1rem;
+      width: 380px;
+      height: 550px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+      flex-direction: column;
+      z-index: 99;
+    }
+
+  
+  #chatbotBtn.active {
+  display: none;
 }
 
-.hero-section {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
 
-.floating-elements {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none;
-    z-index:1;
-}
+    body.dark-mode .chatbot-window {
+        bottom: 1.5rem;
 
-.floating-circle {
-    position: absolute;
-    border-radius:50%;
-    background: rgba(255,255,255,0.1);
-    animation: float 6s ease-in-out infinite;
-}
+      background: #1e1e1e;
+    }
 
-.circle-1 { width:80px; height:80px; top:20%; left:10%; animation-delay:0s; }
-.circle-2 { width:120px; height:120px; top:60%; right:10%; animation-delay:2s; }
-.circle-3 { width:60px; height:60px; top:80%; left:20%; animation-delay:4s; }
-.circle-4 { width:100px; height:100px; top:30%; right:20%; animation-delay:1s; }
+    .chatbot-window.active {
+      display: flex;
+    }
 
-@keyframes float {
-    0%,100% { transform:translateY(0px) rotate(0deg); opacity:0.3; }
-    50% { transform:translateY(-20px) rotate(180deg); opacity:0.8; }
-}
+    .chatbot-header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 1rem;
+      border-radius: 15px 15px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.hero-content { position:relative; z-index:2; max-width:800px; padding:2rem; }
+    .chatbot-header h3 {
+      margin: 0;
+      font-size: 0.95rem;
+    }
 
-.hero-title { font-size:3.5rem; font-weight:bold; margin-bottom:1rem; opacity:0; transform:translateY(50px); animation:slideUp 1s ease-out 0.5s forwards; }
-.hero-subtitle { font-size:1.5rem; margin-bottom:2rem; opacity:0; transform:translateY(50px); animation:slideUp 1s ease-out 1s forwards; font-weight:300; }
-.hero-description { font-size:1.1rem; line-height:1.6; margin-bottom:2rem; opacity:0; transform:translateY(50px); animation:slideUp 1s ease-out 1.5s forwards; }
+    .chatbot-header p {
+      margin: 0.3rem 0 0 0;
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
 
-.cta-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; opacity:0; transform:translateY(50px); animation:slideUp 1s ease-out 2s forwards; }
-.cta-button {
-    padding:1rem 2rem;
-    border:2px solid white;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter:blur(10px);
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:bold;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    transition: all 0.3s ease;
-}
+    .close-chatbot {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
 
-.cta-button:hover {
-    background:white;
-    color:#013241;
-    transform:translateY(-2px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
+    .close-chatbot:hover {
+      transform: rotate(90deg);
+    }
 
-.particles { position:absolute; width:100%; height:100%; top:0; left:0; pointer-events:none; }
-.particle { position:absolute; width:4px; height:4px; background: rgba(255,255,255,0.6); border-radius:50%; animation:particle 15s linear infinite; }
+    .chatbot-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      scroll-behavior: smooth;
+    }
 
-@keyframes particle {
-    0% { opacity:0; transform:translateY(100vh) translateX(-100px); }
-    10%,90% { opacity:1; }
-    100% { opacity:0; transform:translateY(-100vh) translateX(100px); }
-}
+    body.dark-mode .chatbot-messages {
+      background: #0a0a0a;
+    }
 
-@keyframes slideUp { to { opacity:1; transform:translateY(0); } }
+    .message {
+      display: flex;
+      animation: fadeIn 0.3s ease;
+      word-wrap: break-word;
+    }
 
-.wave-decoration {
-    position:absolute; bottom:0; left:0; width:100%; height:100px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23ffffff"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23ffffff"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23ffffff"></path></svg>') repeat-x;
-    background-size: 1200px 120px;
-    animation: wave 10s linear infinite;
-}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-@keyframes wave { 0% { background-position-x:0; } 100% { background-position-x:1200px; } }
+    .message.bot {
+      justify-content: flex-start;
+    }
 
-@media(max-width:768px) { .hero-title{font-size:2.5rem;} .hero-subtitle{font-size:1.2rem;} .cta-buttons{flex-direction:column;align-items:center;} }
-</style>
+    .message.user {
+      justify-content: flex-end;
+    }
+
+    .message-content {
+      max-width: 75%;
+      padding: 0.9rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .message.bot .message-content {
+      background: white;
+      color: #333;
+      border: 1px solid #e0e0e0;
+    }
+
+    body.dark-mode .message.bot .message-content {
+      background: #2a2a2a;
+      color: #f0f0f0;
+      border: 1px solid #444;
+    }
+
+    .message.user .message-content {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+    }
+
+    .quick-buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    .quick-btn {
+      background: white;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      text-align: left;
+      word-wrap: break-word;
+      white-space: normal;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    body.dark-mode .quick-btn {
+      background: #2a2a2a;
+      border-color: var(--primary);
+    }
+
+    .quick-btn:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .chatbot-input-area {
+      padding: 1rem;
+      border-top: 1px solid #e0e0e0;
+      display: flex;
+      gap: 0.7rem;
+    }
+
+    body.dark-mode .chatbot-input-area {
+      border-top: 1px solid #444;
+    }
+
+    .chatbot-input {
+      flex: 1;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 0.75rem;
+      font-size: 0.95rem;
+      transition: border-color 0.3s;
+    }
+
+    body.dark-mode .chatbot-input {
+      background: #2a2a2a;
+      border-color: #444;
+      color: #f0f0f0;
+    }
+
+    .chatbot-input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .chatbot-send-btn {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+
+    .chatbot-send-btn:hover {
+      transform: scale(1.05);
+    }
+
+  
+    /* MOBILE RESPONSIVO */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .chatbot-window {
+        width: 90vw;
+        height: 60vh;
+        bottom: 5rem;
+        right: 0.5rem;
+        left: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .chatbot-button {
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 100;
+      }
+
+      .chatbot-window {
+        position: fixed;
+        bottom: 4rem;
+        right: 0.5rem;
+        left: 0.5rem;
+        width: calc(100% - 1rem);
+        height: 70vh;
+        max-height: 70vh;
+        border-radius: 10px;
+      }
+
+      .whatsapp-float {
+        bottom: 1rem;
+        right: 5.5rem;
+        width: 55px;
+        height: 55px;
+      }
+
+      .whatsapp-float svg {
+        width: 30px;
+        height: 30px;
+      }
+
+      .chatbot-messages {
+        padding: 1rem;
+      }
+
+      .message-content {
+        font-size: 0.9rem;
+      }
+
+      .quick-btn {
+        font-size: 0.8rem;
+        padding: 0.7rem;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      40% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+      60% {
+        transform: translateX(-50%) translateY(-5px);
+      }
+    }
+
+    @keyframes scrollDot {
+      0% {
+        opacity: 1;
+        top: 10px;
+      }
+      50% {
+        opacity: 0.5;
+        top: 25px;
+      }
+      100% {
+        opacity: 0;
+        top: 35px;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+    }
+  </style>
 </head>
 <body>
-<section class="hero-section">
-    <div class="floating-elements">
-        <div class="floating-circle circle-1"></div>
-        <div class="floating-circle circle-2"></div>
-        <div class="floating-circle circle-3"></div>
-        <div class="floating-circle circle-4"></div>
+
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <span id="themeIcon">🌙</span>
+  </button>
+
+  <div class="nav-menu">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span class="menu-line"></span>
+      <span class="menu-line"></span>
+      <span class="menu-line"></span>
     </div>
+    <div class="menu-content" id="menuContent">
+      <div class="menu-section">
+        <h3>Bem-Vindo</h3>
+        <a href="#" class="menu-link">Sobre</a>
+        <a href="#" class="menu-link">Missão</a>
+        <a href="#" class="menu-link">Visão</a>
+        <a href="#" class="menu-link">Valores</a>
+      </div>
+      <div class="menu-section">
+        <h3>Carreira</h3>
+        <a href="#" class="menu-link">Candidato</a>
+        <a href="#" class="menu-link">Vagas</a>
+      </div>
+      <div class="menu-section">
+        <h3>Atendimento</h3>
+        <a href="#" class="menu-link">Serviços</a>
+        <a href="#" class="menu-link">Contato</a>
+      </div>
+      <div class="menu-section">
+        <h3>Informações</h3>
+        <a href="#" class="menu-link">Cookies</a>
+        <a href="#" class="menu-link">LGBT+</a>
+        <a href="#" class="menu-link">Privacidade</a>
+        <a href="#" class="menu-link">LGPD</a>
+      </div>
+    </div>
+  </div>
 
-    <div class="particles" id="particles"></div>
-
+  <section class="hero">
+    <div class="hero-slideshow">
+      <div class="hero-slide active"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+    </div>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h1 class="hero-title">Bem-vindo a Nova Geração RH</h1>
-        <h2 class="hero-subtitle">Onde experiência e tecnologia moldam o futuro do trabalho.</h2>
-        <p class="hero-description">Transformamos recrutamento em uma experiência digital inovadora, conectando talentos e empresas para construir o futuro do trabalho.</p>
-        <div class="cta-buttons">
-            <a href="global.html" class="cta-button">Página Visual</a>
-            <a href="home.html" class="cta-button">Página Inicial</a>
-            <a href="contato.html" class="cta-button">Entre em Contato</a>
+      <div class="logo-container">
+        <div class="logo-placeholder">
+          <img src="logo.png" alt="Logo Agência Exittus" />
         </div>
-        <!-- Contador de visitas abaixo dos menus -->
-<div id="contador" style="text-align:center; margin-top:25px; font-family:Arial; font-size:16px;">
-  Visitantes: <span id="visitas">0</span>
-</div>
+      </div>
+      <h1 class="hero-title">Agência Exittus</h1>
+      <p class="hero-subtitle">Conectando Talentos ao Futuro com Estratégia e Empatia</p>
     </div>
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
 
-    <div class="wave-decoration"></div>
-</section>
+  <section class="content-section">
+    <h2 class="section-title">Nossa Expertise</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3 class="feature-title">Recrutamento Estratégico</h3>
+        <p class="feature-text">Processos seletivos personalizados com foco em assertividade e agilidade, utilizando metodologias inovadoras e testes comportamentais.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3 class="feature-title">Olhar Humano</h3>
+        <p class="feature-text">Atuamos com empatia e ética, valorizando a escuta e o acolhimento em cada etapa da jornada profissional.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💡</div>
+        <h3 class="feature-title">Tecnologia e Inovação</h3>
+        <p class="feature-text">Equipe multidisciplinar que une expertise em RH com ferramentas tecnológicas para resultados excepcionais.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏢</div>
+        <h3 class="feature-title">Espaço Completo</h3>
+        <p class="feature-text">Infraestrutura preparada para admissões, entrevistas e desligamentos humanizados em ambiente profissional.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3 class="feature-title">Desenvolvimento</h3>
+        <p class="feature-text">Apoiamos o crescimento de carreiras e contribuímos para o desenvolvimento sustentável das organizações.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3 class="feature-title">Excelência</h3>
+        <p class="feature-text">Compromisso com qualidade em cada detalhe, criando pontes sólidas entre profissionais e empresas.</p>
+      </div>
+    </div>
+  </section>
 
-<script>
-// Criar partículas
-function createParticles() {
-    const container = document.getElementById('particles');
-    const count = 15;
-    for(let i=0;i<count;i++){
-        const p=document.createElement('div');
-        p.classList.add('particle');
-        p.style.left=Math.random()*100+'%';
-        p.style.animationDelay=Math.random()*15+'s';
-        p.style.animationDuration=(Math.random()*10+10)+'s';
-        container.appendChild(p);
+  <section class="cta-section">
+    <h2 class="cta-title">Pronto para Transformar sua Carreira?</h2>
+    <p style="margin-bottom: 2rem; font-size: 1.2rem;">Entre em contato e descubra como podemos ajudar</p>
+    <a href="#" class="cta-button">Fale Conosco</a>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p class="footer-info"><strong>Endereço:</strong> R. São José, 584 - sala 204 - Centro, Guaíba - RS</p>
+      <p class="footer-info"><strong>Telefone:</strong> (51) 99338-1495</p>
+      <p class="footer-info"><strong>E-mail:</strong> adm@agenciaexittus.com</p>
+      <p style="margin-top: 2rem; opacity: 0.6;">© 2025 Agência Exittus. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <button class="chatbot-button" id="chatbotBtn" onclick="toggleChatbot()">💬</button>
+  
+  <div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+      <div>
+        <h3>Agência Exittus</h3>
+        <p>Sempre online para ajudar</p>
+      </div>
+      <button class="close-chatbot" onclick="toggleChatbot()">✕</button>
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages"></div>
+    <div class="chatbot-input-area">
+      <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Escreva sua dúvida..." onkeypress="if(event.key==='Enter') enviarMensagem()" autocomplete="off">
+      <button class="chatbot-send-btn" onclick="enviarMensagem()">➤</button>
+    </div>
+  </div>
+
+  <a href="https://wa.me/5551999338-1495" target="_blank" class="whatsapp-float">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.402-2.847 1.12-.757.715-1.176 1.667-1.176 2.678 0 1.063.422 2.07 1.192 2.881.774.817 1.79 1.279 2.858 1.279h.005c1.067 0 2.086-.463 2.846-1.279.761-.813 1.179-1.821 1.179-2.881 0-1.021-.415-1.967-1.172-2.678-.768-.725-1.802-1.12-2.878-1.12zm5.64 19.807h.006c1.966 0 3.87-.744 5.288-2.096 1.47-1.424 2.283-3.289 2.283-5.214 0-.528-.041-1.045-.121-1.55-.161-1.009-.601-1.945-1.3-2.72-1.556-1.72-3.779-2.687-6.156-2.687-2.377 0-4.6.967-6.156 2.687-1.7 1.875-2.286 4.233-1.608 6.547.456 1.568 1.32 2.923 2.53 3.936 1.57 1.364 3.686 2.097 5.914 2.097zm6.555-20.15C19.202 1.575 15.271 0 11 0 5.02 0 .217 4.686.217 10.423c0 1.864.39 3.665 1.167 5.315L0 24l8.755-2.803c1.544.839 3.28 1.28 5.112 1.28 5.981 0 10.783-4.687 10.783-10.423 0-2.784-1.073-5.39-3.026-7.366z"/>
+    </svg>
+  </a>
+
+  <script>
+    const CHATBOT_CONFIG = {
+      mensagens: {
+        bemvindo: {
+          texto: 'Olá! 👋 Bem-vindo à Agência Exittus!\n\nComo podemos ajudá-lo?',
+          opcoes: [
+            { texto: '👤 Sou Candidato', proximo: 'candidato' },
+            { texto: '🏢 Sou Empresa', proximo: 'empresa' },
+            { texto: '❓ Dúvidas Frequentes', proximo: 'duvidas' },
+            { texto: '📞 Contato Direto', proximo: 'contato' }
+          ]
+        },
+        candidato: {
+          texto: '✨ Ótimo! Você está em busca de oportunidade?\n\nNa Exittus conectamos profissionais qualificados com as melhores empresas.',
+          opcoes: [
+            { texto: '🔍 Ver Vagas', proximo: 'vagas' },
+            { texto: '💡 Dicas para Candidatura', proximo: 'dicas' },
+            { texto: '📋 Processo de Seleção', proximo: 'processo' },
+            { texto: '↩️ Voltar', proximo: 'bemvindo' }
+          ]
+        },
+        vagas: {
+          texto: '🔍 Temos vagas em aberto para diversos perfis!\n\nVisite nossa página de Vagas para conferir todas as oportunidades atualizadas.',
+          opcoes: [
+            { texto: '🌐 Ver Vagas Online', link: 'https://agenciaexittus.com/vagas' },
+            { texto: '↩️ Voltar', proximo: 'candidato' }
+          ]
+        },
+        dicas: {
+          texto: '💡 Dicas Importantes para sua Candidatura:\n\n✅ Currículo atualizado e bem estruturado\n✅ Foto profissional de qualidade\n✅ LinkedIn completo e otimizado\n✅ Carta de apresentação personalizada\n✅ Responda rápido nossas mensagens',
+          opcoes: [
+            { texto: '💬 Falar com Especialista', acao: 'whatsapp' },
+            { texto: '↩️ Voltar', proximo: 'candidato' }
+          ]
+        },
+        processo: {
+          texto: '📋 Nosso Processo é Simples e Rápido:\n\n1️⃣ Inscrição e Análise de Perfil\n2️⃣ Entrevista Preliminar\n3️⃣ Testes Técnicos/Comportamentais\n4️⃣ Dinâmica com Empresa\n5️⃣ Proposta Final\n\n⏱️ Média: 7-10 dias úteis',
+          opcoes: [
+            { texto: '💬 Falar Conosco', acao: 'whatsapp' },
+            { texto: '↩️ Voltar', proximo: 'candidato' }
+          ]
+        },
+        empresa: {
+          texto: '🏢 Excelente! Você procura profissionais qualificados?\n\nTemos soluções completas de recrutamento e seleção.',
+          opcoes: [
+            { texto: '🎯 Nossos Serviços', proximo: 'servicos' },
+            { texto: '📊 Cases de Sucesso', proximo: 'cases' },
+            { texto: '💰 Tabela de Valores', proximo: 'precos' },
+            { texto: '↩️ Voltar', proximo: 'bemvindo' }
+          ]
+        },
+        servicos: {
+          texto: '🎯 Serviços Disponíveis:\n\n✅ Recrutamento e Seleção\n✅ Testes Técnicos e Comportamentais\n✅ Entrevistas Estruturadas\n✅ Background Check\n✅ Consultoria em RH\n✅ Treinamentos Corporativos',
+          opcoes: [
+            { texto: '💬 Solicitar Orçamento', acao: 'whatsapp' },
+            { texto: '↩️ Voltar', proximo: 'empresa' }
+          ]
+        },
+        cases: {
+          texto: '📊 Nossos Números Falam:\n\n🏆 +500 profissionais colocados\n🏆 95% de taxa de sucesso\n🏆 Empresas de diversos segmentos\n🏆 Preenchimento em média 7 dias\n🏆 Satisfação garantida',
+          opcoes: [
+            { texto: '💬 Conhecer Detalhes', acao: 'whatsapp' },
+            { texto: '↩️ Voltar', proximo: 'empresa' }
+          ]
+        },
+        precos: {
+          texto: '💰 Tabela de Valores:\n\n📦 Básico: R$ 1.500\n📦 Intermediário: R$ 3.000\n📦 Premium: Sob Consulta\n\n*Valores variam conforme perfil\n*Sem taxa de sucesso',
+          opcoes: [
+            { texto: '💬 Falar com Especialista', acao: 'whatsapp' },
+            { texto: '↩️ Voltar', proximo: 'empresa' }
+          ]
+        },
+        duvidas: {
+          texto: '❓ Dúvidas Frequentes:\n\nEscolha a pergunta que tem:',
+          opcoes: [
+            { texto: '⏱️ Quanto tempo leva?', proximo: 'tempo' },
+            { texto: '💵 Custa algo para candidato?', proximo: 'custo' },
+            { texto: '📊 Taxa de sucesso?', proximo: 'taxa' },
+            { texto: '↩️ Voltar', proximo: 'bemvindo' }
+          ]
+        },
+        tempo: {
+          texto: '⏱️ Quanto tempo leva o processo?\n\nPara o candidato: 7 a 10 dias úteis\n• Análise de currículo: 1 a 3 dias\n• Entrevistas: 1 a 5 dias\n• Resultado: 2 a 4 dias',
+          opcoes: [
+            { texto: '❓ Outras Dúvidas', proximo: 'duvidas' },
+            { texto: '↩️ Início', proximo: 'bemvindo' }
+          ]
+        },
+        custo: {
+          texto: '💵 Quanto custa?\n\nPara o Candidato: TOTALMENTE GRATUITO ✅\n\nPara a Empresa: A partir de R$ 1.500',
+          opcoes: [
+            { texto: '❓ Outras Dúvidas', proximo: 'duvidas' },
+            { texto: '↩️ Início', proximo: 'bemvindo' }
+          ]
+        },
+        taxa: {
+          texto: '📊 Nossa taxa de sucesso:\n\n✅ 95% de aproveitamento\n✅ +500 profissionais colocados\n✅ Satisfação garantida\n✅ Suporte contínuo',
+          opcoes: [
+            { texto: '❓ Outras Dúvidas', proximo: 'duvidas' },
+            { texto: '↩️ Início', proximo: 'bemvindo' }
+          ]
+        },
+        contato: {
+          texto: '📞 Entre em Contato:\n\n📱 WhatsApp: (51) 99338-1495\n📧 E-mail: adm@agenciaexittus.com\n📍 R. São José, 584 - Guaíba, RS',
+          opcoes: [
+            { texto: '💬 Abrir WhatsApp', acao: 'whatsapp' },
+            { texto: '📧 Enviar E-mail', acao: 'email' },
+            { texto: '↩️ Voltar', proximo: 'bemvindo' }
+          ]
+        }
+      }
+    };
+
+    let chatAtual = 'bemvindo';
+    let aberto = false;
+
+  function toggleChatbot() {
+  const btn = document.getElementById('chatbotBtn');
+  const chatWindow = document.getElementById('chatbotWindow');
+  const body = document.body;
+
+  aberto = !aberto;
+
+  btn.classList.toggle('active', aberto);
+  chatWindow.classList.toggle('active', aberto);
+  body.classList.toggle('chat-open', aberto);
+
+  if (aberto) {
+    body.style.overflow = 'hidden';
+
+    if (document.getElementById('chatbotMessages').children.length === 0) {
+      mostrarMensagem('bemvindo');
     }
-}
-document.addEventListener('DOMContentLoaded',()=>{ createParticles(); });
-</script>
-    <script>
-  // Verifica se já existe contador salvo
-  let visitas = localStorage.getItem('contadorVisitas');
-  if (!visitas) {
-    visitas = 1;
+
+    setTimeout(() => {
+      document.getElementById('chatbotInput').focus();
+    }, 150);
   } else {
-    visitas = parseInt(visitas) + 1;
+    body.style.overflow = '';
   }
-  localStorage.setItem('contadorVisitas', visitas);
-  document.getElementById('visitas').textContent = visitas;
-</script>
+}
+
+
+    function mostrarMensagem(id) {
+      const config = CHATBOT_CONFIG.mensagens[id];
+      if (!config) return;
+
+      chatAtual = id;
+      const mensagens = document.getElementById('chatbotMessages');
+      mensagens.innerHTML = '';
+
+      const msgDiv = document.createElement('div');
+      msgDiv.className = 'message bot';
+      msgDiv.innerHTML = `<div class="message-content">${config.texto}</div>`;
+      mensagens.appendChild(msgDiv);
+
+      setTimeout(() => {
+        const btnsDiv = document.createElement('div');
+        btnsDiv.className = 'message bot';
+        btnsDiv.innerHTML = '<div class="message-content"><div class="quick-buttons">' + 
+          config.opcoes.map(opt => {
+            if (opt.acao === 'whatsapp') {
+              return `<button class="quick-btn" onclick="window.open('https://wa.me/5551999338-1495', '_blank');">` + opt.texto + `</button>`;
+            } else if (opt.acao === 'email') {
+              return `<button class="quick-btn" onclick="window.location.href='mailto:adm@agenciaexittus.com';">` + opt.texto + `</button>`;
+            } else if (opt.link) {
+              return `<button class="quick-btn" onclick="window.open('` + opt.link + `', '_blank');">` + opt.texto + `</button>`;
+            } else {
+              return `<button class="quick-btn" onclick="mostrarMensagem('` + opt.proximo + `');">` + opt.texto + `</button>`;
+            }
+          }).join('') + 
+        '</div></div>';
+        mensagens.appendChild(btnsDiv);
+        
+        setTimeout(() => {
+          mensagens.scrollTop = mensagens.scrollHeight;
+        }, 50);
+      }, 300);
+    }
+
+    function enviarMensagem() {
+      const input = document.getElementById('chatbotInput');
+      const texto = input.value.trim();
+      if (!texto) return;
+
+      const mensagens = document.getElementById('chatbotMessages');
+      const msgDiv = document.createElement('div');
+      msgDiv.className = 'message user';
+      msgDiv.innerHTML = `<div class="message-content">${texto}</div>`;
+      mensagens.appendChild(msgDiv);
+      input.value = '';
+      mensagens.scrollTop = mensagens.scrollHeight;
+
+      setTimeout(() => {
+        const resposta = document.createElement('div');
+        resposta.className = 'message bot';
+        resposta.innerHTML = `<div class="message-content">Clique em uma das opções acima para continuar 👇</div>`;
+        mensagens.appendChild(resposta);
+        mensagens.scrollTop = mensagens.scrollHeight;
+      }, 500);
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const icon = document.getElementById('themeIcon');
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        icon.textContent = '☀️';
+      } else {
+        icon.textContent = '🌙';
+      }
+    }
+
+    function toggleMenu() {
+      document.getElementById('menuContent').classList.toggle('active');
+    }
+
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('menuContent');
+      const menuBtn = document.querySelector('.menu-toggle');
+      if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+        menu.classList.remove('active');
+      }
+    });
+
+    let slide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    setInterval(() => {
+      slides[slide].classList.remove('active');
+      slide = (slide + 1) % slides.length;
+      slides[slide].classList.add('active');
+    }, 5000);
+
+    document.querySelector('.scroll-indicator').addEventListener('click', () => {
+      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    });
+
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      document.body.classList.add('scrolling');
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        document.body.classList.remove('scrolling');
+      }, 250);
+    });
+
+    document.addEventListener('click', (e) => {
+  const chat = document.getElementById('chatbotWindow');
+  const btn = document.getElementById('chatbotBtn');
+
+  if (!aberto) return;
+
+  if (!chat.contains(e.target) && !btn.contains(e.target)) {
+    toggleChatbot();
+  }
+});
+
+document.getElementById('chatbotWindow').addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+
+  </script>
+
 </body>
 </html>
 
